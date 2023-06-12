@@ -1,16 +1,29 @@
 export const home = (onNavigate) => {
-  const homeDiv = document.createElement('div');
-  const buttonRegister = document.createElement('button');
-  const buttonLogin = document.createElement('button');
+  // HTML
+  const homeDiv = document.createElement("div");
+  const viewHome = `
+  <div >
+  <h1>BIENVENID@S A</h1>
+    <h2>{LABGRAM}</h2>
+    <img >
+    <button id=">Inicia sesión</button>
+  </div>
+  
+  `;
+  homeDiv.innerHTML += viewHome;
+  // BOTON INICIO
+  const buttonLogin = document.createElement("button");
 
-  buttonRegister.textContent = 'Registrate';
-  buttonLogin.textContent = 'Inicia sesión';
+  buttonLogin.textContent = "Inicia sesión";
 
-  buttonRegister.addEventListener('click', () => onNavigate('/register'));
-  buttonLogin.addEventListener('click', () => onNavigate('/login'));
-
-  homeDiv.appendChild(buttonRegister);
   homeDiv.appendChild(buttonLogin);
+
+  buttonLogin.addEventListener("click", () => onNavigate("/login"));
+  // BOTON REGISTRARSE
+  const buttonRegister = document.createElement("button");
+  buttonRegister.textContent = "Registrate";
+  homeDiv.appendChild(buttonRegister);
+  buttonRegister.addEventListener("click", () => onNavigate("/register"));
 
   return homeDiv;
 };
