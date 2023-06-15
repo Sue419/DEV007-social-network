@@ -2,15 +2,18 @@ import { crearUsuarioYContraseña } from "../lib";
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement("div");
+  homeDiv.classList.add("containerLogin");
+
   const buttonLogin = document.createElement("button");
   buttonLogin.textContent = "Inicia";
   homeDiv.innerHTML += `
   <div class="form-container login-container">
-  <img src="img/c51f5ad5cc105c0b2cc6b278a04e4a82.gif" class="gato-img-logo" alt="logo">
       <h2>INICIA SESIÓN</h2>
-        <input id="email" type="email" placeholder="Email">
-        <input id="password" type="password" placeholder="Password">
+      <img src="img/logo.png" alt="logo" class="imgLogoLogin">
+        <input class="input-email" id="email" type="email" placeholder="Email">
+        <input class="input-password" id="password" type="password" placeholder="Password">
         <span>O ingresa con</span>
+        <br>
         <div class="social-container">
         </div>
       <span>¿No tienes una cuenta? Registrate</span>
@@ -31,11 +34,12 @@ export const login = (onNavigate) => {
   });
   
   homeDiv.appendChild(buttonLogin);
+  /* -----------------REGRESA AL LOGIN---------------------------*/
+
+  const buttonHome = document.createElement("button");
+  buttonHome.textContent = "Regresar al Home";
+  buttonHome.addEventListener("click", () => onNavigate("/"));
+  homeDiv.appendChild(buttonHome);
 
   return homeDiv;
-  /* -----------------REGRESA AL LOGIN---------------------------*/
-  // const buttonHome = document.createElement("button");
-  // buttonHome.textContent = "Regresar al Home";
-  // buttonHome.addEventListener("click", () => onNavigate("/"));
-  // homeDiv.appendChild(buttonHome);
 };
