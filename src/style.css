@@ -7,6 +7,7 @@ body {
   width: 200px;
   height: 200px;
 }
+<<<<<<< HEAD:src/stayle.css
 .container {
   display: flex;
   background: rgba(255, 255, 255, 0.23);
@@ -99,6 +100,9 @@ body {
   align-items: center;
   margin-top: 60px;
 }
+=======
+
+>>>>>>> a78fbc7d3f17b3f0ebfc55fe68e61574b53bb893:src/style.css
 /**/
 /*
 principales

@@ -25,9 +25,14 @@ export const login = (onNavigate) => {
 
   buttonLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    crearUsuarioYContraseña(inputEmail.value, inputPassword.value);
-    console.log(inputEmail.value, inputPassword.value);
+    crearUsuarioYContraseña(
+      inputEmail.value, 
+      inputPassword.value
+    ).then(() => {
+    onNavigate('/feed');
+    });
   });
+  
   homeDiv.appendChild(buttonLogin);
   /* -----------------REGRESA AL LOGIN---------------------------*/
 
