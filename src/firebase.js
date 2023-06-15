@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";// lo exporto para usarlo en todas las otras paginas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,3 +19,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig); // Inicia firebase
 export const auth = getAuth(app); // inicia autentication
+export const db = getFirestore(app);
