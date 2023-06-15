@@ -1,9 +1,103 @@
+/*---------------------------HOME---------------------------*/
 body {
   background-color: #eae1f1;
+  margin: 0;
 }
 .gato-img-logo {
   width: 200px;
   height: 200px;
+}
+.container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 810px;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  gap: 30px;
+}
+.containerHome {
+  margin-top: 15px;
+}
+.imgLogo {
+  width: 306px;
+  height: 200px;
+}
+
+.textCenter {
+  text-align: center;
+}
+/*--------------------*/
+.btnLogin {
+}
+/*---------------------------LOGIN---------------------------*/
+.imgLogoLogin {
+  width: 306px;
+  height: 200px;
+}
+.containerLogin {
+  display: flex;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 810px;
+  margin: 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+.input-email {
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: none;
+}
+.input-password {
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: none;
+}
+.input-name {
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: none;
+}
+
+/*---------------------------REGISTER---------------------------*/
+.containerRegister {
+  display: flex;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 810px;
+  margin: 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
 }
 /**/
 /*

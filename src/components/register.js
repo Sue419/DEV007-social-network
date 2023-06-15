@@ -1,16 +1,18 @@
 import { crearUsuarioYContraseña } from "../lib";
+
 export const register = (onNavigate) => {
   const homeDiv = document.createElement("div");
+  homeDiv.classList.add("containerRegister");
   const buttonRegister = document.createElement("button");
   buttonRegister.textContent = "Registrate";
   homeDiv.innerHTML += `
   <div class="form-container register-container">
-      <form action="#">
+      <form class="textCenter">
         <h2>Registro</h2>
-        <input  id="name" type="text" placeholder="Nombre">
-        <input id="email" type="email" placeholder="Email">
-        <input id="password"  type="password" placeholder="password">
-        <input type="ConfirmPassword" placeholder="Confirm password">
+        <input  class="input-name " id="name" type="text" placeholder="Nombre">
+        <input class="input-email" id="email" type="email" placeholder="Email">
+        <input class="input-password" id="password"  type="password" placeholder="password">
+        <input class="input-password" type="ConfirmPassword" placeholder="Confirm password">
         <div class="social-container">
         </div>
       </form>
