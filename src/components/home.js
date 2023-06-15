@@ -2,11 +2,9 @@ export const home = (onNavigate) => {
   // HTML
   const homeDiv = document.createElement("div");
   const viewHome = `
-  <div >
+  <div>
   <h1>BIENVENID@S A</h1>
     <h2>{LABGRAM}</h2>
-    <img >
-    <button id=">Inicia sesión</button>
   </div>
   
   `;
