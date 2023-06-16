@@ -2,21 +2,19 @@ import { crearUsuarioYContraseña } from '../lib/index.js';
 
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
-  homeDiv.classList.add('containerRegister');
+  homeDiv.classList.add('fondo');
   const buttonRegister = document.createElement('button');
+  buttonRegister.classList.add('btn-register-register');
   buttonRegister.textContent = 'Registrate';
   homeDiv.innerHTML += `
   <div class="form-container register-container">
-      <form class="textCenter">
-      <h1>Bienvenid@s a {LABGRAM}</h1>
-        <h2>Registro</h2>
-        <input  class="input-name " id="name" type="text" placeholder="Nombre">
-        <input class="input-email" id="email" type="email" placeholder="Email">
-        <input class="input-password" id="password"  type="password" placeholder="password">
-        <input class="input-password" type="password" placeholder="Confirm password">
-        <div class="social-container">
-        </div>
-      </form>
+        <h2 class="register-texto">Registro</h2>
+        <img src="img/log_720.png" alt="logo" class="imgLogoRegister">
+        <input  class="input-register-name" id="name" type="text" placeholder="Nombre">
+        <input class="input-register-email" id="email" type="email" placeholder="Email">
+        <input class="input-register-contraseña" id="password"  type="password" placeholder="password">
+        <input class="input-register-contraseña-confirmar" type="password" placeholder="Confirm password">
+        <a class="tienes-cuenta-inicia">¿YA TIENES CUENTA? INICIA SESIÓN</a>
     </div>
   `;
   /*------------------------------------------------------*/
