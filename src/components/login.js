@@ -1,4 +1,4 @@
-import { crearUsuarioYContraseña } from "../lib";
+import { loginUsuarioYContraseña } from "../lib";
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement("div");
@@ -25,7 +25,7 @@ export const login = (onNavigate) => {
 
   buttonLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    crearUsuarioYContraseña(
+    loginUsuarioYContraseña(
       inputEmail.value, 
       inputPassword.value
     ).then(() => {

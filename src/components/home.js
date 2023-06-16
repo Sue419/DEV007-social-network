@@ -1,36 +1,29 @@
 export const home = (onNavigate) => {
   // HTML
-  const homeDiv = document.createElement("div");
-  homeDiv.classList.add("container");
+  const homeDiv = document.createElement('div');
+  homeDiv.classList.add('container');
   const viewHome = `
-<<<<<<< HEAD
-  <div class="textCenter containerHome">
-  <h1 class="bienvenida" >BIENVENID@S a</h1>
-    <h2>{LABGRAM}</h2>
-    <img src="img/logo.png" alt="logo" class="imgLogo">
-    <button id=">Inicia sesión</button>
-=======
   <div>
-  <h1>BIENVENID@S A</h1>
-    <h2>{LABGRAM}</h2>
->>>>>>> a78fbc7d3f17b3f0ebfc55fe68e61574b53bb893
+    <h1 class="labgram-texto">LABGRAM</h1>
+    <p class="p-texto">TU ESPACIO PARA COMPARTIR EJERCICOS DEL GYM</p>
+    <img class="logo-labgram"src="img/log_720.png" alt="logo">
   </div>
   
   `;
   homeDiv.innerHTML += viewHome;
   // BOTON INICIO
 
-  const buttonLogin = document.createElement("button");
-  buttonLogin.textContent = "Inicia sesión";
+  const buttonLogin = document.createElement('button');
+  buttonLogin.textContent = 'Inicia sesión';
   homeDiv.appendChild(buttonLogin);
-  buttonLogin.addEventListener("click", () => onNavigate("/login"));
-  buttonLogin.classList.add("btnLogin");
+  buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  buttonLogin.classList.add('btn-iniciarSesion');
 
   // BOTON REGISTRARSE
-  const buttonRegister = document.createElement("button");
-  buttonRegister.textContent = "Registrate";
+  const buttonRegister = document.createElement('button');
+  buttonRegister.textContent = 'Registrate';
   homeDiv.appendChild(buttonRegister);
-  buttonRegister.addEventListener("click", () => onNavigate("/register"));
-
+  buttonRegister.addEventListener('click', () => onNavigate('/register'));
+  buttonRegister.classList.add('btn-register');
   return homeDiv;
 };
