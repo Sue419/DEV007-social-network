@@ -1,41 +1,37 @@
 // aqui exportaras las funciones que necesites
 
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { auth, db } from "../firebase";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { auth, db } from '../firebase';
 
-export const crearUsuarioYContraseña = (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password);
-};//agregue return para la promesa de console log de login fila 25
+export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
 
-export const crearPost = async (texto) => {
-  await addDoc(collection(db, 'publicaciones'), {
-    contenido: texto,
-    // usuario: user,
-  });
-};
+export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
 
-export const obtenerTodosLosPost = (texto) => {
-  return getDocs(collection(db, 'publicaciones'), {
-    contenido: texto,
-    // usuario: user,
-  });
-};
+export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
+  contenido: texto,
+  // usuario: user,
+});
 
-export const obtenerNombreUsuario = () => {
-  return onAuthStateChanged(auth, (user) => {
-    if (obtenerNombreUsuario) {
+export const obtenerTodosLosPost = (texto) => getDocs(collection(db, 'publicaciones'), {
+  contenido: texto,
+  // usuario: user,
+});
+
+export const obtenerNombreUsuario = () => onAuthStateChanged(auth, (user) => {
+  if (obtenerNombreUsuario) {
     //  User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User 
-      const uid = user.uid;
-      //...
-    } else {
-      //user is signed out
-    }
-  });
-
-
-}
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // user is signed out
+  }
+});
 
 // borrar post
 
@@ -47,9 +43,8 @@ export const obtenerNombreUsuario = () => {
 
 // dejar un comentario
 
-// editar nombre 
+// editar nombre
 
 // editar foto
 
 // acciones con firebase
-

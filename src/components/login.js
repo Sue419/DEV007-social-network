@@ -1,11 +1,11 @@
-import { crearUsuarioYContraseña } from "../lib";
+import { loginUsuarioYContraseña } from '../lib/index.js';
 
 export const login = (onNavigate) => {
-  const homeDiv = document.createElement("div");
-  homeDiv.classList.add("containerLogin");
+  const homeDiv = document.createElement('div');
+  homeDiv.classList.add('containerLogin');
 
-  const buttonLogin = document.createElement("button");
-  buttonLogin.textContent = "Inicia";
+  const buttonLogin = document.createElement('button');
+  buttonLogin.textContent = 'Inicia';
   homeDiv.innerHTML += `
   <div class="form-container login-container">
       <h2>INICIA SESIÓN</h2>
@@ -20,25 +20,25 @@ export const login = (onNavigate) => {
     </div>
   
   `;
-  const inputEmail = homeDiv.querySelector("#email");
-  const inputPassword = homeDiv.querySelector("#password");
+  const inputEmail = homeDiv.querySelector('#email');
+  const inputPassword = homeDiv.querySelector('#password');
 
-  buttonLogin.addEventListener("click", (e) => {
+  buttonLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    crearUsuarioYContraseña(
-      inputEmail.value, 
-      inputPassword.value
+    loginUsuarioYContraseña(
+      inputEmail.value,
+      inputPassword.value,
     ).then(() => {
-    onNavigate('/feed');
+      onNavigate('/feed');
     });
   });
-  
+
   homeDiv.appendChild(buttonLogin);
   /* -----------------REGRESA AL LOGIN---------------------------*/
 
-  const buttonHome = document.createElement("button");
-  buttonHome.textContent = "Regresar al Home";
-  buttonHome.addEventListener("click", () => onNavigate("/"));
+  const buttonHome = document.createElement('button');
+  buttonHome.textContent = 'Regresar al Home';
+  buttonHome.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonHome);
 
   return homeDiv;
