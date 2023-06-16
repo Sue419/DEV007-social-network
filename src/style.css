@@ -83,69 +83,248 @@ border-style:none ;
 
 }
 /*---------------------------LOGIN---------------------------*/
-.imgLogoLogin {
-  width: 306px;
-  height: 200px;
+.fondo{
+  background-color: #1E1E1E;
+  height: 100%;
 }
-.containerLogin {
-  display: flex;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(6.6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  height: 810px;
-  margin: 20px;
-  flex-direction: column;
-  gap: 15px;
+.inicia-texto{
+position: absolute;
+width: 237px;
+height: 72px;
+left: 72px;
+top: 30px;
+
+font-family: 'Anton';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 72px;
+
+color: #C574C1;
 }
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 60px;
+.imgLogoLogin{
+position: absolute;
+width: 136px;
+height: 146px;
+left: 127px;
+top: 170px;
 }
-.input-email {
+.input-email{
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 363px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
   font-size: 20px;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  border: none;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  color: rgba(0, 6, 36, 0.37);
+  text-align: center;
 }
 .input-password {
-  font-size: 20px;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  border: none;
-}
-.input-name {
-  font-size: 20px;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  border: none;
-}
+position: absolute;
+width: 303px;
+height: 52px;
+left: 43px;
+top: 440px;
+background: #FFFFFF;
+border-radius: 10px;
+font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: 0.03em;
 
+color: rgba(0, 6, 36, 0.37);
+text-align: center;
+}
+.olvidoContraseña{
+  position: absolute;
+  width: 210px;
+  height: 17px;
+  left: 173px;
+  top: 520px;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  
+}
+.inicia-sesion-login{
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 72px;
+  top: 557px;
+  background-color: #46355B;
+
+  font-family: 'Anton';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 28px;
+ line-height: 48px;
+ letter-spacing: 0.03em;
+ text-transform: uppercase;
+ color: #EAE4D8;
+ border-radius: 10px;
+ border-style:none ;
+}
+.ingresaCon-google{
+position: absolute;
+width: 103px;
+height: 22px;
+left: 143px;
+top: 639px;
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: #FFFFFF;
+}
+.fondo-icono-google{
+  position: absolute;
+width: 77px;
+height: 75px;
+left: 148px;
+top: 686px;
+
+background: #FF4D5A;
+border-radius: 39px;
+}
+.img-google{
+position: absolute;
+width: 75px;
+height: 75px;
+left: 149px;
+top: 686px;
+z-index: 5;
+}
+.no-cuenta-registrate{
+  position: absolute;
+  width: 261px;
+  height: 17px;
+  left: 72px;
+  top: 791px;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+
+}
 /*---------------------------REGISTER---------------------------*/
-.containerRegister {
-  display: flex;
-  background: rgba(255, 255, 255, 0.23);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(6.6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  height: 810px;
-  margin: 20px;
-  flex-direction: column;
-  gap: 15px;
+.fondo{
+  background-color: #1E1E1E;
+  height: 100%;
 }
+.register-texto{
+  position: absolute;
+  width: 165px;
+  height: 72px;
+  left: 112px;
+  top: 20px;
+  
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+  
+  color: #C574C1;  
+}
+.imgLogoRegister{
+position: absolute;
+width: 136px;
+height: 146px;
+left: 127px;
+top: 170px;
+}
+.input-register-name{
+  position: absolute;
+width: 303px;
+height: 52px;
+left: 43px;
+top: 363px;
 
-.register-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 60px;
+background: #FFFFFF;
+border-radius: 10px;
+text-align: center;
+}
+.input-register-email{
+position: absolute;
+width: 303px;
+height: 52px;
+left: 43px;
+top: 440px;
+text-align: center;
+background: #FFFFFF;
+border-radius: 10px;
+}
+.input-register-contraseña{ 
+position: absolute;
+width: 303px;
+height: 52px;
+left: 43px;
+top: 517px;
+text-align: center;
+background: #FFFFFF;
+border-radius: 10px;
+}
+.input-register-contraseña-confirmar{
+position: absolute;
+width: 303px;
+height: 52px;
+left: 43px;
+top: 588px;
+text-align: center;
+background: #FFFFFF;
+border-radius: 10px;
+}
+.btn-register-register{
+position: absolute;
+width: 240px;
+height: 52px;
+left: 72px;
+top: 695px;
+background: #46355B;
+border-radius: 10px;
+font-family: 'Anton';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: #EAE4D8;
+border-radius: 10px;
+border-style:none ;
+}
+.tienes-cuenta-inicia{
+  position: absolute;
+    width: 265px;
+    height: 17px;
+    left: 60px;
+    top: 791px;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+
 }
 /**/
 /*

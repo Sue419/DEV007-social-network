@@ -2,21 +2,23 @@ import { loginUsuarioYContraseña } from '../lib/index.js';
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
-  homeDiv.classList.add('containerLogin');
+  homeDiv.classList.add('fondo');
 
   const buttonLogin = document.createElement('button');
-  buttonLogin.textContent = 'Inicia';
+  buttonLogin.classList.add('inicia-sesion-login');
+  buttonLogin.textContent = 'Iniciar Sesión';
   homeDiv.innerHTML += `
-  <div class="form-container login-container">
-      <h2>INICIA SESIÓN</h2>
-      <img src="img/logo.png" alt="logo" class="imgLogoLogin">
+  <div class="form-container login-container ">
+      <h2 class="inicia-texto">INICIA SESIÓN</h2>
+      <img src="img/log_720.png" alt="logo" class="imgLogoLogin">
         <input class="input-email" id="email" type="email" placeholder="Email">
         <input class="input-password" id="password" type="password" placeholder="Password">
-        <span>O ingresa con</span>
+        <a class="olvidoContraseña">¿OLVIDASTE TU CONTRASEÑA?</a>
+        <span class="ingresaCon-google">O ingresa con</span>
         <br>
-        <div class="social-container">
-        </div>
-      <span>¿No tienes una cuenta? Registrate</span>
+        <div class="fondo-icono-google"></div>
+        <img class="img-google" src="img/ios_google_icon_360.png" alt="logo-google">
+      <span class="no-cuenta-registrate">¿No tienes una cuenta? Registrate</span>
     </div>
   
   `;
