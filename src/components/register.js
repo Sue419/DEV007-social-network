@@ -8,6 +8,7 @@ export const register = (onNavigate) => {
   homeDiv.innerHTML += `
   <div class="form-container register-container">
       <form class="textCenter">
+      <h1>Bienvenid@s a {LABGRAM}</h1>
         <h2>Registro</h2>
         <input  class="input-name " id="name" type="text" placeholder="Nombre">
         <input class="input-email" id="email" type="email" placeholder="Email">

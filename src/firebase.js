@@ -13,7 +13,7 @@ const firebaseConfig = {
   projectId: "labgram-53b0c",
   storageBucket: "labgram-53b0c.appspot.com",
   messagingSenderId: "240384744782",
-  appId: "1:240384744782:web:88c6c3bd80dece4d10521f",
+  appId: "1:240384744782:web:88c6c3bd80dece4d10521f"
 };
 
 // Initialize Firebase

@@ -2,54 +2,59 @@ import { QuerySnapshot } from "firebase/firestore";
 import { crearPost, obtenerTodosLosPost } from "../lib";
 
 export const feed = (onNavigate) => {
-// HTML
+
 const homeDiv = document.createElement("div");
-homeDiv.textContent = 'Bienvenid@s a {LABGRAM]';
-homeDiv.className = 'home-div';
-const buttonHome = document.createElement('button');
-
-buttonHome.classList = 'home-div__button';
-buttonHome.textContent = 'Regresar al Home';
-
-buttonHome.addEventListener('click', () => onNavigate('/'));
-
+homeDiv.classList.add("containerFeed");
 homeDiv.innerHTML += `
+<div class="form-container feed-container">
+<form class="textCenter">
+<h1>Bienvenid@s a {LABGRAM}</h1>
+<h2>Publicaciones</h2>
 <div class="new-post__container">
-  <textarea class="new-post__container__textarea"></textarea>
+  <textarea class="new-post__container__textarea" placeholder="Escribe aqui"></textarea>
   <button class="new-post__container__button">Publicar</button>
 </div>
-<section class="posts">
+<section class="posts__container">
   <div class="posts__post">
-    <p>No logro entender los ejercicios de GYM 5. Aiudaaaa!.</p>
+    <p>${obtenerTodosLosPost.value}</p>
   </div>
 </section>
+</form>
 `;
+
+const buttonLogin = document.createElement('button');
+buttonLogin.classList = 'home-div__button';
+buttonLogin.textContent = 'Regresar al Login';
+buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
 homeDiv.querySelector('.new-post__container__button').addEventListener(
     'click', 
     () => {
         const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
-        crearPost(contenidoDelTextarea.value).then(() => {
-          contenidoDelTextarea.value = "";
-          homeDiv.querySelector('.publicaciones').innerHTML = '';
-          obtenerTodosLosPost().then((QuerySnapshot) => {
-            QuerySnapshot.forEach((doc) => {
-              homeDiv.querySelector('.publicaciones').innerHTML += `
-              <div class="posts__post">
-                <p>${doc.data().contenido}</p>
-              </div>
-              `;
-            });
-          });
-        });
-        // console.log(contenidoDelTextarea.value);
- }
+        console.log(contenidoDelTextarea.value);
+//         crearPost(contenidoDelTextarea.value).then(() => {
+//           contenidoDelTextarea.value = "";
+//           alert('Publicación subida');
+//         })
+//         .catch((error) => {
+//           alert(error);
+//         });
+    }
 );
-//<h3>${doc.data().usuario}</h3>va en fila43
-//<div class="usuario__user"><h3>Jo</h3></div> va en fila 25
+        //   homeDiv.querySelector('.publicaciones').innerHTML = '';
+        //   obtenerTodosLosPost().then((QuerySnapshot) => {
+        //     QuerySnapshot.forEach((doc) => {
+        //       homeDiv.querySelector('.publicaciones').innerHTML += `
+        //       <div class="posts__post">
+        //         <p>${doc.data().contenido}</p>
+        //       </div>
+        //       `;
+        //     });
+        //   });
+        // });
+        // console.log(contenidoDelTextarea.value);
 
-homeDiv.appendChild(buttonHome);
+
+homeDiv.appendChild(buttonLogin);
 return homeDiv;
-
-
 }
