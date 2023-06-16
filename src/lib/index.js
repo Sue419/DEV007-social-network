@@ -8,8 +8,8 @@ export const crearUsuarioYContraseña = (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password);
 };//agregue return para la promesa de console log de login fila 25
 
-export const crearPost = (texto) => {
-  return addDoc(collection(db, 'publicaciones'), {
+export const crearPost = async (texto) => {
+  await addDoc(collection(db, 'publicaciones'), {
     contenido: texto,
     // usuario: user,
   });
@@ -24,8 +24,8 @@ export const obtenerTodosLosPost = (texto) => {
 
 export const obtenerNombreUsuario = () => {
   return onAuthStateChanged(auth, (user) => {
-    if (user) {
-     // User is signed in, see docs for a list of available properties
+    if (obtenerNombreUsuario) {
+    //  User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User 
       const uid = user.uid;
       //...
@@ -33,8 +33,6 @@ export const obtenerNombreUsuario = () => {
       //user is signed out
     }
   });
-
-
 
 
 }
