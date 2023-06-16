@@ -8,21 +8,12 @@ import { getAuth } from 'firebase/auth'; // lo exporto para usarlo en todas las 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-<<<<<<< HEAD
   apiKey: 'AIzaSyAnKOEfXjEtP0hUS-0ZRJ2L6q29OXsV7bo',
   authDomain: 'labgram-53b0c.firebaseapp.com',
   projectId: 'labgram-53b0c',
   storageBucket: 'labgram-53b0c.appspot.com',
   messagingSenderId: '240384744782',
   appId: '1:240384744782:web:88c6c3bd80dece4d10521f',
-=======
-  apiKey: "AIzaSyAnKOEfXjEtP0hUS-0ZRJ2L6q29OXsV7bo",
-  authDomain: "labgram-53b0c.firebaseapp.com",
-  projectId: "labgram-53b0c",
-  storageBucket: "labgram-53b0c.appspot.com",
-  messagingSenderId: "240384744782",
-  appId: "1:240384744782:web:88c6c3bd80dece4d10521f"
->>>>>>> 84eb943d787ea3719e0a0aeffca4c2d70a5de85e
 };
 
 // Initialize Firebase
