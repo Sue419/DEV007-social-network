@@ -4,9 +4,14 @@ export const home = (onNavigate) => {
   homeDiv.classList.add('container');
   const viewHome = `
   <div>
+<<<<<<< HEAD
     <h1 class="labgram-texto">LABGRAM</h1>
     <p class="p-texto">TU ESPACIO PARA COMPARTIR EJERCICOS DEL GYM</p>
     <img class="logo-labgram"src="img/log_720.png" alt="logo">
+=======
+  <h1>BIENVENID@S A</h1>
+    <h2>{LABGRAM}</h2>
+>>>>>>> 84eb943d787ea3719e0a0aeffca4c2d70a5de85e
   </div>
   
   `;
