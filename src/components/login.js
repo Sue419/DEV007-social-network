@@ -22,8 +22,8 @@ export const login = (onNavigate) => {
           </button>
       <span class="no-cuenta-registrate">¿No tienes una cuenta? Registrate</span>
     </div>
-  
   `;
+  
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
   const btnLoginGoogle = homeDiv.querySelector('.btn-google');

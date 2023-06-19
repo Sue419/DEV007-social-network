@@ -42,6 +42,8 @@ export const feed = (onNavigate) => {
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
     querySnapshot.forEach((doc) => {
+      const idPost = doc.id;
+      console.log(idPost);
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
