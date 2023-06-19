@@ -20,8 +20,8 @@ export const login = (onNavigate) => {
         <img class="img-google" src="img/ios_google_icon_360.png" alt="logo-google">
       <span class="no-cuenta-registrate">¿No tienes una cuenta? Registrate</span>
     </div>
-  
   `;
+  
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
 
@@ -36,7 +36,8 @@ export const login = (onNavigate) => {
   });
 
   homeDiv.appendChild(buttonLogin);
-  /* -----------------REGRESA AL LOGIN---------------------------*/
+
+  /* -----------------REGRESA AL HOME---------------------------*/
 
   const buttonHome = document.createElement('button');
   buttonHome.textContent = 'Regresar al Home';
