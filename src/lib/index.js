@@ -1,6 +1,12 @@
 // aqui exportaras las funciones que necesites
 
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 import { addDoc, collection, onSnapshot } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -8,12 +14,18 @@ export const crearUsuarioYContraseña = (email, password) => createUserWithEmail
 
 export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
 
+export const loginGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider) // faltaba un return
+  // signInWithPopup() método para iniciar sesion con ventana emergente
+};
+
 export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
   contenido: texto,
   // usuario: user,
 });
 
-export const obtenerTodosLosPost = (callback) => onSnapshot (collection(db, 'publicaciones'), callback);
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), callback);
 
 export const obtenerNombreUsuario = () => onAuthStateChanged(auth, (user) => {
   if (obtenerNombreUsuario) {

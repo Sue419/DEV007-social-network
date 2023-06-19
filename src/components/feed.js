@@ -4,19 +4,19 @@ export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('containerFeed');
   homeDiv.innerHTML += `
-  <div class="form-container feed-container">
-  <form class="textCenter">
-    <h1>Bienvenid@s a {LABGRAM}</h1>
-    <h2>Publicaciones</h2>
-    <div class="new-post__container">
-      <textarea class="new-post__container__textarea" placeholder="Escribe aqui"></textarea>
-      <button class="new-post__container__button">Publicar</button>
+    <div class="form-container feed-container">
+      <form class="textCenter">
+        <h1>Bienvenid@s a {LABGRAM}</h1>
+        <h2>Publicaciones</h2>
+        <div class="new-post__container">
+          <textarea class="new-post__container__textarea" placeholder="Escribe aqui"></textarea>
+          <button class="new-post__container__button">Publicar</button>
+        </div>
+        <section class="posts__container">
+        </section>
+      </form>
     </div>
-    <section class="posts__container">
-    </section>
-  </form>
-</div>
-`;
+  `;
 
   const buttonLogin = document.createElement('button');
   buttonLogin.classList = 'home-div__button';
