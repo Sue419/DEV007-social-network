@@ -1,4 +1,4 @@
-import { loginUsuarioYContraseña } from '../lib/index.js';
+import { loginUsuarioYContraseña, loginGoogle } from '../lib/index.js';
 
 export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -17,13 +17,16 @@ export const login = (onNavigate) => {
         <span class="ingresaCon-google">O ingresa con</span>
         <br>
         <div class="fondo-icono-google"></div>
-        <img class="img-google" src="img/ios_google_icon_360.png" alt="logo-google">
+          <button class="btn-google" type="button">
+            <img class="img-google" src="img/ios_google_icon_360.png" alt="logo-google">
+          </button>
       <span class="no-cuenta-registrate">¿No tienes una cuenta? Registrate</span>
     </div>
   
   `;
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
+  const btnLoginGoogle = homeDiv.querySelector('.btn-google');
 
   buttonLogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -33,9 +36,17 @@ export const login = (onNavigate) => {
     ).then(() => {
       onNavigate('/feed');
     });
-  });
+  }); // agregar una alerta de validación
 
   homeDiv.appendChild(buttonLogin);
+
+  btnLoginGoogle.addEventListener('click', (e) => {
+    e.preventDefault(); // como está dentro del formulario, es mejor colocar el preventDefault
+    loginGoogle().then(() => {
+      onNavigate('/feed');
+    }); // informar al usuario que tiene que copletar la selección de su gmail
+  });
+
   /* -----------------REGRESA AL LOGIN---------------------------*/
 
   const buttonHome = document.createElement('button');
