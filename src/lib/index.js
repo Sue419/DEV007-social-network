@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
 export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
@@ -25,10 +25,7 @@ export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
   // usuario: user,
 });
 
-export const obtenerTodosLosPost = (texto) => getDocs(collection(db, 'publicaciones'), {
-  contenido: texto,
-  // usuario: user,
-});
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), callback);
 
 export const obtenerNombreUsuario = () => onAuthStateChanged(auth, (user) => {
   if (obtenerNombreUsuario) {
