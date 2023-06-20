@@ -44,7 +44,7 @@ body {
   top: 264px;
 }
 
-.btn-iniciarSesion{
+.btn-iniciarSesion {
  position: absolute;
  width: 240px;
  height: 52px;
@@ -61,7 +61,7 @@ body {
  color: #EAE4D8;
  border-radius: 10px;
  border-style:none ;
-
+ 
 }
 .btn-register{
  position: absolute;

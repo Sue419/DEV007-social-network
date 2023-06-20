@@ -44,7 +44,7 @@ export const login = (onNavigate) => {
     e.preventDefault(); // como está dentro del formulario, es mejor colocar el preventDefault
     loginGoogle().then(() => {
       onNavigate('/feed');
-    }); // informar al usuario que tiene que copletar la selección de su gmail
+    }); // informar al usuario que tiene que completar la selección de su gmail
   });
 
   /* -----------------REGRESA AL LOGIN---------------------------*/

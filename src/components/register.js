@@ -26,11 +26,12 @@ export const register = (onNavigate) => {
 
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
+  const inputName = homeDiv.querySelector('#name');
 
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    crearUsuarioYContraseña(inputEmail.value, inputPassword.value);
-    console.log(inputEmail.value, inputPassword.value);
+    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value);
+    console.log(inputEmail.value, inputPassword.value, inputEmail.value);
   });
   homeDiv.appendChild(buttonRegister);
 

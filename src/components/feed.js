@@ -3,28 +3,26 @@ import { crearPost, obtenerTodosLosPost } from '../lib';
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('containerFeed');
+
+//POST SECTION:::::::::::::::::::::::::::::::::::::.
   homeDiv.innerHTML += `
     <div class="form-container feed-container">
-      <form class="textCenter">
-        <h1>Bienvenid@s a {LABGRAM}</h1>
-        <h2>Publicaciones</h2>
+        <h1>Hola</h1>
+        <h2>Publica tus dudas, ayuda, resultados y más del GYM y ejercítate!</h2>
         <div class="new-post__container">
-          <textarea class="new-post__container__textarea" placeholder="Escribe aqui"></textarea>
+          <input class="new-post__container__textarea" 
+          placeholder="Escribe aqui"></input>
           <button class="new-post__container__button">Publicar</button>
         </div>
-        <section class="posts__container">
-        </section>
-      </form>
+        <div class="posts__container">
+        <h2>Publicaciones</h2>
+        <div class="posts__post"></div>
+        </div>
     </div>
   `;
 
-  const buttonLogin = document.createElement('button');
-  buttonLogin.classList = 'home-div__button';
-  buttonLogin.textContent = 'Regresar al Login';
-  buttonLogin.addEventListener('click', () => onNavigate('/login'));
-
+//PUBLICACION DE POST:::::::::::::::::::::::::::::::::::
   const buttonPost = homeDiv.querySelector('.new-post__container__button');
-
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
     const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
@@ -38,6 +36,8 @@ export const feed = (onNavigate) => {
     }
   });
 
+
+//TODOS LOS POSTSSSS:::::::::::::::::::::::::::::::::::::
   const postDivs = document.createElement('div');
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
@@ -52,7 +52,15 @@ export const feed = (onNavigate) => {
     });
   });
 
-  homeDiv.querySelector('.posts__container').appendChild(postDivs);
+  homeDiv.querySelector('.posts__post').appendChild(postDivs);
+
+
+//BOTON REGRESAR AL LOGIN:::::::::::::::::::::::::::::::::
+  const buttonLogin = document.createElement('button');
+  buttonLogin.classList = 'home-div__button';
+  buttonLogin.textContent = 'Regresar al Login';
+  buttonLogin.addEventListener('click', () => onNavigate('/login'));
+
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
