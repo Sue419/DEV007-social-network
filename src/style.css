@@ -82,9 +82,21 @@ border-radius: 10px;
 border-style:none ;
 
 }
+.icono-flecha-home{
+z-index: 5; 
+}
+.btn-flecha-home{
+  position: absolute;
+  top: 5px;
+  width: 44px;
+  height: 36px;
+  z-index: 4;
+  background-color: rgba(30, 30, 30, 0);
+  border: none;
+}
 /*---------------------------LOGIN---------------------------*/
 .fondo{
-  background-color: #1E1E1E;
+  background-color: rgba(1, 7, 36, 1);
   height: 100%;
 }
 .inicia-texto{
@@ -201,18 +213,21 @@ top: 686px;
 background: #FF4D5A;
 border-radius: 39px;
 }
-.img-google{
+.btn-google{
 position: absolute;
 width: 75px;
 height: 75px;
 left: 149px;
 top: 686px;
 z-index: 5;
+border: none;
+background-color: #ffffff00;
+border-radius: 40px;
+background-image: url(img/ios_google_icon_360.png);
+background-size: contain;
 }
-.no-cuenta-registrate{
+.btn-register-direccion{
   position: absolute;
-  width: 261px;
-  height: 17px;
   left: 72px;
   top: 791px;
   font-family: 'Bebas Neue';
@@ -222,13 +237,10 @@ z-index: 5;
   line-height: 17px;
   letter-spacing: 0.1em;
   color: #FFFFFF;
-
+  background-color: #00000000;
+  border: none;
 }
 /*---------------------------REGISTER---------------------------*/
-.fondo{
-  background-color: #1E1E1E;
-  height: 100%;
-}
 .register-texto{
   position: absolute;
   width: 165px;
@@ -311,20 +323,92 @@ color: #EAE4D8;
 border-radius: 10px;
 border-style:none ;
 }
-.tienes-cuenta-inicia{
+.btn-login-direccion{
   position: absolute;
-    width: 265px;
-    height: 17px;
-    left: 60px;
-    top: 791px;
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 17px;
-    letter-spacing: 0.1em;
-    color: #FFFFFF;
+  left: 72px;
+  top: 791px;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  background-color: #00000000;
+  border: none;
+}
+/*---------------------------FEED---------------------------*/
+.colorLetras{
+  color: #FFFFFF;
+}
+.fondo-feed {
+  background-color: rgba(1, 7, 36, 1);
+}
+.labgram-text-feed{
+  margin: 0;
+  position: absolute;
+  width: 143px;
+  height: 60px;
+  left: 18px;
+  top: 0px;
 
+font-family: 'Anton';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 60px;
+
+color: #C574C1;
+
+}
+.barra-morada-feed{
+box-sizing: border-box;
+
+width: 390px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(90deg, #7945AA -50.9%, #4C2E64 76.54%);
+border: 1px solid #000000;
+}
+.publicaciones-feed{
+  margin-left: 15px;
+}
+.texto-publicacion{
+ box-sizing: border-box;
+width: 299px;
+height: 108px;
+background: #FFFFFF;
+border: 1px solid #BB88BF;
+border-radius: 10px;
+font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+letter-spacing: 0.03em;
+
+color: rgba(0, 6, 36, 0.37);
+}
+.btn-compartir{
+width: 103px;
+height: 36px;
+
+
+background: #BB88BF;
+border-radius: 7px;
+
+font-family: 'Bebas Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+letter-spacing: 0.1em;
+
+color: #FFFFFF;
 }
 /**/
 /*

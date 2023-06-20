@@ -2,19 +2,20 @@ import { crearPost, obtenerTodosLosPost } from '../lib';
 
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
-  homeDiv.classList.add('containerFeed');
+  homeDiv.classList.add('fondo-feed');
+  homeDiv.classList.add('colorLetras');
   homeDiv.innerHTML += `
     <div class="form-container feed-container">
-      <form class="textCenter">
-        <h1>Bienvenid@s a {LABGRAM}</h1>
-        <h2>Publicaciones</h2>
-        <div class="new-post__container">
-          <textarea class="new-post__container__textarea" placeholder="Escribe aqui"></textarea>
-          <button class="new-post__container__button">Publicar</button>
+    <div class="barra-morada-feed">
+      <h2 class="labgram-text-feed">LABGRAM </h2>
+    </div>
+        <h2 class="publicaciones-feed" >Publicaciones</h2>
+        <div class="new-post__container ">
+          <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe aqui"></textarea>
+          <button class="new-post__container__button btn-compartir">Publicar</button>
         </div>
         <section class="posts__container">
         </section>
-      </form>
     </div>
   `;
 
