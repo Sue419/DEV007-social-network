@@ -7,7 +7,9 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { addDoc, collection, onSnapshot } from 'firebase/firestore';
+import {
+  addDoc, collection, onSnapshot, serverTimestamp,
+} from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
 export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
@@ -16,11 +18,12 @@ export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndP
 
 export const loginGoogle = () => {
   const provider = new GoogleAuthProvider();
-  return signInWithPopup(auth, provider) // faltaba un return
+  return signInWithPopup(auth, provider); // faltaba un return
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
 export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
+  date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   // usuario: user,
 });

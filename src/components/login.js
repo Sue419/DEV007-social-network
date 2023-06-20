@@ -9,21 +9,27 @@ export const login = (onNavigate) => {
   buttonLogin.textContent = 'Iniciar Sesión';
   homeDiv.innerHTML += `
   <div class="form-container login-container ">
-      <h2 class="inicia-texto">INICIA SESIÓN</h2>
-      <img src="img/log_720.png" alt="logo" class="imgLogoLogin">
-        <input class="input-email" id="email" type="email" placeholder="Email">
-        <input class="input-password" id="password" type="password" placeholder="Password">
-        <a class="olvidoContraseña">¿OLVIDASTE TU CONTRASEÑA?</a>
-        <span class="ingresaCon-google">O ingresa con</span>
-        <br>
-        <div class="fondo-icono-google"></div>
-          <button class="btn-google" type="button">
-            <img class="img-google" src="img/ios_google_icon_360.png" alt="logo-google">
-          </button>
-      <span class="no-cuenta-registrate">¿No tienes una cuenta? Registrate</span>
+    <div class="icono-flecha-home">
+     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left-lines" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+     <path d="M12 15v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h3v6h-3z" />
+     <path d="M21 15v-6" />
+     <path d="M18 15v-6" />
+      </svg>
     </div>
+    <h2 class="inicia-texto">INICIA SESIÓN</h2>
+    <img src="img/log_720.png" alt="logo" class="imgLogoLogin">
+       <input class="input-email" id="email" type="email" placeholder="Email">
+       <input class="input-password" id="password" type="password" placeholder="Password">
+       <a class="olvidoContraseña">¿OLVIDASTE TU CONTRASEÑA?</a>
+       <span class="ingresaCon-google">O ingresa con</span>
+      <br>
+   <div class="fondo-icono-google"></div>
+      <button class="btn-google" type="button">
+       </button>
+   </div>
   `;
-  
+
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
   const btnLoginGoogle = homeDiv.querySelector('.btn-google');
@@ -46,13 +52,20 @@ export const login = (onNavigate) => {
       onNavigate('/feed');
     }); // informar al usuario que tiene que copletar la selección de su gmail
   });
+  /* ----------------- redireccion registro---------------------------*/
+  const buttonRegister = document.createElement('button');
+  buttonRegister.textContent = '¿No tienes una cuenta? Registrate';
+  homeDiv.appendChild(buttonRegister);
+  buttonRegister.addEventListener('click', () => onNavigate('/register'));
+  buttonRegister.classList.add('btn-register-direccion');
 
-  /* -----------------REGRESA AL LOGIN---------------------------*/
+  /* -----------------REGRESA AL HOME---------------------------*/
 
   const buttonHome = document.createElement('button');
-  buttonHome.textContent = 'Regresar al Home';
+  buttonHome.textContent = '';
   buttonHome.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonHome);
+  buttonHome.classList.add('btn-flecha-home');
 
   return homeDiv;
 };
