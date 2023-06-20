@@ -2,22 +2,20 @@ import { crearPost, obtenerTodosLosPost } from '../lib';
 
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
-  homeDiv.classList.add('containerFeed');
-
-//POST SECTION:::::::::::::::::::::::::::::::::::::.
+  homeDiv.classList.add('fondo-feed');
+  homeDiv.classList.add('colorLetras');
   homeDiv.innerHTML += `
     <div class="form-container feed-container">
-        <h1>Hola</h1>
-        <h2>Publica tus dudas, ayuda, resultados y más del GYM y ejercítate!</h2>
-        <div class="new-post__container">
-          <input class="new-post__container__textarea" 
-          placeholder="Escribe aqui"></input>
-          <button class="new-post__container__button">Publicar</button>
+    <div class="barra-morada-feed">
+      <h2 class="labgram-text-feed">LABGRAM </h2>
+    </div>
+        <h2 class="publicaciones-feed" >Publicaciones</h2>
+        <div class="new-post__container ">
+          <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe aqui"></textarea>
+          <button class="new-post__container__button btn-compartir">Publicar</button>
         </div>
-        <div class="posts__container">
-        <h2>Publicaciones</h2>
-        <div class="posts__post"></div>
-        </div>
+        <section class="posts__container">
+        </section>
     </div>
   `;
 
@@ -35,7 +33,6 @@ export const feed = (onNavigate) => {
       console.log(error.code);
     }
   });
-
 
 //TODOS LOS POSTSSSS:::::::::::::::::::::::::::::::::::::
   const postDivs = document.createElement('div');
