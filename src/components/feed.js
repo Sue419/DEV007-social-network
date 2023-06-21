@@ -1,4 +1,4 @@
-import { crearPost, obtenerTodosLosPost } from '../lib';
+import { crearPost, obtenerTodosLosPost, borrarPost } from '../lib';
 
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
@@ -38,7 +38,7 @@ export const feed = (onNavigate) => {
       console.log(error.code);
     }
   });
-
+  /*-------------------------------------------------------*/
   const postDivs = document.createElement('div');
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
@@ -48,10 +48,21 @@ export const feed = (onNavigate) => {
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
+          <button id=${idPost} class="btn-borrar ">borrar</button>
         </div>
       `;
     });
+    borrar();
   });
+  /* -------------------------FUNCION BORRAR POST------------------------------*/
+  function borrar() {
+    const botonesBorrar = postDivs.querySelectorAll('.btn-borrar');
+    botonesBorrar.forEach((btnBorrar) => {
+      btnBorrar.addEventListener('click', () => {
+        borrarPost(btnBorrar.id);
+      });
+    });
+  }
 
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
