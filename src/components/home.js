@@ -11,15 +11,15 @@ export const home = (onNavigate) => {
   
   `;
   homeDiv.innerHTML += viewHome;
-  // BOTON INICIO
-
+  
+  // BOTON INICIO:::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia sesión';
   homeDiv.appendChild(buttonLogin);
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonLogin.classList.add('btn-iniciarSesion');
 
-  // BOTON REGISTRARSE
+  // BOTON REGISTRARSE:::::::::::::::::::::::::::::::
   const buttonRegister = document.createElement('button');
   buttonRegister.textContent = 'Registrate';
   homeDiv.appendChild(buttonRegister);

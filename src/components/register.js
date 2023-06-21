@@ -1,5 +1,6 @@
 import { crearUsuarioYContraseña } from '../lib/index.js';
 
+// FORMULARIO REGISTRO DE USUARIO :::::::::::::::::::::::::::::::::::
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo');
@@ -30,21 +31,23 @@ export const register = (onNavigate) => {
   buttonHome.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonHome);
   buttonHome.classList.add('btn-flecha-home');
-  /*------------------------------------------------------*/
+  /*----------------------REGRESA AL LOGIN-------------------------------*/
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = '¿Ya tienes cuenta? INICIA SESIÓN';
   homeDiv.appendChild(buttonLogin);
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonLogin.classList.add('btn-login-direccion');
-  /*------------------------------------------------------*/
+
+  // REGISTRO DE USUARIO::::::::::::::::::::::::::::::::::::::::::
 
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
+  const inputName = homeDiv.querySelector('#name');
 
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    crearUsuarioYContraseña(inputEmail.value, inputPassword.value);
-    console.log(inputEmail.value, inputPassword.value);
+    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value);
+    console.log(inputEmail.value, inputPassword.value, inputEmail.value);
   });
   homeDiv.appendChild(buttonRegister);
 

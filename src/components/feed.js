@@ -1,5 +1,6 @@
 import { crearPost, obtenerTodosLosPost, borrarPost } from '../lib';
 
+//CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo-feed');
@@ -18,14 +19,16 @@ export const feed = (onNavigate) => {
         </section>
     </div>
   `;
+//BOTON REGRESAR AL LOGIN:::::::::::::::::::::::::::::::::
+const buttonLogin = document.createElement('button');
+buttonLogin.classList = 'home-div__button';
+buttonLogin.textContent = 'Regresar al Login';
+buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
-  const buttonLogin = document.createElement('button');
-  buttonLogin.classList = 'home-div__button';
-  buttonLogin.textContent = 'Regresar al Login';
-  buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
+//PUBLICACION DE POST:::::::::::::::::::::::::::::::::::
   const buttonPost = homeDiv.querySelector('.new-post__container__button');
-
+  
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
     const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
@@ -38,7 +41,12 @@ export const feed = (onNavigate) => {
       console.log(error.code);
     }
   });
+<<<<<<< HEAD
+
+//TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
+=======
   /*-------------------------------------------------------*/
+>>>>>>> 6152f88f8dba4d7082e724d2d34c1a66cb8d7ee6
   const postDivs = document.createElement('div');
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
@@ -64,7 +72,16 @@ export const feed = (onNavigate) => {
     });
   }
 
+
+
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
+
+//BORRAR POST
+//EDITAR POST
+//LIKES POST
+//CONTAR LIKES POST
+
+
