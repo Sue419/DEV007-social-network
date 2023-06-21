@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp,
+  addDoc, collection, onSnapshot, serverTimestamp, deleteDoc, doc,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -40,6 +40,7 @@ export const obtenerNombreUsuario = () => onAuthStateChanged(auth, (user) => {
     // user is signed out
   }
 });
+export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId));
 
 // borrar post
 
