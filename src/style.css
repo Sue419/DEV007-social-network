@@ -410,23 +410,3 @@ letter-spacing: 0.1em;
 
 color: #FFFFFF;
 }
-/**/
-/*
-principales
-color= #F2E4EE
-color= #3D3659
-color= #6D658C
-color= #0D0259
-color= #B5B4D9
-----------------------------------
-tres principales
-#EAE1F1
-#C0B8DC
-#5B5279
-----------------------
-/* Gradient in Hex 
-linear-gradient(to right, #EAE1F1 0%, 23.329853862212943%, #C0B8DC 46.659707724425886%, 73.32985386221294%, #5B5279 100%);
-
- Gradient in RGBA 
-linear-gradient(to right, rgba(234, 225, 241, 1) 0%, 23.329853862212943%, rgba(192, 184, 220, 1) 46.659707724425886%, 73.32985386221294%, rgba(91, 82, 121, 1) 100%);
-*/
