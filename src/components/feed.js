@@ -1,4 +1,4 @@
-import { crearPost, obtenerTodosLosPost } from '../lib';
+import { crearPost, obtenerTodosLosPost, borrarPost } from '../lib';
 
 //CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::
 export const feed = (onNavigate) => {
@@ -41,8 +41,12 @@ buttonLogin.addEventListener('click', () => onNavigate('/login'));
       console.log(error.code);
     }
   });
+<<<<<<< HEAD
 
 //TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
+=======
+  /*-------------------------------------------------------*/
+>>>>>>> 6152f88f8dba4d7082e724d2d34c1a66cb8d7ee6
   const postDivs = document.createElement('div');
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
@@ -52,10 +56,21 @@ buttonLogin.addEventListener('click', () => onNavigate('/login'));
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
+          <button id=${idPost} class="btn-borrar ">borrar</button>
         </div>
       `;
     });
+    borrar();
   });
+  /* -------------------------FUNCION BORRAR POST------------------------------*/
+  function borrar() {
+    const botonesBorrar = postDivs.querySelectorAll('.btn-borrar');
+    botonesBorrar.forEach((btnBorrar) => {
+      btnBorrar.addEventListener('click', () => {
+        borrarPost(btnBorrar.id);
+      });
+    });
+  }
 
 
 

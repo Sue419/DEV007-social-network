@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp,
+  addDoc, collection, onSnapshot, serverTimestamp, deleteDoc, doc,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
