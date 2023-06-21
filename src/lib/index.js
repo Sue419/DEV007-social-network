@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
@@ -11,44 +12,50 @@ import {
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
-// REGISTER::::::::::::::::::::::::::::::::::::
 export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
 
-// LOGIN::::::::::::::::::::::::::::::::::::::
 export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
 
-// LOGIN CON GOOGLE::::::::::::::::::::::::::::
 export const loginGoogle = () => {
   const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider); // faltaba un return
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
-//CREAR POST:::::::::::::::::::::::::::::::::
 export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
   date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   // usuario: user,
 });
 
-//VER TODOS LOS POST:::::::::::::::::::::::::
 export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), callback);
 
-//OBTENER USUARIO ACTIVO:::::::::::::::::::::
-//BORRAR POST
+export const obtenerNombreUsuario = () => onAuthStateChanged(auth, (user) => {
+  if (obtenerNombreUsuario) {
+    //  User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // user is signed out
+  }
+});
+
+export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId));
 
 
-//EDITAR POST
+// borrar post
 
+// obtener post
 
-//LIKES POST
-//CONTAR LIKES POST
+// dar like
 
-//____________________________________________________________________________________________//
+// iniciar sesion con google
 
-//HACKER EDITION
 // dejar un comentario
+
 // editar nombre
+
 // editar foto
 
-
+// acciones con firebase

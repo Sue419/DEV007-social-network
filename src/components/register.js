@@ -31,7 +31,7 @@ export const register = (onNavigate) => {
   buttonHome.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonHome);
   buttonHome.classList.add('btn-flecha-home');
-  /*----------------------REGRESA AL LOGIN-------------------------------*/
+  /* ----------------------REGRESA AL LOGIN-------------------------------*/
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = '¿Ya tienes cuenta? INICIA SESIÓN';
   homeDiv.appendChild(buttonLogin);
