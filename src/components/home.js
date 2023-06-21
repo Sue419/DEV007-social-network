@@ -11,7 +11,7 @@ export const home = (onNavigate) => {
   
   `;
   homeDiv.innerHTML += viewHome;
-  
+
   // BOTON INICIO:::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia sesión';

@@ -4,7 +4,7 @@ export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo');
 
-//FORMULARIO LOGIN::::::::::::::::::::::::::::::::::::
+  // FORMULARIO LOGIN::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('inicia-sesion-login');
   buttonLogin.textContent = 'Iniciar Sesión';
@@ -31,7 +31,7 @@ export const login = (onNavigate) => {
    </div>
   `;
 
-//LOGIN::::::::::::::::::::::::::::::::::::::::::::::::::
+  // LOGIN::::::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
   const btnLoginGoogle = homeDiv.querySelector('.btn-google');
@@ -42,17 +42,17 @@ export const login = (onNavigate) => {
       inputEmail.value,
       inputPassword.value,
     ).then(() => {
-    onNavigate('/feed');
+      onNavigate('/feed');
     });
   }); // agregar una alerta de validación
 
   homeDiv.appendChild(buttonLogin);
 
-//LOGIN CON GOOGLE
+  // LOGIN CON GOOGLE
   btnLoginGoogle.addEventListener('click', (e) => {
     e.preventDefault(); // como está dentro del formulario, es mejor colocar el preventDefault
     loginGoogle().then(() => {
-    onNavigate('/feed');
+      onNavigate('/feed');
     }); // informar al usuario que tiene que completar la selección de su gmail
   });
   /* ----------------- redireccion registro---------------------------*/
