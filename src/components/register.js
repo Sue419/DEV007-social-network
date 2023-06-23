@@ -22,7 +22,7 @@ export const register = (onNavigate) => {
         <input class="input-register-name" id="name" type="text" placeholder="Nombre">
         <input class="input-register-email" id="email" type="email" placeholder="Email">
         <input class="input-register-contraseña" id="password"  type="password" placeholder="password">
-        <input class="input-register-contraseña-confirmar" type="password" placeholder="Confirm password">
+        <input class="input-register-contraseña-confirmar" id="passwordConfirm" type="password" placeholder="Confirm password">
     </div>
   `;
 
@@ -43,9 +43,30 @@ export const register = (onNavigate) => {
   // REGISTRO DE USUARIO:::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
+  const inputPasswordConfirm = homeDiv.querySelector('#passwordConfirm');
   const inputName = homeDiv.querySelector('#name');
 
   buttonRegister.addEventListener('click', (e) => {
+    if (inputName.value === '' || inputEmail.value === '' || inputPassword === '') {
+      alert('Llena todos los campos');
+      return;
+    }
+    if (inputName.value === '') {
+      alert('ingrese su nombre');
+      return;
+    }
+    if (inputEmail.value === '') {
+      alert('ingrese un email');
+      return;
+    }
+    if (inputPassword === '') {
+      alert('ingresa una contraseña');
+      return;
+    }
+    if (inputPassword !== inputPasswordConfirm) {
+      alert('la contraseña con coincide');
+      return;
+    }
     e.preventDefault();
     crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
       onNavigate('/feed');

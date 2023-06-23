@@ -55,6 +55,7 @@ export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId)
 
 // // Obtiene todos los posts de la base de datos en orden descendente por fecha.
 // /* export const getPosts = async () => {
+// eslint-disable-next-line max-len
 //   const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('postDate', 'desc')));
 //   return querySnapshot;
 // }; */

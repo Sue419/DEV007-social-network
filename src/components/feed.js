@@ -35,7 +35,10 @@ export const feed = (onNavigate) => {
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
     const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
-    console.log(contenidoDelTextarea.value);
+    if (contenidoDelTextarea.value === '') {
+      alert('completa todos los campos');
+      return;
+    }
     try {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().uid);
       contenidoDelTextarea.value = '';
@@ -44,6 +47,7 @@ export const feed = (onNavigate) => {
     } catch (error) {
       console.log(error.code);
     }
+    console.log(contenidoDelTextarea.value);
   });
 
   // VER TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
