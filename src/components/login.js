@@ -59,7 +59,7 @@ export const login = (onNavigate) => {
 
   // REDIRECCION REGISTRO::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonRegister = document.createElement('button');
-  buttonRegister.textContent = '¿No tienes una cuenta? Registrate';
+  buttonRegister.innerHTML = '¿No tienes una cuenta? <span class="btnQuestion">REGÍSTRATE</span>';
   homeDiv.appendChild(buttonRegister);
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonRegister.classList.add('btn-register-direccion');
@@ -73,5 +73,3 @@ export const login = (onNavigate) => {
 
   return homeDiv;
 };
-
-// buttonRegister.innerHTML = '¿No tienes una cuenta? <span class="btnQuestion">REGÍSTRATE</span>';

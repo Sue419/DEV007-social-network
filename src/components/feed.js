@@ -58,8 +58,8 @@ export const feed = (onNavigate) => {
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
-          <button id=${idPost} class="btn-borrar ">Borrar</button> 
-          <button id=${idPost} class="btn-editar ">Editar</button>
+          <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
+          <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
         </div>
       `;
     });
@@ -72,12 +72,14 @@ export const feed = (onNavigate) => {
     const botonesBorrar = postDivs.querySelectorAll('.btn-borrar');
     botonesBorrar.forEach((btnBorrar) => {
       btnBorrar.addEventListener('click', () => {
-        if (currentUserInfo().uid === btnBorrar.id) {
-          borrarPost(btnBorrar.id);
+        const idPost = btnBorrar.id;
+        const idPostUser = btnBorrar.dataset.user;
+        if (currentUserInfo().uid === idPostUser) {
+          borrarPost(idPost);
         } else {
           alert('No puedes eliminar, este post no es tuyo');
         }
-        console.log(btnBorrar.id);
+        console.log(idPost);
         console.log(currentUserInfo().uid);
       });
     });
