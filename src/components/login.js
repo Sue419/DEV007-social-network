@@ -38,13 +38,25 @@ export const login = (onNavigate) => {
 
   buttonLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    loginUsuarioYContraseña(
-      inputEmail.value,
-      inputPassword.value,
-    ).then(() => {
-      onNavigate('/feed');
-    });
-  }); // agregar una alerta de validación
+    if (inputEmail.value === '' || inputPassword.value === '') {
+      alert('Por favor, completa todos los campos');
+      return;
+    }
+    loginUsuarioYContraseña(inputEmail.value, inputPassword.value)
+      .then(() => {
+        onNavigate('/feed');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/user-not-found') {
+          alert('El usuario no existe');
+        }
+        if (error.code === 'auth/wrong-password') {
+          alert('Contraseña incorrecta');
+        } else {
+          alert('Ocurrió un error al iniciar sesión');
+        }
+      });
+  });
 
   homeDiv.appendChild(buttonLogin);
 
