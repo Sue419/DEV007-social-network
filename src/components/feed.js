@@ -1,6 +1,8 @@
-import { crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo } from '../lib';
+import {
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo,
+} from '../lib/index.js';
 
-//CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
+// CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
 export const feed = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo-feed');
@@ -20,16 +22,16 @@ export const feed = (onNavigate) => {
     </div>
   `;
 
-//BOTON REGRESAR AL LOGIN::::::::::::::::::::::::::::::::::::::::::::::::
+  // BOTON REGRESAR AL LOGIN::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.classList = 'home-div__button';
   buttonLogin.textContent = 'Regresar al Login';
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
-//BOTON PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // BOTON PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonPost = homeDiv.querySelector('.new-post__container__button');
 
-//PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
     const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
@@ -44,37 +46,43 @@ export const feed = (onNavigate) => {
     }
   });
 
-//VER TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
+  // VER TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
   const postDivs = document.createElement('div');
   obtenerTodosLosPost((querySnapshot) => {
     postDivs.innerHTML = '';
     querySnapshot.forEach((doc) => {
+      const idUser = doc.data().usuario;
       const idPost = doc.id;
       console.log(idPost);
       console.log(currentUserInfo().uid);
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
-          <button id=${idPost} class="btn-borrar ">Borrar</button>
+          <button id=${idPost} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} class="btn-editar ">Editar</button>
-
         </div>
       `;
     });
-    borrar();//ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
+    borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
     // editar();
   });
 
-//FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
   function borrar() {
     const botonesBorrar = postDivs.querySelectorAll('.btn-borrar');
     botonesBorrar.forEach((btnBorrar) => {
       btnBorrar.addEventListener('click', () => {
-        borrarPost(btnBorrar.id);
+        if (currentUserInfo().uid === btnBorrar.id) {
+          borrarPost(btnBorrar.id);
+        } else {
+          alert('No puedes eliminar, este post no es tuyo');
+        }
+        console.log(btnBorrar.id);
+        console.log(currentUserInfo().uid);
       });
     });
   }
-//FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
   // function editar() {
   //   const botonesEditar = postDivs.querySelector('.btn-editar');
   //   botonesEditar.forEach((btnEditar) => {
@@ -88,7 +96,6 @@ export const feed = (onNavigate) => {
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
-
 
 // EDITAR POST
 // LIKES POST
