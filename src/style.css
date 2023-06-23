@@ -95,6 +95,13 @@ z-index: 5;
   background-color: rgba(30, 30, 30, 0);
   border: none;
 }
+.btnQuestion {
+  font-weight: bold;
+}
+.btnQuestion:hover {
+  color:#FF4D5A;
+  text-decoration: underline;
+}
 /*---------------------------LOGIN---------------------------*/
 .fondo{
   background-color: rgba(1, 7, 36, 1);

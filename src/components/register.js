@@ -1,6 +1,6 @@
 import { crearUsuarioYContraseña } from '../lib/index.js';
 
-// FORMULARIO REGISTRO DE USUARIO :::::::::::::::::::::::::::::::::::
+// FORMULARIO REGISTRO DE USUARIO ::::::::::::::::::::::::::::::::::::::
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo');
@@ -19,27 +19,28 @@ export const register = (onNavigate) => {
     </div>
         <h2 class="register-texto">REGISTRO</h2>
         <img src="img/log_720.png" alt="logo" class="imgLogoRegister">
-        <input  class="input-register-name" id="name" type="text" placeholder="Nombre">
+        <input class="input-register-name" id="name" type="text" placeholder="Nombre">
         <input class="input-register-email" id="email" type="email" placeholder="Email">
         <input class="input-register-contraseña" id="password"  type="password" placeholder="password">
         <input class="input-register-contraseña-confirmar" id="passwordConfirm" type="password" placeholder="Confirm password">
     </div>
   `;
-  /* ---------------------REGRESA AL HOME---------------------------------*/
+
+  // REGRESA AL HOME::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonHome = document.createElement('button');
   buttonHome.textContent = '';
   buttonHome.addEventListener('click', () => onNavigate('/'));
   homeDiv.appendChild(buttonHome);
   buttonHome.classList.add('btn-flecha-home');
-  /* ----------------------REGRESA AL LOGIN-------------------------------*/
+
+  // REGRESA AL LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = '¿Ya tienes cuenta? INICIA SESIÓN';
   homeDiv.appendChild(buttonLogin);
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
   buttonLogin.classList.add('btn-login-direccion');
 
-  // REGISTRO DE USUARIO::::::::::::::::::::::::::::::::::::::::::
-
+  // REGISTRO DE USUARIO:::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
   const inputPasswordConfirm = homeDiv.querySelector('#passwordConfirm');
@@ -67,8 +68,10 @@ export const register = (onNavigate) => {
       return;
     }
     e.preventDefault();
-    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value);
-    console.log(inputEmail.value, inputPassword.value, inputEmail.value);
+    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
+      onNavigate('/feed');
+    });
+    console.log(inputEmail.value, inputPassword.value, inputName.value);
   });
   homeDiv.appendChild(buttonRegister);
 

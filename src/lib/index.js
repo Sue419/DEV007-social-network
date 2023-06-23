@@ -1,4 +1,4 @@
-// aqui exportaras las funciones que necesites
+// aqui exportaras las funciones que necesites:::::::::::::::::::::::::::::::::::::::::::::::::
 
 import {
   GoogleAuthProvider,
@@ -7,48 +7,57 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, deleteDoc, doc,
+  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
-// REGISTER::::::::::::::::::::::::::::::::::::
-export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
+// FUNCION PARA CREAR USUARIO QUE SE EXPORTA REGISTER.JS::::::::::::::::::::::::::::::::::::::::
+export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
-// LOGIN::::::::::::::::::::::::::::::::::::::
-export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password); // agregue return para la promesa de console log de login fila 25
+// FUNCION PARA ENTRAR CON LOGIN LOGEARSE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::
+export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-// LOGIN CON GOOGLE::::::::::::::::::::::::::::
+// FUNCION PARA ENTRAR CON GOOGLE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::::::::::
 export const loginGoogle = () => {
   const provider = new GoogleAuthProvider();
-  return signInWithPopup(auth, provider); // faltaba un return
+  return signInWithPopup(auth, provider); //
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
-// CREAR POST:::::::::::::::::::::::::::::::::
-export const crearPost = (texto) => addDoc(collection(db, 'publicaciones'), {
+// FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
+export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
   date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
-  // usuario: user,
+  usuario: user,
 });
 
-// VER TODOS LOS POST:::::::::::::::::::::::::
-export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), callback);
+// FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
-// OBTENER USUARIO ACTIVO:::::::::::::::::::::
-// BORRAR POST
+// FUNCION PARA IDENTIFICAR AL USUARIO
+export const currentUserInfo = () => auth.currentUser;
 
+// FUNCION PARA BORRAR PUBLICACIÓN QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
 export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId));
 
 // EDITAR POST
+// export const editarPost = (postId) => updateDoc(doc(db, 'publicaciones', postId));
 
 // LIKES POST
-// CONTAR LIKES POST
 
-// ____________________________________________________________________________________________//
+// export const darLikes =
 
-// HACKER EDITION
-// dejar un comentario
+// // Función para crear una referencia al documento del usuario actual
+// export const getUserRef = (userId) => firestoreDoc(db, 'users', userId);
 
-// editar nombre
+// // Exporta el usuario actual
+// export const getCurrentUser = () => auth.currentUser;
 
-// editar foto
+// // Obtiene todos los posts de la base de datos en orden descendente por fecha.
+// /* export const getPosts = async () => {
+// eslint-disable-next-line max-len
+//   const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('postDate', 'desc')));
+//   return querySnapshot;
+// }; */
+
+// // CONTAR LIKES POST

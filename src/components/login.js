@@ -4,7 +4,7 @@ export const login = (onNavigate) => {
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('fondo');
 
-  // FORMULARIO LOGIN::::::::::::::::::::::::::::::::::::
+  // FORMULARIO LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('inicia-sesion-login');
   buttonLogin.textContent = 'Iniciar Sesión';
@@ -31,7 +31,7 @@ export const login = (onNavigate) => {
    </div>
   `;
 
-  // LOGIN::::::::::::::::::::::::::::::::::::::::::::::::::
+  // LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
   const inputPassword = homeDiv.querySelector('#password');
   const btnLoginGoogle = homeDiv.querySelector('.btn-google');
@@ -67,15 +67,15 @@ export const login = (onNavigate) => {
       onNavigate('/feed');
     }); // informar al usuario que tiene que completar la selección de su gmail
   });
-  /* ----------------- redireccion registro---------------------------*/
+
+  // REDIRECCION REGISTRO::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonRegister = document.createElement('button');
-  buttonRegister.textContent = '¿No tienes una cuenta? Registrate';
+  buttonRegister.innerHTML = '¿No tienes una cuenta? <span class="btnQuestion">REGÍSTRATE</span>';
   homeDiv.appendChild(buttonRegister);
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonRegister.classList.add('btn-register-direccion');
 
-  /* -----------------REGRESA AL HOME---------------------------*/
-
+  // REGRESA AL HOME:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonHome = document.createElement('button');
   buttonHome.textContent = '';
   buttonHome.addEventListener('click', () => onNavigate('/'));
