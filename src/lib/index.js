@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc,
+  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -41,7 +41,7 @@ export const currentUserInfo = () => auth.currentUser;
 export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId));
 
 // EDITAR POST
-// export const editarPost = (postId) => updateDoc(doc(db, 'publicaciones', postId));
+export const editarPost = (postId, updatePosts) => updateDoc(doc(db, 'publicaciones', postId), updatePosts);
 
 // LIKES POST
 
