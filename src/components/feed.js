@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo,
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost,
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -66,9 +66,9 @@ export const feed = (onNavigate) => {
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
         </div>
       `;
+      editar(idPost, { contenido: 'Nuevo contenido' });
     });
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
-    // editar();
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -89,20 +89,26 @@ export const feed = (onNavigate) => {
     });
   }
   // FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
-  // function editar() {
-  //   const botonesEditar = postDivs.querySelector('.btn-editar');
-  //   botonesEditar.forEach((btnEditar) => {
-  //     btnEditar.addEventListener('click', () => {
-  //       editarPost(btnEditar.id);
-  //     });
-  //   });
-  // };
+  function editar() {
+    const botonesEditar = postDivs.querySelectorAll('.btn-editar');
+    botonesEditar.forEach((btnEditar) => {
+      btnEditar.addEventListener('click', () => {
+        const idPostUser = btnEditar.dataset.user;
+        const idPost = btnEditar.id;
+        if (currentUserInfo().uid === idPostUser) {
+          const editPost = prompt('Ingresa el nuevo contenido:');
+          if (editPost !== null) {
+            const updatePosts = { contenido: editPost };
+            editarPost(idPost, updatePosts);
+          }
+        } else {
+          alert('No puedes editar, este post no es tuyo');
+        }
+      });
+    });
+  }
 
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
-
-// EDITAR POST
-// LIKES POST
-// CONTAR LIKES POST
