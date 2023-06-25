@@ -96,7 +96,7 @@ export const feed = (onNavigate) => {
         const idPostUser = btnEditar.dataset.user;
         const idPost = btnEditar.id;
         if (currentUserInfo().uid === idPostUser) {
-          const editPost = prompt('Ingresa el nuevo contenido:');
+          const editPost = prompt('Edita el post:');
           if (editPost !== null) {
             const updatePosts = { contenido: editPost };
             editarPost(idPost, updatePosts);
