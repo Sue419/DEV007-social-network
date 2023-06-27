@@ -29,7 +29,32 @@ export const login = (onNavigate) => {
       <button class="btn-google" type="button">
        </button>
    </div>
+   <div id="snackbar" class="hide">
+    <span id="snackbar-text"></span>
+    <button id="snackbar-close">Close</button>
+   </div>
   `;
+  // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  function hideSnackbar() {
+    const snackbar = document.getElementById('snackbar');
+    snackbar.classList.remove('show');
+    snackbar.classList.add('hide');
+  }
+  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close');
+  btnSnackbarClose.addEventListener('click', () => {
+    hideSnackbar();
+  });
+
+  function showSnackbar(mensaje) {
+    const snackbar = document.getElementById('snackbar');
+    const snackbarText = document.getElementById('snackbar-text');
+
+    snackbarText.textContent = mensaje;
+    snackbar.classList.remove('hide');
+    snackbar.classList.add('show');
+
+    setTimeout(hideSnackbar, 5000);
+  }
 
   // LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
@@ -39,7 +64,7 @@ export const login = (onNavigate) => {
   buttonLogin.addEventListener('click', (e) => {
     e.preventDefault();
     if (inputEmail.value === '' || inputPassword.value === '') {
-      alert('Por favor, completa todos los campos');
+      showSnackbar('Por favor, completa todos los campos');
       return;
     }
     loginUsuarioYContraseña(inputEmail.value, inputPassword.value)
@@ -48,12 +73,13 @@ export const login = (onNavigate) => {
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
-          alert('El usuario no existe');
+          showSnackbar('El usuario no existe');
+          return;
         }
         if (error.code === 'auth/wrong-password') {
-          alert('Contraseña incorrecta');
+          showSnackbar('Contraseña incorrecta');
         } else {
-          alert('Ocurrió un error al iniciar sesión');
+          showSnackbar('Ocurrió un error al iniciar sesión');
         }
       });
   });
