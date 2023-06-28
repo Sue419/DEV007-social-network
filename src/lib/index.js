@@ -24,11 +24,17 @@ export const loginGoogle = () => {
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
+// PERFIL USUARIO GOOGLE
+export const obtenerUsuarioLogeado = () => auth.currentUser.displayName;
+
+// PERFIL USUARIO ACTUAL CON LOGIN MAIL
+
 // FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
 export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
   date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   usuario: user,
+  // nombre: displayName,
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
@@ -43,21 +49,9 @@ export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId)
 // EDITAR POST
 export const editarPost = (postId, updatePosts) => updateDoc(doc(db, 'publicaciones', postId), updatePosts);
 
-// LIKES POST
 
-// export const darLikes =
 
-// // Función para crear una referencia al documento del usuario actual
-// export const getUserRef = (userId) => firestoreDoc(db, 'users', userId);
 
-// // Exporta el usuario actual
-// export const getCurrentUser = () => auth.currentUser;
 
-// // Obtiene todos los posts de la base de datos en orden descendente por fecha.
-// /* export const getPosts = async () => {
-// eslint-disable-next-line max-len
-//   const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('postDate', 'desc')));
-//   return querySnapshot;
-// }; */
-
-// // CONTAR LIKES POST
+// DAR LIKES POST
+// CONTAR LIKES POST

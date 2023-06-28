@@ -8,7 +8,6 @@ export const home = (onNavigate) => {
     <p class="p-texto">TU ESPACIO PARA COMPARTIR EJERCICOS DEL GYM</p>
     <img class="logo-labgram"src="img/log_720.png" alt="logo">
   </div>
-  
   `;
   homeDiv.innerHTML += viewHome;
 

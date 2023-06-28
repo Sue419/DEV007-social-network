@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost,
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, obtenerUsuarioLogeado
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -12,10 +12,13 @@ export const feed = (onNavigate) => {
     <div class="barra-morada-feed">
       <h2 class="labgram-text-feed">LABGRAM </h2>
     </div>
-        <h2 class="publicaciones-feed" >Publicaciones</h2>
+    <div class="perfil-usuario">
+      <img src="img/conejo.jpg" class="foto-perfil">
+      <h2 class="usuario-post">¡Hola, ${obtenerUsuarioLogeado}!</h2></div>
+        <h2 class="publicaciones-feed" ></h2>
         <div class="new-post__container ">
-          <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe aqui"></textarea>
-          <button class="new-post__container__button btn-compartir">Publicar</button>
+          <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe algo aquí"></textarea>
+          <button class="new-post__container__button btn-compartir">Compartir</button>
         </div>
         <section class="posts__container">
         </section>
@@ -34,7 +37,7 @@ export const feed = (onNavigate) => {
   // PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
+    const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea', '.firma');
     if (contenidoDelTextarea.value === '') {
       alert('completa todos los campos');
       return;
@@ -43,6 +46,7 @@ export const feed = (onNavigate) => {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().uid);
       contenidoDelTextarea.value = '';
       console.log(currentUserInfo());
+      console.log(obtenerUsuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
       alert('Publicación subida');
     } catch (error) {
       console.log(error.code);
@@ -62,6 +66,8 @@ export const feed = (onNavigate) => {
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
+          <p>${obtenerUsuarioLogeado()}</p>
+          <h3 class="usuario-post"></h3>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
         </div>
@@ -107,6 +113,11 @@ export const feed = (onNavigate) => {
       });
     });
   }
+
+  
+
+
+
 
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
