@@ -72,23 +72,23 @@ export const register = (onNavigate) => {
 
   buttonRegister.addEventListener('click', (e) => {
     if (inputName.value === '') {
-      showSnackbar('ingrese su nombre');
+      showSnackbar('Ingrese su nombre');
       return;
     }
     if (inputEmail.value === '') {
-      showSnackbar('ingrese un email');
+      showSnackbar('Ingrese un email');
       return;
     }
     if (inputPassword.value === '') {
-      showSnackbar('ingresa una contraseña');
+      showSnackbar('Ingresa una contraseña');
       return;
     }
     if (inputPasswordConfirm.value === '') {
-      showSnackbar('ingresa la confirmacion de la contraseña');
+      showSnackbar('Ingresa la confirmacion de la contraseña');
       return;
     }
     if (inputPassword !== inputPasswordConfirm) {
-      showSnackbar('la contraseña con coincide');
+      showSnackbar('La contraseña no coincide');
       return;
     }
 
