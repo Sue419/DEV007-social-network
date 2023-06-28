@@ -65,6 +65,7 @@ export const feed = (onNavigate) => {
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
           <button id=${idPost} class="btn-like">Like</button>
+          <span class="likes-count" data-post=${idPost}></span>
         </div>
       `;
       editar(idPost, { contenido: '' });
@@ -121,7 +122,7 @@ export const feed = (onNavigate) => {
           const postSnapshot = querySnapshot.docs.find((doc) => doc.id === idPost);
           const post = postSnapshot.data();
           if (post.likes && post.likes.includes(idUser)) {
-            // El usuario puede remover el like si es que ya había dado like
+            // El usuario puede remover el like
             await removeLike(idPost, idUser);
             console.log('Se removio el like');
           } else {
