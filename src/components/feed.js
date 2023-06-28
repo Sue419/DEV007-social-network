@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost,
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike,
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -64,11 +64,13 @@ export const feed = (onNavigate) => {
           <p>${doc.data().contenido}</p>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
+          <button id=${idPost} class="btn-like">Like</button>
         </div>
       `;
-      editar(idPost, { contenido: 'Nuevo contenido' });
+      editar(idPost, { contenido: '' });
     });
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
+    darLike(querySnapshot);
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -93,8 +95,8 @@ export const feed = (onNavigate) => {
     const botonesEditar = postDivs.querySelectorAll('.btn-editar');
     botonesEditar.forEach((btnEditar) => {
       btnEditar.addEventListener('click', () => {
-        const idPostUser = btnEditar.dataset.user;
         const idPost = btnEditar.id;
+        const idPostUser = btnEditar.dataset.user;
         if (currentUserInfo().uid === idPostUser) {
           const editPost = prompt('Edita el post:');
           if (editPost !== null) {
@@ -103,6 +105,32 @@ export const feed = (onNavigate) => {
           }
         } else {
           alert('No puedes editar, este post no es tuyo');
+        }
+      });
+    });
+  }
+
+  // FUNCION DAR LIKE A LOS POSTS :::::::::::::::::::::::::::::::::::::::
+  function darLike(querySnapshot) {
+    const botonesLikes = postDivs.querySelectorAll('.btn-like');
+    botonesLikes.forEach((btnLikes) => {
+      btnLikes.addEventListener('click', async () => {
+        const idPost = btnLikes.id;
+        const idUser = currentUserInfo().uid;
+        try {
+          const postSnapshot = querySnapshot.docs.find((doc) => doc.id === idPost);
+          const post = postSnapshot.data();
+          if (post.likes && post.likes.includes(idUser)) {
+            // El usuario puede remover el like si es que ya había dado like
+            await removeLike(idPost, idUser);
+            console.log('Se removio el like');
+          } else {
+            // Agregar el like
+            await likesPost(idPost, idUser);
+            console.log('Like agregado');
+          }
+        } catch (error) {
+          console.log(error);
         }
       });
     });
