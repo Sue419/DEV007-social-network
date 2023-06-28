@@ -7,9 +7,10 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc,
+  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
+import { async } from 'regenerator-runtime';
 
 // FUNCION PARA CREAR USUARIO QUE SE EXPORTA REGISTER.JS::::::::::::::::::::::::::::::::::::::::
 export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password);
@@ -44,6 +45,17 @@ export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId)
 export const editarPost = (postId, updatePosts) => updateDoc(doc(db, 'publicaciones', postId), updatePosts);
 
 // LIKES POST
+export const likesPost = async (postId, userId) => {
+  await updateDoc(doc(db, 'publicaciones', postId), {
+    likes: arrayUnion(userId),
+  });
+};
+
+export const removeLike = async(postId, userId) => {
+  await updateDoc(doc(db, 'publicaciones', postId), {
+    likes: arrayRemove(userId),
+  });
+};
 
 // export const darLikes =
 

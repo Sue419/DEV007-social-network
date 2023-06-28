@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo,
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike,
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -64,11 +64,15 @@ export const feed = (onNavigate) => {
           <p>${doc.data().contenido}</p>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
+          <button id=${idPost} class="btn-like">Like</button>
+          <span class="likes-count" data-post=${idPost}></span>
         </div>
       `;
+      
+      editar(idPost, { contenido: '' });
     });
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
-    // editar();
+    darLike(querySnapshot);
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -89,14 +93,50 @@ export const feed = (onNavigate) => {
     });
   }
   // FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
-  // function editar() {
-  //   const botonesEditar = postDivs.querySelector('.btn-editar');
-  //   botonesEditar.forEach((btnEditar) => {
-  //     btnEditar.addEventListener('click', () => {
-  //       editarPost(btnEditar.id);
-  //     });
-  //   });
-  // };
+  function editar() {
+    const botonesEditar = postDivs.querySelectorAll('.btn-editar');
+    botonesEditar.forEach((btnEditar) => {
+      btnEditar.addEventListener('click', () => {
+        const idPost = btnEditar.id;
+        const idPostUser = btnEditar.dataset.user;
+        if (currentUserInfo().uid === idPostUser) {
+          const editPost = prompt('Edita el post:');
+          if (editPost !== null) {
+            const updatePosts = { contenido: editPost };
+            editarPost(idPost, updatePosts);
+          }
+        } else {
+          alert('No puedes editar, este post no es tuyo');
+        }
+      });
+    });
+  }
+
+  // FUNCION DAR LIKE A LOS POSTS :::::::::::::::::::::::::::::::::::::::
+  function darLike(querySnapshot) {
+    const botonesLikes = postDivs.querySelectorAll('.btn-like');
+    botonesLikes.forEach((btnLikes) => {
+      btnLikes.addEventListener('click', async () => {
+        const idPost = btnLikes.id;
+        const idUser = currentUserInfo().uid;
+        try {
+          const postSnapshot = querySnapshot.docs.find((doc) => doc.id === idPost);
+          const post = postSnapshot.data();
+          if (post.likes && post.likes.includes(idUser)) {
+            // El usuario puede remover el like
+            await removeLike(idPost, idUser);
+            console.log('Se removio el like');
+          } else {
+            // Agregar el like
+            await likesPost(idPost, idUser);
+            console.log('Like agregado');
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    });
+  }
 
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
