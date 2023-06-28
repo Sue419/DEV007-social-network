@@ -68,6 +68,7 @@ export const feed = (onNavigate) => {
           <span class="likes-count" data-post=${idPost}></span>
         </div>
       `;
+      
       editar(idPost, { contenido: '' });
     });
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
@@ -141,3 +142,7 @@ export const feed = (onNavigate) => {
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
+
+// EDITAR POST
+// LIKES POST
+// CONTAR LIKES POST
