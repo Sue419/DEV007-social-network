@@ -5,9 +5,10 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc,
+  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -25,16 +26,22 @@ export const loginGoogle = () => {
 };
 
 // PERFIL USUARIO GOOGLE
-export const obtenerUsuarioLogeado = () => auth.currentUser.displayName;
+export const usuarioLogeado = () => auth.currentUser.email;
+
+// FOTO USUARIO GOOGLE
+export const fotoUsuario = () => auth.currentUser.photoURL;
 
 // PERFIL USUARIO ACTUAL CON LOGIN MAIL
+export const usuarioLogeadoRegister = (displayName) => updateProfile(auth.currentUser, {
+  name: displayName,
+});
 
 // FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
 export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
   date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   usuario: user,
-  // nombre: displayName,
+  likes: [],
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
@@ -49,9 +56,19 @@ export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId)
 // EDITAR POST
 export const editarPost = (postId, updatePosts) => updateDoc(doc(db, 'publicaciones', postId), updatePosts);
 
+// LIKES POST
+export const likesPost = async (postId, userId) => {
+  await updateDoc(doc(db, 'publicaciones', postId), {
+    likes: arrayUnion(userId),
+  });
+};
+
+export const removeLike = async(postId, userId) => {
+  await updateDoc(doc(db, 'publicaciones', postId), {
+    likes: arrayRemove(userId),
+  });
+};
 
 
 
 
-// DAR LIKES POST
-// CONTAR LIKES POST

@@ -24,8 +24,32 @@ export const register = (onNavigate) => {
         <input class="input-register-contraseña" id="password"  type="password" placeholder="password">
         <input class="input-register-contraseña-confirmar" id="passwordConfirm" type="password" placeholder="Confirm password">
     </div>
+    <div id="snackbar" class="hide">
+     <span id="snackbar-text"></span>
+     <button id="snackbar-close">Close</button>
+    </div>
   `;
+  // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  function hideSnackbar() {
+    const snackbar = document.getElementById('snackbar');
+    snackbar.classList.remove('show');
+    snackbar.classList.add('hide');
+  }
+  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close');
+  btnSnackbarClose.addEventListener('click', () => {
+    hideSnackbar();
+  });
 
+  function showSnackbar(mensaje) {
+    const snackbar = document.getElementById('snackbar');
+    const snackbarText = document.getElementById('snackbar-text');
+
+    snackbarText.textContent = mensaje;
+    snackbar.classList.remove('hide');
+    snackbar.classList.add('show');
+
+    setTimeout(hideSnackbar, 8000);
+  }
   // REGRESA AL HOME::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonHome = document.createElement('button');
   buttonHome.textContent = '';
@@ -47,26 +71,27 @@ export const register = (onNavigate) => {
   const inputName = homeDiv.querySelector('#name');
 
   buttonRegister.addEventListener('click', (e) => {
-    if (inputName.value === '' || inputEmail.value === '' || inputPassword === '') {
-      alert('Llena todos los campos');
-      return;
-    }
     if (inputName.value === '') {
-      alert('ingrese su nombre');
+      showSnackbar('Ingrese su nombre');
       return;
     }
     if (inputEmail.value === '') {
-      alert('ingrese un email');
+      showSnackbar('Ingrese un email');
       return;
     }
-    if (inputPassword === '') {
-      alert('ingresa una contraseña');
+    if (inputPassword.value === '') {
+      showSnackbar('Ingresa una contraseña');
       return;
     }
-    if (inputPassword !== inputPasswordConfirm) {
-      alert('la contraseña con coincide');
+    if (inputPasswordConfirm.value === '') {
+      showSnackbar('Ingresa la confirmacion de la contraseña');
       return;
     }
+    if (inputPassword.value !== inputPasswordConfirm.value) {
+      showSnackbar('La contraseña no coincide');
+      return;
+    }
+
     e.preventDefault();
     crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
       onNavigate('/feed');
