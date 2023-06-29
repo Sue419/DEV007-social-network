@@ -471,3 +471,98 @@ color: #FFFFFF;
   to {bottom: 0; opacity: 0;}
 }
 
+/*------------------PERFIL USUARIO-------------------------*/
+
+.perfil-usuario {
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-gap: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.foto-perfil {
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.hola-name {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+}
+
+.new-post__container__textarea {
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.new-post__container__button {
+  border-radius: 10px;
+  margin-left: 210px;
+}
+
+.posts__container {
+  width: 390px;
+  height: 784px;
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.posts__post {
+  color: #cbbfcc;
+}
+/*------------------snackbar-------------------------*/
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 8s; /* Ajusta la duración de fadeout */
+}
+
+#snackbar-close {
+  color: #C574C1;
+  font-size: 15px;
+  font-family: 'Roboto Condensed';
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+#snackbar-close:hover {
+  color: #FF4D5A;
+  font-size: 15px;
+  font-family: 'Roboto Condensed';
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+

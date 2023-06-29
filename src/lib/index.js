@@ -5,12 +5,12 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth';
 import {
   addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
-import { async } from 'regenerator-runtime';
 
 // FUNCION PARA CREAR USUARIO QUE SE EXPORTA REGISTER.JS::::::::::::::::::::::::::::::::::::::::
 export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password);
@@ -25,11 +25,23 @@ export const loginGoogle = () => {
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
+// PERFIL USUARIO GOOGLE
+export const usuarioLogeado = () => auth.currentUser.email;
+
+// FOTO USUARIO GOOGLE
+export const fotoUsuario = () => auth.currentUser.photoURL;
+
+// PERFIL USUARIO ACTUAL CON LOGIN MAIL
+export const usuarioLogeadoRegister = (displayName) => updateProfile(auth.currentUser, {
+  name: displayName,
+});
+
 // FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
 export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
   date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   usuario: user,
+  likes: [],
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
@@ -57,19 +69,6 @@ export const removeLike = async(postId, userId) => {
   });
 };
 
-// export const darLikes =
 
-// // Función para crear una referencia al documento del usuario actual
-// export const getUserRef = (userId) => firestoreDoc(db, 'users', userId);
 
-// // Exporta el usuario actual
-// export const getCurrentUser = () => auth.currentUser;
 
-// // Obtiene todos los posts de la base de datos en orden descendente por fecha.
-// /* export const getPosts = async () => {
-// eslint-disable-next-line max-len
-//   const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('postDate', 'desc')));
-//   return querySnapshot;
-// }; */
-
-// // CONTAR LIKES POST

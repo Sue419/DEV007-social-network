@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike,
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike, usuarioLogeado
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -12,15 +12,21 @@ export const feed = (onNavigate) => {
     <div class="barra-morada-feed">
       <h2 class="labgram-text-feed">LABGRAM </h2>
     </div>
-        <h2 class="publicaciones-feed" >Publicaciones</h2>
-        <div class="new-post__container ">
-          <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe aqui"></textarea>
-          <button class="new-post__container__button btn-compartir">Publicar</button>
-        </div>
-        <section class="posts__container">
-        </section>
+    <div class="perfil-usuario">
+      <h2 class="usuario-saludo">¡Hola!${usuarioLogeado()}</h2>
+    </div>
+      <h2 class="publicaciones-feed" ></h2>
+      <div class="new-post__container ">
+      <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe algo aquí"></textarea>
+      <button class="new-post__container__button btn-compartir">Compartir</button>
+      </div>
+      <section class="posts__container">
+      </section>
     </div>
   `;
+
+  
+  
 
   // BOTON REGRESAR AL LOGIN::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
@@ -34,15 +40,16 @@ export const feed = (onNavigate) => {
   // PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea');
+    const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea', '.firma');
     if (contenidoDelTextarea.value === '') {
       alert('completa todos los campos');
       return;
     }
     try {
-      await crearPost(contenidoDelTextarea.value, currentUserInfo().uid);
+      await crearPost(contenidoDelTextarea.value, currentUserInfo().email);
       contenidoDelTextarea.value = '';
       console.log(currentUserInfo());
+      console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
       alert('Publicación subida');
     } catch (error) {
       console.log(error.code);
@@ -58,17 +65,19 @@ export const feed = (onNavigate) => {
       const idUser = doc.data().usuario;
       const idPost = doc.id;
       console.log(idPost);
-      console.log(currentUserInfo().uid);
+      console.log(currentUserInfo().email);
+      // console.log(usuarioLogeado());//MUESTRA SOLO EN CONSOLA
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
+          <p>${doc.data().usuario}</p>
+          <h3 class="usuario-post"></h3>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
           <button id=${idPost} class="btn-like">Like</button>
-          <span class="likes-count" data-post=${idPost}></span>
+          <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
         </div>
       `;
-      
       editar(idPost, { contenido: '' });
     });
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
@@ -82,13 +91,13 @@ export const feed = (onNavigate) => {
       btnBorrar.addEventListener('click', () => {
         const idPost = btnBorrar.id;
         const idPostUser = btnBorrar.dataset.user;
-        if (currentUserInfo().uid === idPostUser) {
+        if (currentUserInfo().email === idPostUser) {
           borrarPost(idPost);
         } else {
           alert('No puedes eliminar, este post no es tuyo');
         }
         console.log(idPost);
-        console.log(currentUserInfo().uid);
+        console.log(currentUserInfo().email);
       });
     });
   }
@@ -99,7 +108,7 @@ export const feed = (onNavigate) => {
       btnEditar.addEventListener('click', () => {
         const idPost = btnEditar.id;
         const idPostUser = btnEditar.dataset.user;
-        if (currentUserInfo().uid === idPostUser) {
+        if (currentUserInfo().email === idPostUser) {
           const editPost = prompt('Edita el post:');
           if (editPost !== null) {
             const updatePosts = { contenido: editPost };
@@ -118,7 +127,7 @@ export const feed = (onNavigate) => {
     botonesLikes.forEach((btnLikes) => {
       btnLikes.addEventListener('click', async () => {
         const idPost = btnLikes.id;
-        const idUser = currentUserInfo().uid;
+        const idUser = currentUserInfo().email;
         try {
           const postSnapshot = querySnapshot.docs.find((doc) => doc.id === idPost);
           const post = postSnapshot.data();
@@ -143,6 +152,4 @@ export const feed = (onNavigate) => {
   return homeDiv;
 };
 
-// EDITAR POST
-// LIKES POST
-// CONTAR LIKES POST
+

@@ -87,7 +87,7 @@ export const register = (onNavigate) => {
       showSnackbar('Ingresa la confirmacion de la contraseña');
       return;
     }
-    if (inputPassword !== inputPasswordConfirm) {
+    if (inputPassword.value !== inputPasswordConfirm.value) {
       showSnackbar('La contraseña no coincide');
       return;
     }
