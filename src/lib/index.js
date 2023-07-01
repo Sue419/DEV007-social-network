@@ -6,9 +6,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove,
+  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove, query
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
@@ -47,8 +48,12 @@ export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones')
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
 export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
+
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
+
+// FUNCION PARA CERRAR SESION
+export const logOut = () => signOut(auth);
 
 // FUNCION PARA BORRAR PUBLICACIÓN QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
 export const borrarPost = (postId) => deleteDoc(doc(db, 'publicaciones', postId));

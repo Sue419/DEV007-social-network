@@ -1,5 +1,5 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike, usuarioLogeado
+  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike, usuarioLogeado, logOut
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -13,9 +13,10 @@ export const feed = (onNavigate) => {
       <h2 class="labgram-text-feed">LABGRAM </h2>
     </div>
     <div class="perfil-usuario">
-      <h2 class="usuario-saludo">¡Hola!${usuarioLogeado()}</h2>
+      <h1 class="usuario-saludo">¡Hola!<br>${usuarioLogeado()}</h1>
+      <h2 class="bienvenida-feed">Bienvenida a tu espacio para compartir ejercicios del GYM</h2>
+      <br><br>
     </div>
-      <h2 class="publicaciones-feed" ></h2>
       <div class="new-post__container ">
       <textarea class="new-post__container__textarea texto-publicacion" placeholder="Escribe algo aquí"></textarea>
       <button class="new-post__container__button btn-compartir">Compartir</button>
@@ -25,14 +26,20 @@ export const feed = (onNavigate) => {
     </div>
   `;
 
-  
-  
-
   // BOTON REGRESAR AL LOGIN::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.classList = 'home-div__button';
   buttonLogin.textContent = 'Regresar al Login';
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
+
+  // BOTON CERRAR SESION
+  const buttonOut = document.createElement('button');
+  buttonOut.classList = 'home-div__button';
+  buttonOut.textContent = 'Cerrar Sesión';
+  buttonOut.addEventListener('click', () => {
+    logOut().then(() => onNavigate('/'));
+  });
+
 
   // BOTON PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonPost = homeDiv.querySelector('.new-post__container__button');
@@ -64,13 +71,15 @@ export const feed = (onNavigate) => {
     querySnapshot.forEach((doc) => {
       const idUser = doc.data().usuario;
       const idPost = doc.id;
+      const fecha = doc.data().date.toDate().toLocaleString();
       console.log(idPost);
       console.log(currentUserInfo().email);
-      // console.log(usuarioLogeado());//MUESTRA SOLO EN CONSOLA
+      console.log(usuarioLogeado());
       postDivs.innerHTML += `
         <div class="posts__post">
           <p>${doc.data().contenido}</p>
           <p>${doc.data().usuario}</p>
+          <p>${fecha}</p>
           <h3 class="usuario-post"></h3>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
@@ -147,8 +156,11 @@ export const feed = (onNavigate) => {
     });
   }
 
+  
+
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
+  homeDiv.appendChild(buttonOut);
   return homeDiv;
 };
 

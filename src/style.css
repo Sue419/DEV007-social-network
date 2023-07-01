@@ -351,6 +351,7 @@ border-style:none ;
 }
 .fondo-feed {
   background-color: rgba(1, 7, 36, 1);
+    
 }
 .labgram-text-feed{
   margin: 0;
@@ -380,11 +381,28 @@ top: 0px;
 background: linear-gradient(90deg, #7945AA -50.9%, #4C2E64 76.54%);
 border: 1px solid #000000;
 }
+
 .publicaciones-feed{
   margin-left: 15px;
 }
+.bienvenida-feed {
+  font-family: 'Bebas Neue', sans-serif;
+  position: absolute;
+  left: 16px;
+  top: 180px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  font-size: 15px;
+
+
+}
 .texto-publicacion{
- box-sizing: border-box;
+ box-sizing: border-box solid white;
+margin-top: 70px;
 width: 299px;
 height: 108px;
 background: #FFFFFF;
@@ -480,6 +498,10 @@ color: #FFFFFF;
   margin-left: 10px;
   margin-top: 15px;
 }
+.usuario-saludo {
+font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+}
 
 .foto-perfil {
   border-radius: 100px;
@@ -488,8 +510,9 @@ color: #FFFFFF;
 }
 
 .hola-name {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 25px;
+  font-style: italic;
 }
 
 .new-post__container__textarea {
