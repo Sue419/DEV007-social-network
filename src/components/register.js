@@ -96,7 +96,7 @@ export const register = (onNavigate) => {
     crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
       onNavigate('/feed');
     });
-    console.log(inputEmail.value, inputPassword.value, inputName.value);
+    // console.log(inputEmail.value, inputPassword.value, inputName.value);
   });
   homeDiv.appendChild(buttonRegister);
 

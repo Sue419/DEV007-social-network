@@ -1,5 +1,13 @@
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike, usuarioLogeado, logOut
+  crearPost,
+  obtenerTodosLosPost,
+  borrarPost,
+  currentUserInfo,
+  editarPost,
+  likesPost,
+  removeLike,
+  usuarioLogeado,
+  logOut,
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -40,9 +48,10 @@ export const feed = (onNavigate) => {
     logOut().then(() => onNavigate('/'));
   });
 
-
   // BOTON PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonPost = homeDiv.querySelector('.new-post__container__button');
+
+  const postDivs = document.createElement('div');
 
   // PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   buttonPost.addEventListener('click', async (e) => {
@@ -55,42 +64,13 @@ export const feed = (onNavigate) => {
     try {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().email);
       contenidoDelTextarea.value = '';
-      console.log(currentUserInfo());
-      console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
+      // console.log(currentUserInfo());
+      // console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
       alert('Publicación subida');
     } catch (error) {
-      console.log(error.code);
+      // console.log(error.code);
     }
-    console.log(contenidoDelTextarea.value);
-  });
-
-  // VER TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
-  const postDivs = document.createElement('div');
-  obtenerTodosLosPost((querySnapshot) => {
-    postDivs.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      const idUser = doc.data().usuario;
-      const idPost = doc.id;
-      const fecha = doc.data().date.toDate().toLocaleString();
-      console.log(idPost);
-      console.log(currentUserInfo().email);
-      console.log(usuarioLogeado());
-      postDivs.innerHTML += `
-        <div class="posts__post">
-          <p>${doc.data().contenido}</p>
-          <p>${doc.data().usuario}</p>
-          <p>${fecha}</p>
-          <h3 class="usuario-post"></h3>
-          <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
-          <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
-          <button id=${idPost} class="btn-like">Like</button>
-          <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
-        </div>
-      `;
-      editar(idPost, { contenido: '' });
-    });
-    borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
-    darLike(querySnapshot);
+    // console.log(contenidoDelTextarea.value);
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -105,8 +85,8 @@ export const feed = (onNavigate) => {
         } else {
           alert('No puedes eliminar, este post no es tuyo');
         }
-        console.log(idPost);
-        console.log(currentUserInfo().email);
+        // console.log(idPost);
+        // console.log(currentUserInfo().email);
       });
     });
   }
@@ -143,25 +123,49 @@ export const feed = (onNavigate) => {
           if (post.likes && post.likes.includes(idUser)) {
             // El usuario puede remover el like
             await removeLike(idPost, idUser);
-            console.log('Se removio el like');
+            // console.log('Se removio el like');
           } else {
             // Agregar el like
             await likesPost(idPost, idUser);
-            console.log('Like agregado');
+            // console.log('Like agregado');
           }
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       });
     });
   }
 
-  
+  // VER TODOS LOS POSTSSSS (ACUMULADOS):::::::::::::::::::::::::::::::::::::
+  obtenerTodosLosPost((querySnapshot) => {
+    postDivs.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      const idUser = doc.data().usuario;
+      const idPost = doc.id;
+      const fecha = doc.data().date.toDate().toLocaleString();
+      // console.log(idPost);
+      // console.log(currentUserInfo().email);
+      // console.log(usuarioLogeado());
+      postDivs.innerHTML += `
+        <div class="posts__post">
+          <p>${doc.data().contenido}</p>
+          <p>${doc.data().usuario}</p>
+          <p>${fecha}</p>
+          <h3 class="usuario-post"></h3>
+          <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
+          <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
+          <button id=${idPost} class="btn-like">Like</button>
+          <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
+        </div>
+      `;
+      editar(idPost, { contenido: '' });
+    });
+    borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
+    darLike(querySnapshot);
+  });
 
   homeDiv.querySelector('.posts__container').appendChild(postDivs);
   homeDiv.appendChild(buttonLogin);
   homeDiv.appendChild(buttonOut);
   return homeDiv;
 };
-
-

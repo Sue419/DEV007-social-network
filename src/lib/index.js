@@ -1,5 +1,4 @@
 // aqui exportaras las funciones que necesites:::::::::::::::::::::::::::::::::::::::::::::::::
-
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -9,15 +8,28 @@ import {
   signOut,
 } from 'firebase/auth';
 import {
-  addDoc, collection, onSnapshot, serverTimestamp, orderBy, deleteDoc, doc, updateDoc, arrayUnion, arrayRemove, query
+  addDoc,
+  collection,
+  onSnapshot,
+  serverTimestamp,
+  orderBy,
+  deleteDoc,
+  doc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
 // FUNCION PARA CREAR USUARIO QUE SE EXPORTA REGISTER.JS::::::::::::::::::::::::::::::::::::::::
-export const crearUsuarioYContraseña = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+export const crearUsuarioYContraseña = (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password);
+};
 
 // FUNCION PARA ENTRAR CON LOGIN LOGEARSE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::
-export const loginUsuarioYContraseña = (email, password) => signInWithEmailAndPassword(auth, email, password);
+export const loginUsuarioYContraseña = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password);
+};
 
 // FUNCION PARA ENTRAR CON GOOGLE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::::::::::
 export const loginGoogle = () => {
@@ -48,7 +60,6 @@ export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones')
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
 export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
-
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
 
@@ -68,12 +79,8 @@ export const likesPost = async (postId, userId) => {
   });
 };
 
-export const removeLike = async(postId, userId) => {
+export const removeLike = async (postId, userId) => {
   await updateDoc(doc(db, 'publicaciones', postId), {
     likes: arrayRemove(userId),
   });
 };
-
-
-
-
