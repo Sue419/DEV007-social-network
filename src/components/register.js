@@ -3,7 +3,7 @@ import { crearUsuarioYContraseña } from '../lib/index.js';
 // FORMULARIO REGISTRO DE USUARIO ::::::::::::::::::::::::::::::::::::::
 export const register = (onNavigate) => {
   const homeDiv = document.createElement('div');
-  homeDiv.classList.add('fondo');
+  homeDiv.classList.add('container-register');
   const buttonRegister = document.createElement('button');
   buttonRegister.classList.add('btn-register-register');
   buttonRegister.textContent = 'Registrate';
@@ -50,19 +50,6 @@ export const register = (onNavigate) => {
 
     setTimeout(hideSnackbar, 8000);
   }
-  // REGRESA AL HOME::::::::::::::::::::::::::::::::::::::::::::::::::::
-  const buttonHome = document.createElement('button');
-  buttonHome.textContent = '';
-  buttonHome.addEventListener('click', () => onNavigate('/'));
-  homeDiv.appendChild(buttonHome);
-  buttonHome.classList.add('btn-flecha-home');
-
-  // REGRESA AL LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::
-  const buttonLogin = document.createElement('button');
-  buttonLogin.textContent = '¿Ya tienes cuenta? INICIA SESIÓN';
-  homeDiv.appendChild(buttonLogin);
-  buttonLogin.addEventListener('click', () => onNavigate('/login'));
-  buttonLogin.classList.add('btn-login-direccion');
 
   // REGISTRO DE USUARIO:::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
@@ -98,6 +85,12 @@ export const register = (onNavigate) => {
     }
   });
   homeDiv.appendChild(buttonRegister);
+  // REGRESA AL LOGIN:::::::::::::::::::::::::::::::::::::::::::::::::::
+  const buttonLogin = document.createElement('button');
+  buttonLogin.innerHTML = '¿Ya tienes cuenta? INICIA SESIÓN';
+  homeDiv.appendChild(buttonLogin);
+  buttonLogin.addEventListener('click', () => onNavigate('/login'));
+  buttonLogin.classList.add('btn-login-direccion');
 
   return homeDiv;
 };

@@ -1,13 +1,11 @@
 export const home = (onNavigate) => {
-// HTML:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // HTML:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   const homeDiv = document.createElement('div');
   homeDiv.classList.add('container');
   const viewHome = `
-  <div>
     <h1 class="labgram-texto">LABGRAM</h1>
     <p class="p-texto">TU ESPACIO PARA COMPARTIR EJERCICOS DEL GYM</p>
     <img class="logo-labgram"src="img/log_720.png" alt="logo">
-  </div>
   `;
   homeDiv.innerHTML += viewHome;
 
