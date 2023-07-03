@@ -22,13 +22,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.19.4",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-jest": "^29.5.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^25.3.0",
     "htmlhint": "^1.0.0",
-    "jest": "^27.0.1",
+    "jest": "^27.5.1",
     "regenerator-runtime": "^0.13.1",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
@@ -43,6 +45,7 @@
     "commit": "a5360f78b634be4f14eaea996ee4c7afc85a2f48"
   },
   "dependencies": {
+    "@types/jest": "^29.5.2",
     "firebase": "^9.22.1"
   }
 }

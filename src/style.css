@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+=======
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
 
 /*---------------------------HOME---------------------------*/
 body {
@@ -7,6 +11,7 @@ body {
   background-color: rgba(1, 7, 36, 1);
 }
 
+<<<<<<< HEAD
 #root {
   width: 100%;
 }
@@ -30,6 +35,35 @@ body {
 }
 .p-texto {
   font-family: 'Bebas Neue', sans-serif;
+=======
+.rootContainer {
+  height: 100vh;
+}
+
+.container {
+  background-image: url(img/fondo.jpeg);
+  background-size: cover;
+  height: 100%;
+  z-index: -1;
+}
+
+.labgram-texto {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  color: rgba(197, 116, 193, 1);
+  font-size: 72px;
+  font-weight: 100;
+  top: 50px;
+  left: 70px;
+  position: absolute;
+}
+
+.p-texto {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  left: 16px;
+  top: 180px;
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 800;
   line-height: 22px;
@@ -37,16 +71,32 @@ body {
   color: #ffffff;
   font-size: 13px;
 }
+<<<<<<< HEAD
 .logo-labgram {
   position: relative;
+=======
+
+.logo-labgram {
+  position: absolute;
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   width: 272px;
   height: 291px;
 }
 .btn-iniciarSesion {
+<<<<<<< HEAD
   width: 240px;
   height: 52px;
   background-color: #46355b;
   font-family: 'Anton';
+=======
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 75px;
+  top: 599px;
+  background-color: #46355b;
+  font-family: "Anton";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -57,6 +107,7 @@ body {
   border-radius: 10px;
   border-style: none;
 }
+<<<<<<< HEAD
 .btn-iniciarSesion:hover {
   color: #ff4d5a;
 }
@@ -77,8 +128,53 @@ body {
 }
 .btn-register:hover {
   color: #ff4d5a;
+=======
+
+.btn-register {
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 75px;
+  top: 676px;
+  background-color: #46355b;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
+
+.icono-flecha-home {
+  z-index: 5;
+}
+
+.btn-flecha-home {
+  position: absolute;
+  top: 5px;
+  width: 44px;
+  height: 36px;
+  z-index: 4;
+  background-color: rgba(30, 30, 30, 0);
+  border: none;
+}
+
+.btnQuestion {
+  font-weight: bold;
+}
+
+.btnQuestion:hover {
+  color: #ff4d5a;
+  text-decoration: underline;
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
+}
+
 /*---------------------------LOGIN---------------------------*/
+<<<<<<< HEAD
 .container-login {
   display: flex;
   flex-direction: column;
@@ -97,6 +193,38 @@ body {
   justify-content: center;
 }
 .btnHome {
+=======
+.fondo {
+  background-color: rgba(1, 7, 36, 1);
+  height: 100%;
+}
+
+.inicia-texto {
+  position: absolute;
+  width: 237px;
+  height: 72px;
+  left: 72px;
+  top: 30px;
+
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+
+  color: #c574c1;
+}
+
+.imgLogoLogin {
+  position: absolute;
+  width: 136px;
+  height: 146px;
+  left: 127px;
+  top: 170px;
+}
+
+.input-email {
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   position: absolute;
   left: 5px;
   background-color: #00000000;
@@ -118,6 +246,7 @@ body {
 .input-email {
   width: 303px;
   height: 52px;
+<<<<<<< HEAD
   background: #ffffff;
   border-radius: 10px;
   font-family: 'Roboto Condensed';
@@ -133,9 +262,13 @@ body {
 .input-password {
   width: 303px;
   height: 52px;
+=======
+  left: 43px;
+  top: 363px;
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -146,14 +279,44 @@ body {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .olvidoContraseña {
   font-family: 'Bebas Neue';
+=======
+.input-password {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 440px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+
+  color: rgba(0, 6, 36, 0.37);
+  text-align: center;
+}
+
+.olvidoContraseña {
+  position: absolute;
+  width: 210px;
+  height: 17px;
+  left: 173px;
+  top: 520px;
+  font-family: "Bebas Neue";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
   letter-spacing: 0.1em;
   color: #ffffff;
+<<<<<<< HEAD
   margin: 5px;
 }
 .ingresaCon-google {
@@ -180,6 +343,19 @@ body {
   height: 52px;
   background-color: #46355b;
   font-family: 'Anton';
+=======
+}
+
+.inicia-sesion-login {
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 72px;
+  top: 557px;
+  background-color: #46355b;
+
+  font-family: "Anton";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -189,6 +365,7 @@ body {
   color: #eae4d8;
   border-radius: 10px;
   border-style: none;
+<<<<<<< HEAD
   margin-top: 30px;
   margin-bottom: 25px;
 }
@@ -197,6 +374,54 @@ body {
 }
 .btn-register-direccion {
   font-family: 'Bebas Neue';
+=======
+}
+
+.ingresaCon-google {
+  position: absolute;
+  width: 103px;
+  height: 22px;
+  left: 143px;
+  top: 639px;
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.fondo-icono-google {
+  position: absolute;
+  width: 77px;
+  height: 75px;
+  left: 148px;
+  top: 686px;
+
+  background: #ff4d5a;
+  border-radius: 39px;
+}
+
+.btn-google {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  left: 149px;
+  top: 686px;
+  z-index: 5;
+  border: none;
+  background-color: #ffffff00;
+  border-radius: 40px;
+  background-image: url(img/ios_google_icon_360.png);
+  background-size: contain;
+}
+
+.btn-register-direccion {
+  position: absolute;
+  left: 72px;
+  top: 791px;
+  font-family: "Bebas Neue";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -207,7 +432,9 @@ body {
   border: none;
   margin-top: 25px;
 }
+
 /*---------------------------REGISTER---------------------------*/
+<<<<<<< HEAD
 .container-register {
   display: flex;
   flex-direction: column;
@@ -220,10 +447,21 @@ body {
 .register-texto {
   height: 72px;
   font-family: 'Anton';
+=======
+.register-texto {
+  position: absolute;
+  width: 165px;
+  height: 72px;
+  left: 112px;
+  top: 20px;
+
+  font-family: "Anton";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
   line-height: 72px;
+<<<<<<< HEAD
   color: #c574c1;
 }
 .input-register-name {
@@ -254,10 +492,32 @@ body {
   margin: 5px;
   width: 303px;
   height: 52px;
+=======
+
+  color: #c574c1;
+}
+
+.imgLogoRegister {
+  position: absolute;
+  width: 136px;
+  height: 146px;
+  left: 127px;
+  top: 170px;
+}
+
+.input-register-name {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 363px;
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   background: #ffffff;
   border-radius: 10px;
   text-align: center;
 }
+<<<<<<< HEAD
 .btn-register-register {
   margin: 40px;
   width: 240px;
@@ -280,6 +540,66 @@ body {
 }
 .btn-login-direccion {
   font-family: 'Bebas Neue';
+=======
+
+.input-register-email {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 440px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.input-register-contraseña {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 517px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.input-register-contraseña-confirmar {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 588px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.btn-register-register {
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 72px;
+  top: 695px;
+  background: #46355b;
+  border-radius: 10px;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-style: none;
+}
+
+.btn-login-direccion {
+  position: absolute;
+  left: 72px;
+  top: 791px;
+  font-family: "Bebas Neue";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -289,13 +609,19 @@ body {
   background-color: #00000000;
   border: none;
 }
+
 /*---------------------------FEED---------------------------*/
 .colorLetras {
   color: #ffffff;
 }
+
 .fondo-feed {
   background-color: rgba(1, 7, 36, 1);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
 .labgram-text-feed {
   margin: 0;
   margin-left: 10px;
@@ -316,6 +642,7 @@ body {
   left: 0px;
   top: 0px;
 
+<<<<<<< HEAD
   background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
   border: 1px solid #000000;
 }
@@ -324,12 +651,60 @@ body {
 }
 .texto-publicacion {
   box-sizing: border-box;
+=======
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+
+  color: #c574c1;
+}
+
+.barra-morada-feed {
+  box-sizing: border-box;
+
+  width: 390px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
+  border: 1px solid #000000;
+}
+
+.publicaciones-feed {
+  margin-left: 15px;
+}
+
+.bienvenida-feed {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  left: 16px;
+  top: 180px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.texto-publicacion {
+  box-sizing: border-box solid white;
+  margin-top: 70px;
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   width: 299px;
   height: 108px;
   background: #ffffff;
   border: 1px solid #bb88bf;
   border-radius: 10px;
+<<<<<<< HEAD
   font-family: 'Roboto Condensed';
+=======
+  font-family: "Roboto Condensed";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -338,19 +713,109 @@ body {
 
   color: rgba(0, 6, 36, 0.37);
 }
+<<<<<<< HEAD
 .btn-compartir {
   width: 103px;
   height: 36px;
   background: #bb88bf;
   border-radius: 7px;
   font-family: 'Bebas Neue';
+=======
+
+.btn-compartir {
+  width: 103px;
+  height: 36px;
+
+  background: #bb88bf;
+  border-radius: 7px;
+
+  font-family: "Bebas Neue";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+<<<<<<< HEAD
   letter-spacing: 0.1em;
   color: #ffffff;
 }
+=======
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+
+  color: #ffffff;
+}
+
+/*------------------snackbar-------------------------*/
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 8s;
+  /* Ajusta la duración de fadeout */
+}
+
+#snackbar-close {
+  color: #c574c1;
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+
+#snackbar-close:hover {
+  color: #ff4d5a;
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
 /*------------------PERFIL USUARIO-------------------------*/
 
 .perfil-usuario {
@@ -361,6 +826,11 @@ body {
   margin-top: 15px;
 }
 
+.usuario-saludo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+}
+
 .foto-perfil {
   border-radius: 100px;
   width: 50px;
@@ -368,8 +838,9 @@ body {
 }
 
 .hola-name {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 25px;
+  font-style: italic;
 }
 
 .new-post__container__textarea {
@@ -391,6 +862,7 @@ body {
 .posts__post {
   color: #cbbfcc;
 }
+
 /*------------------snackbar-------------------------*/
 #snackbar {
   visibility: hidden;
@@ -409,12 +881,14 @@ body {
 
 #snackbar.show {
   visibility: visible;
-  animation: fadein 0.5s, fadeout 0.5s 8s; /* Ajusta la duración de fadeout */
+  animation: fadein 0.5s, fadeout 0.5s 8s;
+  /* Ajusta la duración de fadeout */
 }
 
 #snackbar-close {
   color: #c574c1;
   font-size: 15px;
+<<<<<<< HEAD
   font-family: 'Roboto Condensed';
   background: none;
   border: none;
@@ -426,6 +900,9 @@ body {
   color: #ff4d5a;
   font-size: 15px;
   font-family: 'Roboto Condensed';
+=======
+  font-family: "Roboto Condensed";
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   background: none;
   border: none;
   cursor: pointer;
@@ -433,11 +910,29 @@ body {
   letter-spacing: 0.1em;
 }
 
+<<<<<<< HEAD
+=======
+#snackbar-close:hover {
+  color: #ff4d5a;
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
 @keyframes fadein {
   from {
     bottom: 0;
     opacity: 0;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   to {
     bottom: 30px;
     opacity: 1;
@@ -449,11 +944,16 @@ body {
     bottom: 30px;
     opacity: 1;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
   to {
     bottom: 0;
     opacity: 0;
   }
 }
+<<<<<<< HEAD
 /*------------------MEDIA QUERYS-------------------------*/
 @media screen and (min-width: 768px) {
   /*::::::::::HOME::::::::::*/
@@ -695,3 +1195,5 @@ body {
     font-size: 15px;
   }
 }
+=======
+>>>>>>> 8ffbfddca8d469d844c9cb3b2c47e7b19229757b
