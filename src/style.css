@@ -1,141 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 /*---------------------------HOME---------------------------*/
 body {
+  width: 100vw;
   margin: 0;
-  height: 100vh;
+  background-color: rgba(1, 7, 36, 1);
 }
-.rootContainer{
-  height: 100vh;
+
+#root {
+  width: 100%;
 }
-.container{
+.container {
   background-image: url(img/fondo.jpeg);
   background-size: cover;
-  height: 100%;
-  z-index: -1;
-  
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.labgram-texto{
- margin: 0;
- font-family: 'Anton', sans-serif;
- color: rgba(197, 116, 193, 1);
- font-size: 72px;
- font-weight: 100;
- top: 50px;
- left: 70px;
- position: absolute; 
-
+.labgram-texto {
+  margin: 0;
+  font-family: 'Anton', sans-serif;
+  color: rgba(197, 116, 193, 1);
+  font-size: 72px;
+  font-weight: 100;
 }
-.p-texto{
+.p-texto {
   font-family: 'Bebas Neue', sans-serif;
-  position: absolute;
-  left: 16px;
-  top: 180px;
   font-style: normal;
   font-weight: 800;
   line-height: 22px;
   letter-spacing: -0.5px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 13px;
 }
-.logo-labgram{
-  position: absolute;
+.logo-labgram {
+  position: relative;
   width: 272px;
   height: 291px;
-  left: 59px;
-  top: 264px;
 }
-
 .btn-iniciarSesion {
- position: absolute;
- width: 240px;
- height: 52px;
- left: 75px;
- top: 599px;
- background-color: #46355B;
- font-family: 'Anton';
- font-style: normal;
- font-weight: 400;
- font-size: 32px;
- line-height: 48px;
- letter-spacing: 0.03em;
- text-transform: uppercase;
- color: #EAE4D8;
- border-radius: 10px;
- border-style:none ;
- 
+  width: 240px;
+  height: 52px;
+  background-color: #46355b;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.btn-register{
- position: absolute;
- width: 240px;
- height: 52px;
- left: 75px;
- top: 676px;
- background-color: #46355B;
- font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: #EAE4D8;
-border-radius: 10px;
-border-style:none ;
-
+.btn-iniciarSesion:hover {
+  color: #ff4d5a;
 }
-.icono-flecha-home{
-z-index: 5; 
+.btn-register {
+  width: 240px;
+  height: 52px;
+  background-color: #46355b;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.btn-flecha-home{
-  position: absolute;
-  top: 5px;
-  width: 44px;
-  height: 36px;
-  z-index: 4;
-  background-color: rgba(30, 30, 30, 0);
-  border: none;
-}
-.btnQuestion {
-  font-weight: bold;
-}
-.btnQuestion:hover {
-  color:#FF4D5A;
-  text-decoration: underline;
+.btn-register:hover {
+  color: #ff4d5a;
 }
 /*---------------------------LOGIN---------------------------*/
-.fondo{
-  background-color: rgba(1, 7, 36, 1);
-  height: 100%;
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.inicia-texto{
-position: absolute;
-width: 237px;
-height: 72px;
-left: 72px;
-top: 30px;
-
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 72px;
-
-color: #C574C1;
+.container-btnHome {
+  display: block;
 }
-.imgLogoLogin{
-position: absolute;
-width: 136px;
-height: 146px;
-left: 127px;
-top: 170px;
+.containerFlex {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-.input-email{
+.btnHome {
   position: absolute;
+  left: 5px;
+  background-color: #00000000;
+  border: none;
+}
+.imgLogoLogin {
+  width: 136px;
+  height: 146px;
+}
+.inicia-texto {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+  color: #c574c1;
+}
+
+.input-email {
   width: 303px;
   height: 52px;
-  left: 43px;
-  top: 363px;
-  background: #FFFFFF;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 15px;
+  letter-spacing: 0.03em;
+  color: rgba(0, 6, 36, 0.37);
+  text-align: center;
+}
+.input-password {
+  width: 303px;
+  height: 52px;
+  background: #ffffff;
   border-radius: 10px;
   font-family: 'Roboto Condensed';
   font-style: normal;
@@ -143,334 +141,216 @@ top: 170px;
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.03em;
+  margin: 15px;
   color: rgba(0, 6, 36, 0.37);
   text-align: center;
 }
-.input-password {
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 440px;
-background: #FFFFFF;
-border-radius: 10px;
-font-family: 'Roboto Condensed';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-letter-spacing: 0.03em;
 
-color: rgba(0, 6, 36, 0.37);
-text-align: center;
-}
-.olvidoContraseña{
-  position: absolute;
-  width: 210px;
-  height: 17px;
-  left: 173px;
-  top: 520px;
+.olvidoContraseña {
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
-  
+  color: #ffffff;
+  margin: 5px;
 }
-.inicia-sesion-login{
-  position: absolute;
+.ingresaCon-google {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 5px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.btn-google {
+  margin: 5px;
+  background-image: url(img/ios_google_icon_360.png);
+  background-size: cover;
+  background-color: #ff4d5a;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  border-style: none;
+}
+.btn-inicia-sesion-login {
   width: 240px;
   height: 52px;
-  left: 72px;
-  top: 557px;
-  background-color: #46355B;
-
+  background-color: #46355b;
   font-family: 'Anton';
- font-style: normal;
- font-weight: 400;
- font-size: 28px;
- line-height: 48px;
- letter-spacing: 0.03em;
- text-transform: uppercase;
- color: #EAE4D8;
- border-radius: 10px;
- border-style:none ;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
+  margin-top: 30px;
+  margin-bottom: 25px;
 }
-.ingresaCon-google{
-position: absolute;
-width: 103px;
-height: 22px;
-left: 143px;
-top: 639px;
-font-family: 'Bebas Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
-color: #FFFFFF;
+.btn-inicia-sesion-login:hover {
+  color: #ff4d5a;
 }
-.fondo-icono-google{
-  position: absolute;
-width: 77px;
-height: 75px;
-left: 148px;
-top: 686px;
-
-background: #FF4D5A;
-border-radius: 39px;
-}
-.btn-google{
-position: absolute;
-width: 75px;
-height: 75px;
-left: 149px;
-top: 686px;
-z-index: 5;
-border: none;
-background-color: #ffffff00;
-border-radius: 40px;
-background-image: url(img/ios_google_icon_360.png);
-background-size: contain;
-}
-.btn-register-direccion{
-  position: absolute;
-  left: 72px;
-  top: 791px;
+.btn-register-direccion {
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #00000000;
   border: none;
+  margin-top: 25px;
 }
 /*---------------------------REGISTER---------------------------*/
-.register-texto{
-  position: absolute;
-  width: 165px;
+.container-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgLogoRegister {
+  width: 136px;
+  height: 146px;
+}
+.register-texto {
   height: 72px;
-  left: 112px;
-  top: 20px;
-  
   font-family: 'Anton';
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
   line-height: 72px;
-  
-  color: #C574C1;  
+  color: #c574c1;
 }
-.imgLogoRegister{
-position: absolute;
-width: 136px;
-height: 146px;
-left: 127px;
-top: 170px;
+.input-register-name {
+  margin: 5px;
+  width: 303px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
 }
-.input-register-name{
-  position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 363px;
-
-background: #FFFFFF;
-border-radius: 10px;
-text-align: center;
+.input-register-email {
+  margin: 5px;
+  width: 303px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
 }
-.input-register-email{
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 440px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+.input-register-contraseña {
+  margin: 5px;
+  width: 303px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
 }
-.input-register-contraseña{ 
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 517px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+.input-register-contraseña-confirmar {
+  margin: 5px;
+  width: 303px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
 }
-.input-register-contraseña-confirmar{
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 588px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+.btn-register-register {
+  margin: 40px;
+  width: 240px;
+  height: 52px;
+  background: #46355b;
+  border-radius: 10px;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.btn-register-register{
-position: absolute;
-width: 240px;
-height: 52px;
-left: 72px;
-top: 695px;
-background: #46355B;
-border-radius: 10px;
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: #EAE4D8;
-border-radius: 10px;
-border-style:none ;
+.btn-register-register:hover {
+  color: #ff4d5a;
 }
-.btn-login-direccion{
-  position: absolute;
-  left: 72px;
-  top: 791px;
+.btn-login-direccion {
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #00000000;
   border: none;
 }
 /*---------------------------FEED---------------------------*/
-.colorLetras{
-  color: #FFFFFF;
+.colorLetras {
+  color: #ffffff;
 }
 .fondo-feed {
   background-color: rgba(1, 7, 36, 1);
 }
-.labgram-text-feed{
+.labgram-text-feed {
   margin: 0;
-  position: absolute;
+  margin-left: 10px;
   width: 143px;
   height: 60px;
-  left: 18px;
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
+  color: #c574c1;
+}
+.barra-morada-feed {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 60px;
+  left: 0px;
   top: 0px;
 
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 60px;
-
-color: #C574C1;
-
+  background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
+  border: 1px solid #000000;
 }
-.barra-morada-feed{
-box-sizing: border-box;
-
-width: 390px;
-height: 60px;
-left: 0px;
-top: 0px;
-
-background: linear-gradient(90deg, #7945AA -50.9%, #4C2E64 76.54%);
-border: 1px solid #000000;
-}
-.publicaciones-feed{
+.publicaciones-feed {
   margin-left: 15px;
 }
-.texto-publicacion{
- box-sizing: border-box;
-width: 299px;
-height: 108px;
-background: #FFFFFF;
-border: 1px solid #BB88BF;
-border-radius: 10px;
-font-family: 'Roboto Condensed';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-letter-spacing: 0.03em;
-
-color: rgba(0, 6, 36, 0.37);
-}
-.btn-compartir{
-width: 103px;
-height: 36px;
-
-
-background: #BB88BF;
-border-radius: 7px;
-
-font-family: 'Bebas Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #FFFFFF;
-}
-/*------------------snackbar-------------------------*/
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  transform: translateX(-50%);
-}
-
-#snackbar.show {
-  visibility: visible;
-  animation: fadein 0.5s, fadeout 0.5s 8s; /* Ajusta la duración de fadeout */
-}
-
-#snackbar-close {
-  color: #C574C1;
-  font-size: 15px;
+.texto-publicacion {
+  box-sizing: border-box;
+  width: 299px;
+  height: 108px;
+  background: #ffffff;
+  border: 1px solid #bb88bf;
+  border-radius: 10px;
   font-family: 'Roboto Condensed';
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+
+  color: rgba(0, 6, 36, 0.37);
+}
+.btn-compartir {
+  width: 103px;
+  height: 36px;
+  background: #bb88bf;
+  border-radius: 7px;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
   letter-spacing: 0.1em;
+  color: #ffffff;
 }
-#snackbar-close:hover {
-  color: #FF4D5A;
-  font-size: 15px;
-  font-family: 'Roboto Condensed';
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 8px;
-  letter-spacing: 0.1em;
-}
-
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
 /*------------------PERFIL USUARIO-------------------------*/
 
 .perfil-usuario {
@@ -503,8 +383,6 @@ color: #FFFFFF;
 }
 
 .posts__container {
-  width: 390px;
-  height: 784px;
   flex-shrink: 0;
   margin-left: 10px;
   font-size: 18px;
@@ -535,7 +413,7 @@ color: #FFFFFF;
 }
 
 #snackbar-close {
-  color: #C574C1;
+  color: #c574c1;
   font-size: 15px;
   font-family: 'Roboto Condensed';
   background: none;
@@ -545,7 +423,7 @@ color: #FFFFFF;
   letter-spacing: 0.1em;
 }
 #snackbar-close:hover {
-  color: #FF4D5A;
+  color: #ff4d5a;
   font-size: 15px;
   font-family: 'Roboto Condensed';
   background: none;
@@ -555,14 +433,265 @@ color: #FFFFFF;
   letter-spacing: 0.1em;
 }
 
-
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
-
+/*------------------MEDIA QUERYS-------------------------*/
+@media screen and (min-width: 768px) {
+  /*::::::::::HOME::::::::::*/
+  .labgram-texto {
+    font-size: 100px;
+  }
+  .p-texto {
+    font-size: 20px;
+  }
+  .logo-labgram {
+    position: relative;
+    width: 400px;
+    height: 430px;
+  }
+  .btn-iniciarSesion {
+    width: 340px;
+    height: 70px;
+    font-size: 50px;
+  }
+  .btn-register {
+    width: 340px;
+    height: 70px;
+    font-size: 50px;
+  }
+  /*::::::::::INIVIA SESIÓN::::::::::*/
+  .inicia-texto {
+    font-size: 70px;
+  }
+  .imgLogoLogin {
+    width: 200px;
+    height: 220px;
+  }
+  .btn-google {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .btn-inicia-sesion-login {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-register-direccion {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .ingresaCon-google {
+    font-size: 30px;
+  }
+  .input-email {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-password {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .containerFlex {
+    margin-top: 0px;
+  }
+  .olvidoContraseña {
+    font-size: 15px;
+  }
+  /*::::::::::REGISTRAR::::::::::*/
+  .register-texto {
+    font-size: 70px;
+  }
+  .imgLogoRegister {
+    width: 200px;
+    height: 220px;
+  }
+  .input-register-name {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-email {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-contraseña {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-contraseña-confirmar {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .btn-register-register {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-login-direccion {
+    font-size: 20px;
+  }
+  #snackbar {
+    padding: 30px;
+  }
+  #snackbar-text {
+    font-size: 15px;
+  }
+  #snackbar-close {
+    font-size: 15px;
+  }
+  #snackbar-close:hover {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /*::::::::::HOME::::::::::*/
+  .labgram-texto {
+    margin-top: 30px;
+  }
+  .logo-labgram {
+    display: none;
+  }
+  /*::::::::::INICIA SESIÓN::::::::::*/
+  .inicia-texto {
+    font-size: 65px;
+  }
+  .fondo-login {
+    position: relative;
+    right: 0px;
+    background-image: url(img/fondo.jpeg);
+    width: 640px;
+    height: 640px;
+  }
+  .imgLogoLogin {
+    width: 200px;
+    height: 220px;
+    display: none;
+  }
+  .btn-google {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .btn-inicia-sesion-login {
+    width: 330px;
+    height: 75px;
+    font-size: 40px;
+    margin-left: 45px;
+  }
+  .btn-register-direccion {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 45px;
+  }
+  .ingresaCon-google {
+    font-size: 20px;
+  }
+  .input-email {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-password {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .container-login {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 120px;
+  }
+  .olvidoContraseña {
+    font-size: 15px;
+  }
+  /*::::::::::REGISTRAR::::::::::*/
+  .btnHome {
+    top: 15px;
+    position: absolute;
+    left: 5px;
+    background-color: #00000000;
+    border: none;
+  }
+  .imgLogoRegister{
+    display: none;
+  }
+  .register-texto {
+    font-size: 70px;
+  }
+  .container-register {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 120px;
+  }
+  .imgLogoRegister {
+    width: 200px;
+    height: 220px;
+  }
+  .input-register-name {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-email {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-contraseña {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-contraseña-confirmar {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .btn-register-register {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-login-direccion {
+    font-size: 20px;
+  }
+  #snackbar {
+    padding: 30px;
+  }
+  #snackbar-text {
+    font-size: 15px;
+  }
+  #snackbar-close {
+    font-size: 15px;
+  }
+  #snackbar-close:hover {
+    font-size: 15px;
+  }
+}

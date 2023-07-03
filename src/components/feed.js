@@ -1,5 +1,14 @@
+/** @format */
+
 import {
-  crearPost, obtenerTodosLosPost, borrarPost, currentUserInfo, editarPost, likesPost, removeLike, usuarioLogeado
+  crearPost,
+  obtenerTodosLosPost,
+  borrarPost,
+  currentUserInfo,
+  editarPost,
+  likesPost,
+  removeLike,
+  usuarioLogeado,
 } from '../lib/index.js';
 
 // CONTENEDOR DE PUBLICACIONES:::::::::::::::::::::::::::::::::::::::::::::
@@ -11,6 +20,12 @@ export const feed = (onNavigate) => {
     <div class="form-container feed-container">
     <div class="barra-morada-feed">
       <h2 class="labgram-text-feed">LABGRAM </h2>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="rgba(197, 116, 193, 1)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
+  <path d="M15 12h-12l3 -3" />
+  <path d="M6 15l-3 -3" />
+</svg>
     </div>
     <div class="perfil-usuario">
       <h2 class="usuario-saludo">¡Hola!${usuarioLogeado()}</h2>
@@ -25,9 +40,6 @@ export const feed = (onNavigate) => {
     </div>
   `;
 
-  
-  
-
   // BOTON REGRESAR AL LOGIN::::::::::::::::::::::::::::::::::::::::::::::::
   const buttonLogin = document.createElement('button');
   buttonLogin.classList = 'home-div__button';
@@ -40,7 +52,10 @@ export const feed = (onNavigate) => {
   // PUBLICAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   buttonPost.addEventListener('click', async (e) => {
     e.preventDefault();
-    const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea', '.firma');
+    const contenidoDelTextarea = homeDiv.querySelector(
+      '.new-post__container__textarea',
+      '.firma'
+    );
     if (contenidoDelTextarea.value === '') {
       alert('completa todos los campos');
       return;
@@ -49,7 +64,7 @@ export const feed = (onNavigate) => {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().email);
       contenidoDelTextarea.value = '';
       console.log(currentUserInfo());
-      console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
+      console.log(usuarioLogeado()); //LO MUESTRA EN CONSOLA MAS NO EN EL POST
       alert('Publicación subida');
     } catch (error) {
       console.log(error.code);
@@ -75,12 +90,14 @@ export const feed = (onNavigate) => {
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
           <button id=${idPost} class="btn-like">Like</button>
-          <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
+          <span class="likes-count" data-post=${idPost}>${
+        doc.data().likes.length
+      }</span>
         </div>
       `;
       editar(idPost, { contenido: '' });
     });
-    borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
+    borrar(); // ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
     darLike(querySnapshot);
   });
 
@@ -129,7 +146,9 @@ export const feed = (onNavigate) => {
         const idPost = btnLikes.id;
         const idUser = currentUserInfo().email;
         try {
-          const postSnapshot = querySnapshot.docs.find((doc) => doc.id === idPost);
+          const postSnapshot = querySnapshot.docs.find(
+            (doc) => doc.id === idPost
+          );
           const post = postSnapshot.data();
           if (post.likes && post.likes.includes(idUser)) {
             // El usuario puede remover el like
@@ -151,5 +170,3 @@ export const feed = (onNavigate) => {
   homeDiv.appendChild(buttonLogin);
   return homeDiv;
 };
-
-
