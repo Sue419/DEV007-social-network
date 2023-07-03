@@ -28,7 +28,7 @@ export const register = (onNavigate) => {
      <span id="snackbar-text"></span>
      <button id="snackbar-close">Close</button>
     </div>
-  `;
+    `;
   // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   function hideSnackbar() {
     const snackbar = document.getElementById('snackbar');
@@ -71,6 +71,11 @@ export const register = (onNavigate) => {
   const inputName = homeDiv.querySelector('#name');
 
   buttonRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
+      onNavigate('/feed');
+    });
+    // console.log(inputEmail.value, inputPassword.value, inputName.value);
     if (inputName.value === '') {
       showSnackbar('Ingrese su nombre');
       return;
@@ -85,18 +90,12 @@ export const register = (onNavigate) => {
     }
     if (inputPasswordConfirm.value === '') {
       showSnackbar('Ingresa la confirmacion de la contraseña');
-      return;
+      // return;
     }
     if (inputPassword.value !== inputPasswordConfirm.value) {
       showSnackbar('La contraseña no coincide');
-      return;
+      // return;
     }
-
-    e.preventDefault();
-    crearUsuarioYContraseña(inputEmail.value, inputPassword.value, inputName.value).then(() => {
-      onNavigate('/feed');
-    });
-    console.log(inputEmail.value, inputPassword.value, inputName.value);
   });
   homeDiv.appendChild(buttonRegister);
 

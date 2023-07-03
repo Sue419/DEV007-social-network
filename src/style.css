@@ -1,32 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 /*---------------------------HOME---------------------------*/
 body {
   margin: 0;
   height: 100vh;
 }
-.rootContainer{
+
+.rootContainer {
   height: 100vh;
 }
-.container{
+
+.container {
   background-image: url(img/fondo.jpeg);
   background-size: cover;
   height: 100%;
   z-index: -1;
-  
 }
-.labgram-texto{
- margin: 0;
- font-family: 'Anton', sans-serif;
- color: rgba(197, 116, 193, 1);
- font-size: 72px;
- font-weight: 100;
- top: 50px;
- left: 70px;
- position: absolute; 
 
+.labgram-texto {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  color: rgba(197, 116, 193, 1);
+  font-size: 72px;
+  font-weight: 100;
+  top: 50px;
+  left: 70px;
+  position: absolute;
 }
-.p-texto{
-  font-family: 'Bebas Neue', sans-serif;
+
+.p-texto {
+  font-family: "Bebas Neue", sans-serif;
   position: absolute;
   left: 16px;
   top: 180px;
@@ -34,10 +37,11 @@ body {
   font-weight: 800;
   line-height: 22px;
   letter-spacing: -0.5px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 13px;
 }
-.logo-labgram{
+
+.logo-labgram {
   position: absolute;
   width: 272px;
   height: 291px;
@@ -46,47 +50,48 @@ body {
 }
 
 .btn-iniciarSesion {
- position: absolute;
- width: 240px;
- height: 52px;
- left: 75px;
- top: 599px;
- background-color: #46355B;
- font-family: 'Anton';
- font-style: normal;
- font-weight: 400;
- font-size: 32px;
- line-height: 48px;
- letter-spacing: 0.03em;
- text-transform: uppercase;
- color: #EAE4D8;
- border-radius: 10px;
- border-style:none ;
- 
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 75px;
+  top: 599px;
+  background-color: #46355b;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.btn-register{
- position: absolute;
- width: 240px;
- height: 52px;
- left: 75px;
- top: 676px;
- background-color: #46355B;
- font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: #EAE4D8;
-border-radius: 10px;
-border-style:none ;
 
+.btn-register {
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 75px;
+  top: 676px;
+  background-color: #46355b;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.icono-flecha-home{
-z-index: 5; 
+
+.icono-flecha-home {
+  z-index: 5;
 }
-.btn-flecha-home{
+
+.btn-flecha-home {
   position: absolute;
   top: 5px;
   width: 44px;
@@ -95,49 +100,55 @@ z-index: 5;
   background-color: rgba(30, 30, 30, 0);
   border: none;
 }
+
 .btnQuestion {
   font-weight: bold;
 }
+
 .btnQuestion:hover {
-  color:#FF4D5A;
+  color: #ff4d5a;
   text-decoration: underline;
 }
+
 /*---------------------------LOGIN---------------------------*/
-.fondo{
+.fondo {
   background-color: rgba(1, 7, 36, 1);
   height: 100%;
 }
-.inicia-texto{
-position: absolute;
-width: 237px;
-height: 72px;
-left: 72px;
-top: 30px;
 
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 72px;
+.inicia-texto {
+  position: absolute;
+  width: 237px;
+  height: 72px;
+  left: 72px;
+  top: 30px;
 
-color: #C574C1;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 72px;
+
+  color: #c574c1;
 }
-.imgLogoLogin{
-position: absolute;
-width: 136px;
-height: 146px;
-left: 127px;
-top: 170px;
+
+.imgLogoLogin {
+  position: absolute;
+  width: 136px;
+  height: 146px;
+  left: 127px;
+  top: 170px;
 }
-.input-email{
+
+.input-email {
   position: absolute;
   width: 303px;
   height: 52px;
   left: 43px;
   top: 363px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -146,213 +157,229 @@ top: 170px;
   color: rgba(0, 6, 36, 0.37);
   text-align: center;
 }
-.input-password {
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 440px;
-background: #FFFFFF;
-border-radius: 10px;
-font-family: 'Roboto Condensed';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-letter-spacing: 0.03em;
 
-color: rgba(0, 6, 36, 0.37);
-text-align: center;
+.input-password {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 440px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+
+  color: rgba(0, 6, 36, 0.37);
+  text-align: center;
 }
-.olvidoContraseña{
+
+.olvidoContraseña {
   position: absolute;
   width: 210px;
   height: 17px;
   left: 173px;
   top: 520px;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
-  
+  color: #ffffff;
 }
-.inicia-sesion-login{
+
+.inicia-sesion-login {
   position: absolute;
   width: 240px;
   height: 52px;
   left: 72px;
   top: 557px;
-  background-color: #46355B;
+  background-color: #46355b;
 
-  font-family: 'Anton';
- font-style: normal;
- font-weight: 400;
- font-size: 28px;
- line-height: 48px;
- letter-spacing: 0.03em;
- text-transform: uppercase;
- color: #EAE4D8;
- border-radius: 10px;
- border-style:none ;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-radius: 10px;
+  border-style: none;
 }
-.ingresaCon-google{
-position: absolute;
-width: 103px;
-height: 22px;
-left: 143px;
-top: 639px;
-font-family: 'Bebas Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
-color: #FFFFFF;
-}
-.fondo-icono-google{
+
+.ingresaCon-google {
   position: absolute;
-width: 77px;
-height: 75px;
-left: 148px;
-top: 686px;
+  width: 103px;
+  height: 22px;
+  left: 143px;
+  top: 639px;
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
 
-background: #FF4D5A;
-border-radius: 39px;
+.fondo-icono-google {
+  position: absolute;
+  width: 77px;
+  height: 75px;
+  left: 148px;
+  top: 686px;
+
+  background: #ff4d5a;
+  border-radius: 39px;
 }
-.btn-google{
-position: absolute;
-width: 75px;
-height: 75px;
-left: 149px;
-top: 686px;
-z-index: 5;
-border: none;
-background-color: #ffffff00;
-border-radius: 40px;
-background-image: url(img/ios_google_icon_360.png);
-background-size: contain;
+
+.btn-google {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  left: 149px;
+  top: 686px;
+  z-index: 5;
+  border: none;
+  background-color: #ffffff00;
+  border-radius: 40px;
+  background-image: url(img/ios_google_icon_360.png);
+  background-size: contain;
 }
-.btn-register-direccion{
+
+.btn-register-direccion {
   position: absolute;
   left: 72px;
   top: 791px;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #00000000;
   border: none;
 }
+
 /*---------------------------REGISTER---------------------------*/
-.register-texto{
+.register-texto {
   position: absolute;
   width: 165px;
   height: 72px;
   left: 112px;
   top: 20px;
-  
-  font-family: 'Anton';
+
+  font-family: "Anton";
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
   line-height: 72px;
-  
-  color: #C574C1;  
-}
-.imgLogoRegister{
-position: absolute;
-width: 136px;
-height: 146px;
-left: 127px;
-top: 170px;
-}
-.input-register-name{
-  position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 363px;
 
-background: #FFFFFF;
-border-radius: 10px;
-text-align: center;
+  color: #c574c1;
 }
-.input-register-email{
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 440px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+
+.imgLogoRegister {
+  position: absolute;
+  width: 136px;
+  height: 146px;
+  left: 127px;
+  top: 170px;
 }
-.input-register-contraseña{ 
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 517px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+
+.input-register-name {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 363px;
+
+  background: #ffffff;
+  border-radius: 10px;
+  text-align: center;
 }
-.input-register-contraseña-confirmar{
-position: absolute;
-width: 303px;
-height: 52px;
-left: 43px;
-top: 588px;
-text-align: center;
-background: #FFFFFF;
-border-radius: 10px;
+
+.input-register-email {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 440px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
 }
-.btn-register-register{
-position: absolute;
-width: 240px;
-height: 52px;
-left: 72px;
-top: 695px;
-background: #46355B;
-border-radius: 10px;
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: #EAE4D8;
-border-radius: 10px;
-border-style:none ;
+
+.input-register-contraseña {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 517px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
 }
-.btn-login-direccion{
+
+.input-register-contraseña-confirmar {
+  position: absolute;
+  width: 303px;
+  height: 52px;
+  left: 43px;
+  top: 588px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.btn-register-register {
+  position: absolute;
+  width: 240px;
+  height: 52px;
+  left: 72px;
+  top: 695px;
+  background: #46355b;
+  border-radius: 10px;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #eae4d8;
+  border-style: none;
+}
+
+.btn-login-direccion {
   position: absolute;
   left: 72px;
   top: 791px;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #00000000;
   border: none;
 }
+
 /*---------------------------FEED---------------------------*/
-.colorLetras{
-  color: #FFFFFF;
+.colorLetras {
+  color: #ffffff;
 }
+
 .fondo-feed {
   background-color: rgba(1, 7, 36, 1);
 }
-.labgram-text-feed{
+
+.labgram-text-feed {
   margin: 0;
   position: absolute;
   width: 143px;
@@ -360,64 +387,82 @@ border-style:none ;
   left: 18px;
   top: 0px;
 
-font-family: 'Anton';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 60px;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 60px;
 
-color: #C574C1;
-
+  color: #c574c1;
 }
-.barra-morada-feed{
-box-sizing: border-box;
 
-width: 390px;
-height: 60px;
-left: 0px;
-top: 0px;
+.barra-morada-feed {
+  box-sizing: border-box;
 
-background: linear-gradient(90deg, #7945AA -50.9%, #4C2E64 76.54%);
-border: 1px solid #000000;
+  width: 390px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
+  border: 1px solid #000000;
 }
-.publicaciones-feed{
+
+.publicaciones-feed {
   margin-left: 15px;
 }
-.texto-publicacion{
- box-sizing: border-box;
-width: 299px;
-height: 108px;
-background: #FFFFFF;
-border: 1px solid #BB88BF;
-border-radius: 10px;
-font-family: 'Roboto Condensed';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-letter-spacing: 0.03em;
 
-color: rgba(0, 6, 36, 0.37);
+.bienvenida-feed {
+  font-family: "Bebas Neue", sans-serif;
+  position: absolute;
+  left: 16px;
+  top: 180px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-size: 15px;
 }
-.btn-compartir{
-width: 103px;
-height: 36px;
 
+.texto-publicacion {
+  box-sizing: border-box solid white;
+  margin-top: 70px;
+  width: 299px;
+  height: 108px;
+  background: #ffffff;
+  border: 1px solid #bb88bf;
+  border-radius: 10px;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.03em;
 
-background: #BB88BF;
-border-radius: 7px;
-
-font-family: 'Bebas Neue';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #FFFFFF;
+  color: rgba(0, 6, 36, 0.37);
 }
+
+.btn-compartir {
+  width: 103px;
+  height: 36px;
+
+  background: #bb88bf;
+  border-radius: 7px;
+
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.1em;
+
+  color: #ffffff;
+}
+
 /*------------------snackbar-------------------------*/
 #snackbar {
   visibility: hidden;
@@ -436,23 +481,14 @@ color: #FFFFFF;
 
 #snackbar.show {
   visibility: visible;
-  animation: fadein 0.5s, fadeout 0.5s 8s; /* Ajusta la duración de fadeout */
+  animation: fadein 0.5s, fadeout 0.5s 8s;
+  /* Ajusta la duración de fadeout */
 }
 
 #snackbar-close {
-  color: #C574C1;
+  color: #c574c1;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 8px;
-  letter-spacing: 0.1em;
-}
-#snackbar-close:hover {
-  color: #FF4D5A;
-  font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   background: none;
   border: none;
   cursor: pointer;
@@ -460,15 +496,39 @@ color: #FFFFFF;
   letter-spacing: 0.1em;
 }
 
+#snackbar-close:hover {
+  color: #ff4d5a;
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /*------------------PERFIL USUARIO-------------------------*/
@@ -481,6 +541,11 @@ color: #FFFFFF;
   margin-top: 15px;
 }
 
+.usuario-saludo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+}
+
 .foto-perfil {
   border-radius: 100px;
   width: 50px;
@@ -488,8 +553,9 @@ color: #FFFFFF;
 }
 
 .hola-name {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 25px;
+  font-style: italic;
 }
 
 .new-post__container__textarea {
@@ -513,6 +579,7 @@ color: #FFFFFF;
 .posts__post {
   color: #cbbfcc;
 }
+
 /*------------------snackbar-------------------------*/
 #snackbar {
   visibility: hidden;
@@ -531,23 +598,14 @@ color: #FFFFFF;
 
 #snackbar.show {
   visibility: visible;
-  animation: fadein 0.5s, fadeout 0.5s 8s; /* Ajusta la duración de fadeout */
+  animation: fadein 0.5s, fadeout 0.5s 8s;
+  /* Ajusta la duración de fadeout */
 }
 
 #snackbar-close {
-  color: #C574C1;
+  color: #c574c1;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 8px;
-  letter-spacing: 0.1em;
-}
-#snackbar-close:hover {
-  color: #FF4D5A;
-  font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: "Roboto Condensed";
   background: none;
   border: none;
   cursor: pointer;
@@ -555,14 +613,37 @@ color: #FFFFFF;
   letter-spacing: 0.1em;
 }
 
+#snackbar-close:hover {
+  color: #ff4d5a;
+  font-size: 15px;
+  font-family: "Roboto Condensed";
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
 
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
