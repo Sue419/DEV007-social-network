@@ -1,35 +1,40 @@
-import { async } from 'regenerator-runtime';
+// SE IMPORTAN LAS FUNCIONES A TESTEAR:::::::::::::::::::::::::::::::::::::::::::::::::::
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { crearUsuarioYContraseña, loginUsuarioYContraseña } from '../src/lib/index';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+// IDENTIFICAMOS A QUE ARCHIVO LE HAREMOS MOCK PARA TEST:::::::::::::::::::::::::::::::::
 jest.mock('firebase/auth');
+jest.mock('firebase/firestore');
+jest.mock('../firebase');
 
-describe('crearUsuarioYContraseña'), () => {
-  
-  it('es una función', () => {
+// CON ESTO LIMPIAMOS PARA QUE UN TEST NO CONTAMINE AL OTRO::::::::::::::::::::::::::::::
+beforeEach(() => {
+  createUserWithEmailAndPassword.mockClear();
+  signInWithEmailAndPassword.mockClear();
+  signInWithPopup.mockClear();
+});
+
+describe('crearUsuarioYContraseña', () => {
+  test('es una función', () => {
     expect(typeof crearUsuarioYContraseña).toBe('function');
   });
 
-  it('deberia llamar a la función createUserWithEmailAndPassword cuando es ejecutada', async () => {
+  test('deberia llamar a la función createUserWithEmailAndPassword cuando es ejecutada', async () => {
     await crearUsuarioYContraseña('tetera@mail.com', 'tetera123');
-    expect (createUserWithEmailAndPassword).toHaveBeenCalled();
+    expect(createUserWithEmailAndPassword).toHaveBeenCalled();
   });
 
-  it('Deberia devolver un objeto')
-
-
-
-
-
-
-};
-
-
-
-
+  test('Deberia devolver un objeto', async () => {
+    createUserWithEmailAndPassword.mockReturnValueOnce({
+      user: { email: 'tetera@mail.com' },
+    });
+    const response = await crearUsuarioYContraseña('tetera@mail.com', 'tetera123');
+    expect(response.user.email).toBe('tetera@mail.com');
+  });
+});
 
 describe('loginUsuarioYContraseña', () => {
-  it('es una función', () => {
+  test('es una función', () => {
     expect(typeof loginUsuarioYContraseña).toBe('function');
   });
 });

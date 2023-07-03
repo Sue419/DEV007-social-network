@@ -58,7 +58,7 @@ export const feed = (onNavigate) => {
     e.preventDefault();
     const contenidoDelTextarea = homeDiv.querySelector('.new-post__container__textarea', '.firma');
     if (contenidoDelTextarea.value === '') {
-      alert('completa todos los campos');
+      // alert('completa todos los campos');
       return;
     }
     try {
@@ -66,7 +66,7 @@ export const feed = (onNavigate) => {
       contenidoDelTextarea.value = '';
       // console.log(currentUserInfo());
       // console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
-      alert('Publicación subida');
+      // alert('Publicación subida');
     } catch (error) {
       // console.log(error.code);
     }
@@ -83,7 +83,7 @@ export const feed = (onNavigate) => {
         if (currentUserInfo().email === idPostUser) {
           borrarPost(idPost);
         } else {
-          alert('No puedes eliminar, este post no es tuyo');
+          // alert('No puedes eliminar, este post no es tuyo');
         }
         // console.log(idPost);
         // console.log(currentUserInfo().email);
@@ -104,7 +104,7 @@ export const feed = (onNavigate) => {
             editarPost(idPost, updatePosts);
           }
         } else {
-          alert('No puedes editar, este post no es tuyo');
+          // alert('No puedes editar, este post no es tuyo');
         }
       });
     });

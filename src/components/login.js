@@ -67,10 +67,9 @@ export const login = (onNavigate) => {
       showSnackbar('Por favor, completa todos los campos');
       return;
     }
-    loginUsuarioYContraseña(inputEmail.value, inputPassword.value)
-      .then(() => {
-        onNavigate('/feed');
-      })
+    loginUsuarioYContraseña(inputEmail.value, inputPassword.value).then(() => {
+      onNavigate('/feed');
+    })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
           showSnackbar('El usuario no existe');

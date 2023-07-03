@@ -19,16 +19,19 @@ import {
   arrayUnion,
   arrayRemove,
 } from 'firebase/firestore';
-import { auth, db } from '../firebase';
+import {
+  auth,
+  db,
+} from '../firebase';
 
 // FUNCION PARA CREAR USUARIO QUE SE EXPORTA REGISTER.JS::::::::::::::::::::::::::::::::::::::::
-export const crearUsuarioYContraseña = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password);
+export const crearUsuarioYContraseña = async (email, password) => {
+  await createUserWithEmailAndPassword(auth, email, password);
 };
 
 // FUNCION PARA ENTRAR CON LOGIN LOGEARSE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::
-export const loginUsuarioYContraseña = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password);
+export const loginUsuarioYContraseña = async (email, password) => {
+  await signInWithEmailAndPassword(auth, email, password);
 };
 
 // FUNCION PARA ENTRAR CON GOOGLE QUE SE EXPORTA A LOGIN.JS:::::::::::::::::::::::::::::::::::::
@@ -51,14 +54,14 @@ export const usuarioLogeadoRegister = (displayName) => updateProfile(auth.curren
 
 // FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
 export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
-  date: serverTimestamp(), // todas la fechas ordenadas
+  date: ServerValue.TIMESTAMP, // todas la fechas ordenadas
   contenido: texto,
   usuario: user,
   likes: [],
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
-export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date'), callback);
 
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
