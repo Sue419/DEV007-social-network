@@ -54,14 +54,14 @@ export const usuarioLogeadoRegister = (displayName) => updateProfile(auth.curren
 
 // FUNCION PARA CREAR POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::::::::::
 export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones'), {
-  date: ServerValue.TIMESTAMP, // todas la fechas ordenadas
+  date: serverTimestamp(), // todas la fechas ordenadas
   contenido: texto,
   usuario: user,
   likes: [],
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
-export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date'), callback);
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
