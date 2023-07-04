@@ -36,7 +36,7 @@ export const login = (onNavigate) => {
 
   <div id="snackbar" class="hide">
     <span id="snackbar-text"></span>
-    <button id="snackbar-close">Close</button>
+    <button id="snackbar-close1">Close</button>
   </div>
 </section>
 
@@ -53,7 +53,7 @@ export const login = (onNavigate) => {
     snackbar.classList.remove('show');
     snackbar.classList.add('hide');
   }
-  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close');
+  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close1');
   btnSnackbarClose.addEventListener('click', () => {
     hideSnackbar();
   });
