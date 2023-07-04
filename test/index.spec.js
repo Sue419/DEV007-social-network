@@ -31,10 +31,14 @@ describe('crearUsuarioYContraseña', () => {
     const response = await crearUsuarioYContraseña('tetera@mail.com', 'tetera123');
     expect(response.user.email).toBe('tetera@mail.com');
   });
-});
 
-describe('loginUsuarioYContraseña', () => {
-  test('es una función', () => {
-    expect(typeof loginUsuarioYContraseña).toBe('function');
+  //   test('Deberia devolver la info del usuario al registrarse', async () => {
+  //   })
+  // });
+
+  describe('loginUsuarioYContraseña', () => {
+    test('es una función', () => {
+      expect(typeof loginUsuarioYContraseña).toBe('function');
+    });
   });
 });

@@ -106,10 +106,12 @@ export const feed = (onNavigate) => {
     const botonesEditar = postDivs.querySelectorAll('.btn-editar');
     botonesEditar.forEach((btnEditar) => {
       btnEditar.addEventListener('click', () => {
+        const inputEditar = document.querySelector('#inputEditar');
         const idPost = btnEditar.id;
         const idPostUser = btnEditar.dataset.user;
         if (currentUserInfo().email === idPostUser) {
-          const editPost = prompt('Edita el post:');
+          const editPost = inputEditar.value;
+          // const editPost = prompt('Edita el post:');
           if (editPost !== null) {
             const updatePosts = { contenido: editPost };
             editarPost(idPost, updatePosts);
@@ -167,6 +169,7 @@ export const feed = (onNavigate) => {
           <h3 class="usuario-post"></h3>
           <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
           <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
+          <input type="text" id="inputEditar" styke="opacity: 0;">
           <button id=${idPost} class="btn-like">Like</button>
           <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
         </div>
