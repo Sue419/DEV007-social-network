@@ -26,7 +26,7 @@ export const register = (onNavigate) => {
     </div>
     <div id="snackbar" class="hide">
      <span id="snackbar-text"></span>
-     <button id="snackbar-close2">Close</button>
+     <button id="snackbar-close">Close</button>
     </div>
     `;
   // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -35,7 +35,7 @@ export const register = (onNavigate) => {
     snackbar.classList.remove('show');
     snackbar.classList.add('hide');
   }
-  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close2');
+  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close');
   btnSnackbarClose.addEventListener('click', () => {
     hideSnackbar();
   });

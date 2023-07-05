@@ -36,7 +36,7 @@ export const login = (onNavigate) => {
 
   <div id="snackbar" class="hide">
     <span id="snackbar-text"></span>
-    <button id="snackbar-close1">Close</button>
+    <button id="snackbar-close">Close</button>
   </div>
 </section>
 
@@ -49,11 +49,11 @@ export const login = (onNavigate) => {
 
   // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   function hideSnackbar() {
-    const snackbar = document.getElementById('snackbar');
+    const snackbar = document.getElementById('snackbar3');
     snackbar.classList.remove('show');
     snackbar.classList.add('hide');
   }
-  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close1');
+  const btnSnackbarClose = homeDiv.querySelector('#snackbar-close');
   btnSnackbarClose.addEventListener('click', () => {
     hideSnackbar();
   });
@@ -62,9 +62,9 @@ export const login = (onNavigate) => {
     const snackbar = document.getElementById('snackbar');
     const snackbarText = document.getElementById('snackbar-text');
 
-    snackbarText.textContent = mensaje;
-    snackbar.classList.remove('hide');
-    snackbar.classList.add('show');
+    snackbar3Text.textContent = mensaje;
+    snackbar3.classList.remove('hide');
+    snackbar3.classList.add('show');
 
     setTimeout(hideSnackbar, 5000);
   }
