@@ -62,9 +62,9 @@ export const login = (onNavigate) => {
     const snackbar = document.getElementById('snackbar');
     const snackbarText = document.getElementById('snackbar-text');
 
-    snackbar3Text.textContent = mensaje;
-    snackbar3.classList.remove('hide');
-    snackbar3.classList.add('show');
+    snackbarText.textContent = mensaje;
+    snackbar.classList.remove('hide');
+    snackbar.classList.add('show');
 
     setTimeout(hideSnackbar, 5000);
   }
