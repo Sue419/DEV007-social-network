@@ -21,15 +21,18 @@ export const feed = (onNavigate) => {
     <div class="form-container feed-container">
     <div class="barra-morada-feed">
       <h2 class="labgram-text-feed">LABGRAM </h2>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="rgba(197, 116, 193, 1)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <button class="btn-cerrar-sesion">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c574c1" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" />
   <path d="M15 12h-12l3 -3" />
   <path d="M6 15l-3 -3" />
 </svg>
+    </button>
     </div>
     <div class="perfil-usuario">
-      <h1 class="usuario-saludo">¡Hola!<br>${usuarioLogeado()}</h1>
+      <h1 class="saludo">¡Hola!</h1>
+      <h2 class="usuario-saludo">${usuarioLogeado()}</h2>
       <h2 class="bienvenida-feed">Bienvenida a tu espacio para compartir ejercicios del GYM</h2>
       <br><br>
     </div>
@@ -75,7 +78,7 @@ export const feed = (onNavigate) => {
     try {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().email);
       contenidoDelTextarea.value = '';
-      // console.log(currentUserInfo());
+      console.log(currentUserInfo());
       // console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
       // alert('Publicación subida');
     } catch (error) {
@@ -161,14 +164,18 @@ export const feed = (onNavigate) => {
       // console.log(usuarioLogeado());
       postDivs.innerHTML += `
         <div class="posts__post">
-          <p>${doc.data().contenido}</p>
-          <p>${doc.data().usuario}</p>
-          <p>${fecha}</p>
+          <div class="barra-usuario-fecha">
+            <p>${doc.data().usuario}</p>
+            <p>${fecha}</p>
+          </div>
+          <p class="parrafo-post">${doc.data().contenido}</p>
           <h3 class="usuario-post"></h3>
-          <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
-          <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
-          <button id=${idPost} class="btn-like">Like</button>
-          <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
+          <div class="botones-edit-borrar-like">
+            <button id=${idPost} data-user=${idUser} class="btn-borrar ">Borrar</button> 
+            <button id=${idPost} data-user=${idUser} class="btn-editar ">Editar</button>
+            <button id=${idPost} class="btn-like">Like</button>
+            <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
+          <div>
         </div>
       `;
       editar(idPost, { contenido: '' });
