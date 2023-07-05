@@ -7,7 +7,9 @@ body {
   margin: 0;
   background-color: rgba(1, 7, 36, 1);
 }
-
+.home-div__button{
+  display: none;
+}
 #root {
   width: 100%;
   height: 100vh;
@@ -398,12 +400,6 @@ body {
   font-size: 20px;
 }
 
-.foto-perfil {
-  border-radius: 100px;
-  width: 50px;
-  height: 50px;
-}
-
 .hola-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 25px;
@@ -417,7 +413,7 @@ body {
 
 .new-post__container__button {
   border-radius: 10px;
-  margin-left: 210px;
+  margin: 16px;
 }
 
 .posts__container {
@@ -433,7 +429,8 @@ body {
 }
 .barra-usuario-fecha {
   display: flex;
-  gap: 10px;
+  margin: 7px;
+  justify-content: space-between;
 }
 .botones-edit-borrar-like {
   display: flex;
@@ -441,6 +438,46 @@ body {
 }
 .parrafo-post {
   display: flex;
+  white-space: pre-line;
+}
+.btn-borrar-post {
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Agrega cualquier otro estilo adicional que desees aplicar al botón */
+}
+
+.icon-tabler-trash {
+  width: 24px;
+  height: 24px;
+  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
+}
+.btn-editar-post {
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* Agrega cualquier otro estilo adicional que desees aplicar al botón */
+}
+.icon-tabler-edit{
+  width: 24px;
+  height: 24px;
+  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
+}
+.btn-like-post{
+  height: 40px;
+  width: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.icon-tabler-heart-handshake{
+  width: 24px;
+  height: 24px;
+  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
 }
 /*------------------snackbar-------------------------*/
 #snackbar {
