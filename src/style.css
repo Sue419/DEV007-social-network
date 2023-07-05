@@ -311,12 +311,51 @@ body {
   position: relative;
   left: 0;
 }
+
+/*modal*/
+.modalRegister {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal-content {
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000624;
+  border: 5px solid #7945aa;
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+}
+.modalClose {
+  background-color: #00000000;
+  border: none;
+}
+.logo-register-exitoso{
+  background-image: url();
+}
 /*---------------------------FEED---------------------------*/
 .colorLetras {
   color: #ffffff;
 }
-.fondo-feed {
-  background-color: rgba(1, 7, 36, 1);
+.barra-morada-feed {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
+  border: 1px solid #000000;
 }
 .labgram-text-feed {
   margin: 0;
@@ -330,15 +369,11 @@ body {
   line-height: 60px;
   color: #c574c1;
 }
-.barra-morada-feed {
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(90deg, #7945aa -50.9%, #4c2e64 76.54%);
-  border: 1px solid #000000;
+.btn-cerrar-sesion {
+  background-color: #00000000;
+  border: none;
 }
+
 .publicaciones-feed {
   margin-left: 15px;
 }
@@ -380,94 +415,94 @@ body {
 .bienvenida-feed {
   text-align: center;
 }
-.btn-cerrar-sesion {
-  background-color: #00000000;
-  border: none;
-}
-/*------------------PERFIL USUARIO-------------------------*/
-
-.perfil-usuario {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+/*------------------feed post usuario-------------------------*/
 .saludo {
+  text-align: center;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 30px;
 }
 .usuario-saludo {
+  text-align: center;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
+  letter-spacing: 0.1em;
+  font-weight: 100;
 }
-
 .hola-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 25px;
   font-style: italic;
 }
-
 .new-post__container__textarea {
   border-radius: 15px;
   margin-left: 10px;
 }
-
 .new-post__container__button {
   border-radius: 10px;
   margin: 16px;
 }
-
 .posts__container {
   display: flex;
-  font-size: 18px;
   flex-direction: column;
   align-items: center;
 }
-
 .posts__post {
   color: #cbbfcc;
   border: 2px solid #c574c1;
+  margin: 5px;
 }
 .barra-usuario-fecha {
   display: flex;
-  margin: 7px;
   justify-content: space-between;
+  background-color: #bb88bf6f;
 }
-.botones-edit-borrar-like {
-  display: flex;
-  justify-content: space-around;
+.p-usuario{
+  margin-left: 15px;
+}
+.p-fecha{
+  margin-right: 15px;
 }
 .parrafo-post {
   display: flex;
   white-space: pre-line;
+  margin-left: 15px;
+} 
+.botones-edit-borrar-like {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #4c2e6470;
+  justify-items: center;
+  align-content: center;
 }
 .btn-borrar-post {
+  display: grid;
+  align-items: center;
   height: 40px;
   width: 40px;
   background: none;
   border: none;
   cursor: pointer;
-  /* Agrega cualquier otro estilo adicional que desees aplicar al botón */
 }
-
 .icon-tabler-trash {
   width: 24px;
   height: 24px;
-  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
 }
 .btn-editar-post {
+  display: grid;
+  align-items: center;
   height: 40px;
   width: 40px;
   background: none;
   border: none;
   cursor: pointer;
-  /* Agrega cualquier otro estilo adicional que desees aplicar al botón */
 }
 .icon-tabler-edit{
   width: 24px;
   height: 24px;
-  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
 }
 .btn-like-post{
+  display: grid;
+  align-items: center;
   height: 40px;
   width: 40px;
   background: none;
@@ -477,7 +512,10 @@ body {
 .icon-tabler-heart-handshake{
   width: 24px;
   height: 24px;
-  /* Agrega cualquier otro estilo adicional que desees aplicar al elemento SVG */
+}
+.likes-count{
+  display: grid;
+  align-items: center;
 }
 /*------------------snackbar-------------------------*/
 #snackbar {
@@ -542,38 +580,6 @@ body {
     bottom: 0;
     opacity: 0;
   }
-}
-/*modal*/
-.modal {
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-.modal-content {
-  display: flex;
-  color: #fff;
-  flex-direction: column;
-  align-items: center;
-  background-color: #000624;
-  border: 5px solid #7945aa;
-  border-radius: 20px;
-  width: 300px;
-  height: 300px;
-  justify-content: center;
-}
-.modalClose {
-  background-color: #00000000;
-  border: none;
-}
-.logo-register-exitoso{
-  background-image: url();
 }
 
 /*------------------MEDIA QUERYS-------------------------*/

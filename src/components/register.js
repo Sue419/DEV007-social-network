@@ -34,7 +34,7 @@ export const register = (onNavigate) => {
   <span id="snackbar-text"></span>
   <button id="snackbar-close">Close</button>
 </div>
-<div id="modal" class="modal">
+<div id="modal" class="modalRegister">
   <div class="modal-content">
     <h2>Registro Exitoso</h2>
     <div class="logo-register-exitoso"></div>
@@ -75,20 +75,15 @@ export const register = (onNavigate) => {
     setTimeout(hideSnackbar, 8000);
   }
   // MODAL::::::::::::::::::::::::::::::::::::::::::
-  const modal = homeDiv.querySelector('.modal');
+  const modalRegister = homeDiv.querySelector('.modalRegister');
   const closeBtn = homeDiv.querySelector('.modalClose');
   function openModal() {
-    modal.style.display = 'flex';
+    modalRegister.style.display = 'flex';
   }
   function closeModal() {
-    modal.style.display = 'none';
+    modalRegister.style.display = 'none';
+    onNavigate('/feed');
   }
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
 
   // REGISTRO DE USUARIO:::::::::::::::::::::::::::::::::::::::::::::::
   const inputEmail = homeDiv.querySelector('#email');
@@ -118,15 +113,31 @@ export const register = (onNavigate) => {
       showSnackbar('La contraseña no coincide');
       return;
     }
-    openModal();
-
+    // if (inputEmail.value === true) {
+    //   showSnackbar('Usuario registrado');
+    //   return;
+    // }
     e.preventDefault();
     crearUsuarioYContraseña(
       inputEmail.value,
       inputPassword.value,
       inputName.value,
-    ).then(() => {
-      onNavigate('/feed');
+    )
+      .then(() => {
+        if (inputEmail) {
+          openModal();
+        }
+      })
+      .catch((error) => {
+        if (error.code === 'auth/email-already-in-use') {
+          showSnackbar('Usuario Registrado');
+        }
+      });
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (event) => {
+      if (event.target === modalRegister) {
+        closeModal();
+      }
     });
   });
   homeDiv.appendChild(buttonRegister);

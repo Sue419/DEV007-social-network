@@ -76,12 +76,12 @@ export const feed = (onNavigate) => {
     } catch (error) {
       // console.log(error.code);
     }
-    // console.log(contenidoDelTextarea.value);
+    console.log(contenidoDelTextarea.value);
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::
   function borrar() {
-    const botonesBorrar = postDivs.querySelectorAll('.btn-borrar');
+    const botonesBorrar = postDivs.querySelectorAll('.btn-borrar-post');
     botonesBorrar.forEach((btnBorrar) => {
       btnBorrar.addEventListener('click', () => {
         const idPost = btnBorrar.id;
@@ -98,7 +98,7 @@ export const feed = (onNavigate) => {
   }
   // FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
   function editar() {
-    const botonesEditar = postDivs.querySelectorAll('.btn-editar');
+    const botonesEditar = postDivs.querySelectorAll('.btn-editar-post');
     botonesEditar.forEach((btnEditar) => {
       btnEditar.addEventListener('click', () => {
         const idPost = btnEditar.id;
@@ -157,8 +157,8 @@ export const feed = (onNavigate) => {
       postDivs.innerHTML += `
       <div class="posts__post">
       <div class="barra-usuario-fecha">
-        <p>${doc.data().usuario}</p>
-        <p>${fecha}</p>
+        <p class="p-usuario">${doc.data().usuario}</p>
+        <p class="p-fecha">${fecha}</p>
       </div>
       <p class="parrafo-post">${doc.data().contenido}</p>
       <h3 class="usuario-post"></h3>
