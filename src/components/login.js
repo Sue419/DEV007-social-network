@@ -49,7 +49,7 @@ export const login = (onNavigate) => {
 
   // Snackbar:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   function hideSnackbar() {
-    const snackbar = document.getElementById('snackbar');
+    const snackbar = document.getElementById('snackbar3');
     snackbar.classList.remove('show');
     snackbar.classList.add('hide');
   }

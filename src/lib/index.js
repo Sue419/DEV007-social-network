@@ -61,7 +61,7 @@ export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones')
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
-export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date'), callback);
+export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;

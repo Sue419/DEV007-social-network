@@ -113,10 +113,6 @@ export const register = (onNavigate) => {
       showSnackbar('La contraseña no coincide');
       return;
     }
-    // if (inputEmail.value === true) {
-    //   showSnackbar('Usuario registrado');
-    //   return;
-    // }
     e.preventDefault();
     crearUsuarioYContraseña(
       inputEmail.value,
