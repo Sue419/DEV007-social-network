@@ -516,6 +516,55 @@ body {
   display: grid;
   align-items: center;
 }
+/*-------------MODAL EDITAR POST--------------*/
+
+.close, .saveChanges {
+  background-color: #46355B;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 25px;
+}
+.modal-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+} 
+
+.show {
+  pointer-events: auto;
+}
+.modal {
+  background-color: #fff;
+  width: 500px;
+  max-width: 100%;
+  padding: 30px 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.modal h1 {
+  margin: 0;
+  color: #C574C1;
+  font-size: 30px;
+}
+.edit {
+  background: gray;
+  margin: 5px;
+  width: 100%;
+ 
+  font-size: 14px;
+  color: white;
+}
 /*------------------snackbar-------------------------*/
 #snackbar {
   visibility: hidden;
