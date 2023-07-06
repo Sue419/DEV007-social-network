@@ -105,7 +105,7 @@ export const feed = (onNavigate) => {
         const userPostId = btnEditar.dataset.user;
         if (currentUserInfo().email === userPostId) {
           const modalContainer = document.createElement('div');
-          modalContainer.classList.add('.modal-container');
+          modalContainer.classList.add('modal-container');
           const modalContent = `
             <div class="modal">
               <h1>Edita tu post</h1>
