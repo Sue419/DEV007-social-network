@@ -6,6 +6,7 @@
 body {
   margin: 0;
   background-color: rgba(1, 7, 36, 1);
+  box-sizing: border-box;
 }
 .home-div__button{
   display: none;
@@ -49,7 +50,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -67,7 +68,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -111,7 +112,7 @@ body {
   height: 146px;
 }
 .inicia-texto {
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -124,7 +125,7 @@ body {
   height: 52px;
   background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -139,7 +140,7 @@ body {
   height: 52px;
   background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -151,7 +152,7 @@ body {
 }
 
 .olvidoContraseña {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -161,7 +162,7 @@ body {
   margin: 5px;
 }
 .ingresaCon-google {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -183,7 +184,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -200,7 +201,7 @@ body {
   color: #ff4d5a;
 }
 .btn-register-direccion {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -224,7 +225,7 @@ body {
 }
 .register-texto {
   height: 72px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -282,7 +283,7 @@ body {
   height: 52px;
   background: #46355b;
   border-radius: 10px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -290,14 +291,13 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #eae4d8;
-  border-radius: 10px;
   border-style: none;
 }
 .btn-register-register:hover {
   color: #ff4d5a;
 }
 .btn-login-direccion {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -314,7 +314,6 @@ body {
 
 /*modal*/
 .modalRegister {
-  display: flex;
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -362,7 +361,7 @@ body {
   margin-left: 10px;
   width: 143px;
   height: 60px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -384,7 +383,7 @@ body {
   background: #ffffff;
   border: 1px solid #bb88bf;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -398,7 +397,7 @@ body {
   height: 36px;
   background: #bb88bf;
   border-radius: 7px;
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -591,7 +590,7 @@ body {
 #snackbar-close {
   color: #c574c1;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   background: none;
   border: none;
   cursor: pointer;
@@ -601,7 +600,7 @@ body {
 #snackbar-close:hover {
   color: #ff4d5a;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   background: none;
   border: none;
   cursor: pointer;
@@ -631,247 +630,62 @@ body {
   }
 }
 
-/*------------------MEDIA QUERYS-------------------------*/
-@media screen and (min-width: 768px) {
-  /*::::::::::HOME::::::::::*/
-  .labgram-texto {
-    font-size: 100px;
-  }
-  .p-texto {
-    font-size: 20px;
-  }
-  .logo-labgram {
-    position: relative;
-    width: 400px;
-    height: 430px;
-  }
-  .btn-iniciarSesion {
-    width: 340px;
-    height: 70px;
-    font-size: 50px;
-  }
-  .btn-register {
-    width: 340px;
-    height: 70px;
-    font-size: 50px;
-  }
-  /*::::::::::INIVIA SESIÓN::::::::::*/
-  .inicia-texto {
-    font-size: 70px;
-  }
-  .imgLogoLogin {
-    width: 200px;
-    height: 220px;
-  }
-  .btn-google {
-    width: 100px;
-    height: 100px;
-    margin-top: 15px;
-  }
-  .btn-inicia-sesion-login {
-    width: 340px;
-    height: 85px;
-    font-size: 48px;
-  }
-  .btn-register-direccion {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  .ingresaCon-google {
-    font-size: 30px;
-  }
-  .input-email {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .input-password {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .containerFlex {
-    margin-top: 0px;
-  }
-  .olvidoContraseña {
-    font-size: 15px;
-  }
-  /*::::::::::REGISTRAR::::::::::*/
-  .register-texto {
-    font-size: 70px;
-  }
-  .imgLogoRegister {
-    width: 200px;
-    height: 220px;
-  }
-  .input-register-name {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .input-register-email {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .input-register-contraseña {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .input-register-contraseña-confirmar {
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-  }
-  .btn-register-register {
-    width: 340px;
-    height: 85px;
-    font-size: 48px;
-  }
-  .btn-login-direccion {
-    font-size: 20px;
-  } 
-  .modal-content{
-    width: 500px;
-    height: 500px;
-  }
-  #snackbar {
-    padding: 30px;
-  }
-  #snackbar-text {
-    font-size: 15px;
-  }
-  #snackbar-close {
-    font-size: 15px;
-  }
-  #snackbar-close:hover {
-    font-size: 15px;
-  }
+/*-------------MODAL EDITAR POST--------------*/
+.close, .saveChanges {
+  background-color: #46355b;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 25px;
 }
-@media screen and (min-width: 1024px) {
-  /*::::::::::HOME::::::::::*/
-  .labgram-texto {
-    margin-top: 30px;
-  }
-  .logo-labgram {
-    display: none;
-  }
-  /*::::::::::INICIA SESIÓN::::::::::*/
-  .inicia-texto {
-    font-size: 65px;
-  }
-  .fondo-login {
-    position: relative;
-    right: 0px;
-    background-image: url(img/fondo.jpeg);
-    width: 640px;
-    height: 640px;
-  }
-  .imgLogoLogin {
-    width: 200px;
-    height: 220px;
-    display: none;
-  }
-  .btn-google {
-    width: 100px;
-    height: 100px;
-    margin-top: 15px;
-  }
-  .btn-inicia-sesion-login {
-    width: 330px;
-    height: 75px;
-    font-size: 40px;
-  }
-  .btn-register-direccion {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  .ingresaCon-google {
-    font-size: 20px;
-  }
-  .input-email {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .input-password {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .container-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .olvidoContraseña {
-    font-size: 15px;
-  }
-  /*::::::::::REGISTRAR::::::::::*/
-  .btnRegister {
-    position: absolute;
-    left: 5px;
-    margin-top: 0px;
-    background-color: #00000000;
-    border: none;
-  }
-  .imgLogoRegister {
-    display: none;
-  }
-  .register-texto {
-    font-size: 70px;
-  }
 
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .imgLogoRegister {
-    width: 200px;
-    height: 220px;
-  }
-  .input-register-name {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .input-register-email {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .input-register-contraseña {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .input-register-contraseña-confirmar {
-    width: 400px;
-    height: 60px;
-    font-size: 20px;
-  }
-  .btn-register-register {
-    width: 340px;
-    height: 85px;
-    font-size: 48px;
-  }
-  .btn-login-direccion {
-    font-size: 20px;
-  }
-  #snackbar {
-    padding: 30px;
-  }
-  #snackbar-text {
-    font-size: 15px;
-  }
-  #snackbar-close {
-    font-size: 15px;
-  }
-  #snackbar-close:hover {
-    font-size: 15px;
-  }
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.modal h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal .edit {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.modal button {
+  border: none;
+  background-color: #c574c1;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button + button {
+  margin-left: 10px;
 }
