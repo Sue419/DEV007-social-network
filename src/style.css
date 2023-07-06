@@ -50,7 +50,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -68,7 +68,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -112,7 +112,7 @@ body {
   height: 146px;
 }
 .inicia-texto {
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -125,7 +125,7 @@ body {
   height: 52px;
   background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -140,7 +140,7 @@ body {
   height: 52px;
   background: #ffffff;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -152,7 +152,7 @@ body {
 }
 
 .olvidoContraseña {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -162,7 +162,7 @@ body {
   margin: 5px;
 }
 .ingresaCon-google {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -184,7 +184,7 @@ body {
   width: 240px;
   height: 52px;
   background-color: #46355b;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -201,7 +201,7 @@ body {
   color: #ff4d5a;
 }
 .btn-register-direccion {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -225,7 +225,7 @@ body {
 }
 .register-texto {
   height: 72px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 48px;
@@ -283,7 +283,7 @@ body {
   height: 52px;
   background: #46355b;
   border-radius: 10px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -297,7 +297,7 @@ body {
   color: #ff4d5a;
 }
 .btn-login-direccion {
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -361,7 +361,7 @@ body {
   margin-left: 10px;
   width: 143px;
   height: 60px;
-  font-family: 'Anton';
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -383,7 +383,7 @@ body {
   background: #ffffff;
   border: 1px solid #bb88bf;
   border-radius: 10px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -397,7 +397,7 @@ body {
   height: 36px;
   background: #bb88bf;
   border-radius: 7px;
-  font-family: 'Bebas Neue';
+  font-family: 'Bebas Neue', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -541,7 +541,7 @@ body {
 #snackbar-close {
   color: #c574c1;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   background: none;
   border: none;
   cursor: pointer;
@@ -551,7 +551,7 @@ body {
 #snackbar-close:hover {
   color: #ff4d5a;
   font-size: 15px;
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed', sans-serif;
   background: none;
   border: none;
   cursor: pointer;
@@ -593,46 +593,50 @@ body {
 }
 
 .modal-container {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
-  align-items: center;
-  justify-content: center;
   position: fixed;
-  pointer-events: none;
-  opacity: 0;  
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
-  transition: opacity 0.3s ease;
-}
-
-.show {
-  pointer-events: auto;
-  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .modal {
   background-color: #fff;
-  width: 500px;
-  max-width: 100%;
-  padding: 30px 50px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .modal h1 {
-  margin: 0;
-  color: #c574c1;
-  font-size: 30px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.edit {
-  background: gray;
-  margin: 5px;
-  width: 100%;
-  opacity: 0.7;
-  font-size: 14px;
-  color: white;
+.modal .edit {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.modal button {
+  border: none;
+  background-color: #c574c1;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button + button {
+  margin-left: 10px;
 }
