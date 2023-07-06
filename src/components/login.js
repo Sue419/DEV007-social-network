@@ -58,13 +58,13 @@ export const login = (onNavigate) => {
     hideSnackbar();
   });
 
-  function showSnackbar(mensaje) {
-    const snackbar = document.getElementById('snackbar');
-    const snackbarText = document.getElementById('snackbar-text');
+  function showSnackbar() {
+    // const snackbar = document.getElementById('snackbar');
+    // const snackbarText = document.getElementById('snackbar-text');
 
-    snackbar3Text.textContent = mensaje;
-    snackbar3.classList.remove('hide');
-    snackbar3.classList.add('show');
+    // snackbar3Text.textContent = mensaje;
+    // snackbar3.classList.remove('hide');
+    // snackbar3.classList.add('show');
 
     setTimeout(hideSnackbar, 5000);
   }
