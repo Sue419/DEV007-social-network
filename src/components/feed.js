@@ -106,14 +106,39 @@ export const feed = (onNavigate) => {
     const botonesEditar = postDivs.querySelectorAll('.btn-editar');
     botonesEditar.forEach((btnEditar) => {
       btnEditar.addEventListener('click', () => {
-        const idPost = btnEditar.id;
-        const idPostUser = btnEditar.dataset.user;
-        if (currentUserInfo().email === idPostUser) {
-          const editPost = prompt('Edita el post:');
-          if (editPost !== null) {
-            const updatePosts = { contenido: editPost };
-            editarPost(idPost, updatePosts);
-          }
+        const postId = btnEditar.id;
+        const userPostId = btnEditar.dataset.user;
+        if (currentUserInfo().email === userPostId) {
+          const modalContainer = document.createElement('div');
+          modalContainer.classList.add('.modal-container');
+          const modalContent = `
+            <div class="modal">
+              <h1>Edita tu post</h1>
+              <div contenteditable="true" id="edit" class="edit"></div>
+              <button class="close">Cerrar</button>
+              <button class="saveChanges">Actualizar</button>
+            </div>
+          `;
+          modalContainer.innerHTML = modalContent;
+          document.body.appendChild(modalContainer);
+
+          const closeBtn = modalContainer.querySelector('.close');
+          const saveBtn = modalContainer.querySelector('.saveChanges');
+
+          closeBtn.addEventListener('click', () => {
+            modalContainer.remove();
+          });
+
+          saveBtn.addEventListener('click', () => {
+            const editPostTextarea = modalContainer.querySelector('#edit');
+            const editPostContent = editPostTextarea.innerText;
+
+            if (editPostContent !== '') {
+              const updatePosts = { contenido: editPostContent };
+              editarPost(postId, updatePosts);
+              modalContainer.remove();
+            }
+          });
         } else {
           // alert('No puedes editar, este post no es tuyo');
         }
@@ -171,8 +196,8 @@ export const feed = (onNavigate) => {
           <span class="likes-count" data-post=${idPost}>${doc.data().likes.length}</span>
         </div>
       `;
-      editar(idPost, { contenido: '' });
     });
+    editar();
     borrar();// ESTO MUESTRA EL BOTON BORRAR CON LA FUNCION BORRAR OK::::::
     darLike(querySnapshot);
   });
