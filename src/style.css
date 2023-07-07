@@ -6,7 +6,6 @@
 body {
   margin: 0;
   background-color: rgba(1, 7, 36, 1);
-  box-sizing: border-box;
 }
 .home-div__button{
   display: none;
@@ -630,3 +629,243 @@ body {
   }
 }
 
+/*------------------MEDIA QUERYS-------------------------*/
+@media screen and (min-width: 768px) {
+  /*::::::::::HOME::::::::::*/
+  .labgram-texto {
+    font-size: 100px;
+  }
+  .p-texto {
+    font-size: 20px;
+  }
+  .logo-labgram {
+    position: relative;
+    width: 400px;
+    height: 430px;
+  }
+  .btn-iniciarSesion {
+    width: 340px;
+    height: 70px;
+    font-size: 50px;
+  }
+  .btn-register {
+    width: 340px;
+    height: 70px;
+    font-size: 50px;
+  }
+  /*::::::::::INIVIA SESIÓN::::::::::*/
+  .inicia-texto {
+    font-size: 70px;
+  }
+  .imgLogoLogin {
+    width: 200px;
+    height: 220px;
+  }
+  .btn-google {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .btn-inicia-sesion-login {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-register-direccion {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .ingresaCon-google {
+    font-size: 30px;
+  }
+  .input-email {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-password {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .containerFlex {
+    margin-top: 0px;
+  }
+  .olvidoContraseña {
+    font-size: 15px;
+  }
+  /*::::::::::REGISTRAR::::::::::*/
+  .register-texto {
+    font-size: 70px;
+  }
+  .imgLogoRegister {
+    width: 200px;
+    height: 220px;
+  }
+  .input-register-name {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-email {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-contraseña {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .input-register-contraseña-confirmar {
+    width: 400px;
+    height: 70px;
+    font-size: 25px;
+  }
+  .btn-register-register {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-login-direccion {
+    font-size: 20px;
+  } 
+  .modal-content{
+    width: 500px;
+    height: 500px;
+  }
+  #snackbar {
+    padding: 30px;
+  }
+  #snackbar-text {
+    font-size: 15px;
+  }
+  #snackbar-close {
+    font-size: 15px;
+  }
+  #snackbar-close:hover {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /*::::::::::HOME::::::::::*/
+  .labgram-texto {
+    margin-top: 30px;
+  }
+  .logo-labgram {
+    display: none;
+  }
+  /*::::::::::INICIA SESIÓN::::::::::*/
+  .inicia-texto {
+    font-size: 65px;
+  }
+  .fondo-login {
+    position: relative;
+    right: 0px;
+    background-image: url(img/fondo.jpeg);
+    width: 640px;
+    height: 640px;
+  }
+  .imgLogoLogin {
+    width: 200px;
+    height: 220px;
+    display: none;
+  }
+  .btn-google {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+  }
+  .btn-inicia-sesion-login {
+    width: 330px;
+    height: 75px;
+    font-size: 40px;
+  }
+  .btn-register-direccion {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .ingresaCon-google {
+    font-size: 20px;
+  }
+  .input-email {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-password {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .olvidoContraseña {
+    font-size: 15px;
+  }
+  /*::::::::::REGISTRAR::::::::::*/
+  .btnRegister {
+    position: absolute;
+    left: 5px;
+    margin-top: 0px;
+    background-color: #00000000;
+    border: none;
+  }
+  .imgLogoRegister {
+    display: none;
+  }
+  .register-texto {
+    font-size: 70px;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-register-name {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-email {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-contraseña {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .input-register-contraseña-confirmar {
+    width: 400px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .btn-register-register {
+    width: 340px;
+    height: 85px;
+    font-size: 48px;
+  }
+  .btn-login-direccion {
+    font-size: 20px;
+  }
+  #snackbar {
+    padding: 30px;
+  }
+  #snackbar-text {
+    font-size: 15px;
+  }
+  #snackbar-close {
+    font-size: 15px;
+  }
+  #snackbar-close:hover {
+    font-size: 15px;
+  }
+}
