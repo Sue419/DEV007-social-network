@@ -70,13 +70,13 @@ export const feed = (onNavigate) => {
     try {
       await crearPost(contenidoDelTextarea.value, currentUserInfo().email);
       contenidoDelTextarea.value = '';
-      console.log(currentUserInfo());
+      // console.log(currentUserInfo());
       // console.log(usuarioLogeado());//LO MUESTRA EN CONSOLA MAS NO EN EL POST
       // alert('Publicación subida');
     } catch (error) {
       // console.log(error.code);
     }
-    console.log(contenidoDelTextarea.value);
+    // console.log(contenidoDelTextarea.value);
   });
 
   // FUNCION BORRAR POST:::::::::::::::::::::::::::::::::::::::::::::::::::::

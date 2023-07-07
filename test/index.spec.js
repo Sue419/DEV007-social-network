@@ -24,6 +24,7 @@ import {
   usuarioLogeadoRegister,
   currentUserInfo,
 } from '../src/lib/index';
+import { auth } from '../src/firebase';
 
 // IDENTIFICAMOS A QUE ARCHIVO LE HAREMOS MOCK PARA TEST:::::::::::::::::::::::::::::::::
 jest.mock('firebase/auth');
@@ -53,8 +54,9 @@ describe('crearUsuarioYContraseña', () => {
   });
 
   test('deberia llamar a la función createUserWithEmailAndPassword cuando es ejecutada', async () => {
-    await crearUsuarioYContraseña('tetera@mail.com', 'tetera123');
-    expect(createUserWithEmailAndPassword).toHaveBeenCalled();
+    await crearUsuarioYContraseña('tetera@mail.com', 'tetera123', () => {
+      expect(createUserWithEmailAndPassword).toHaveBeenCalled();
+    });
   });
 
   test('deberia devolver undefined', async () => {
@@ -204,6 +206,14 @@ describe('removeLike', () => {
 describe('usuarioLogeado', () => {
   test('es una función', () => {
     expect(typeof usuarioLogeado).toBe('function');
+  });
+
+  test('debería devolver el correo electrónico del usuario actual', () => {
+    const mockcurrentUser = { email: 'tetera@mail.com' };
+    auth.currentUser = mockcurrentUser;
+    const email = usuarioLogeado();
+
+    expect(email).toBe('tetera@mail.com');
   });
 });
 
