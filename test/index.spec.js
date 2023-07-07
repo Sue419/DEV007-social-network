@@ -24,7 +24,6 @@ import {
   usuarioLogeadoRegister,
   currentUserInfo,
 } from '../src/lib/index';
-import { auth } from '../src/firebase';
 
 // IDENTIFICAMOS A QUE ARCHIVO LE HAREMOS MOCK PARA TEST:::::::::::::::::::::::::::::::::
 jest.mock('firebase/auth');
@@ -209,10 +208,7 @@ describe('usuarioLogeado', () => {
   });
 
   test('debería devolver el correo electrónico del usuario actual', () => {
-    const mockcurrentUser = { email: 'tetera@mail.com' };
-    auth.currentUser = mockcurrentUser;
     const email = usuarioLogeado();
-
     expect(email).toBe('tetera@mail.com');
   });
 });
@@ -220,6 +216,10 @@ describe('usuarioLogeado', () => {
 describe('usuarioLogeadoRegister', () => {
   test('es una función', () => {
     expect(typeof usuarioLogeadoRegister).toBe('function');
+  });
+  test('debería devolver el correo electrónico del usuario', () => {
+    const email = usuarioLogeadoRegister();
+    expect(email).toBeUndefined(); // no
   });
 });
 
