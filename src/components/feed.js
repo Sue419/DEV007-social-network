@@ -94,6 +94,10 @@ export const feed = (onNavigate) => {
         // console.log(idPost);
         // console.log(currentUserInfo().email);
       });
+      const useridPost = btnBorrar.dataset.user;
+      if (currentUserInfo().email !== useridPost) {
+        btnBorrar.style.display = 'none';
+      }
     });
   }
   // FUNCION EDITAR POST::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -134,6 +138,10 @@ export const feed = (onNavigate) => {
           // alert('No puedes editar, este post no es tuyo');
         }
       });
+      const useridPost = btnEditar.dataset.user;
+      if (currentUserInfo().email !== useridPost) {
+        btnEditar.style.display = 'none';
+      }
     });
   }
 
