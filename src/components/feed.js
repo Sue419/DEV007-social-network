@@ -87,7 +87,27 @@ export const feed = (onNavigate) => {
         const idPost = btnBorrar.id;
         const idPostUser = btnBorrar.dataset.user;
         if (currentUserInfo().email === idPostUser) {
-          borrarPost(idPost);
+          const confirmModal = document.createElement('div');
+          confirmModal.classList.add('modal-Borrar');
+          confirmModal.innerHTML = `
+          <div class="modalConfirmarBorrar">
+            <p>¿Estás seguro de eliminar el post?</p>
+            <button class="btn-confirmar">Sí</button>
+            <button class="btn-cancelar">No</button>
+          </div>
+        `;
+          document.body.appendChild(confirmModal);
+          const btnConfirmar = confirmModal.querySelector('.btn-confirmar');
+          const btnCancelar = confirmModal.querySelector('.btn-cancelar');
+
+          btnConfirmar.addEventListener('click', () => {
+            borrarPost(idPost);
+            confirmModal.remove();
+          });
+
+          btnCancelar.addEventListener('click', () => {
+            confirmModal.remove();
+          });
         } else {
           // alert('No puedes eliminar, este post no es tuyo');
         }
