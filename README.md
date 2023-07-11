@@ -16,7 +16,7 @@
 
 ## 1. Definición del proyecto
 
-Nuestro proyecto LABGRAM nacio de la necesidad de compilar ejercicios de programación de nuestro bootcamp, al realizar esta actividad semanalmente, creimos necesario un espacio donde compartir las posibles soluciones a estos ejercicios y asi aprender en comunidad.
+Nuestro proyecto LABGRAM [Link LABGRAM](https://labgram-53b0c.web.app/) nacio de la necesidad de compilar ejercicios de programación de nuestro bootcamp, al realizar esta actividad semanalmente, creimos necesario un espacio donde compartir las posibles soluciones a estos ejercicios y asi aprender en comunidad.
 Esta pagina esta desarrollada como una SPA [Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
 [_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página).
 Esta app utilizara los servicios de Firebase para autenticarse, crear registros, escribir post, editar, borrar, etc.
@@ -27,70 +27,73 @@ Para este proyecto realizamos encuesta a traves de formulario.
 Registramos las necesidades y como poder aceptarlas como finalizadas.
 Recopilamos siete historias de usuario, que podemos ver a continuación, tambien dejamos el link con archivo en drive para ver detalles.
 
-[link historias de usuarios](https://docs.google.com/spreadsheets/d/1ytLTevb_3QAbttfVcF-lRlaGXfcJpWaV/edit?usp=sharing&ouid=105057202485758423586&rtpof=true&sd=true)
+[Link historias de usuarios](https://docs.google.com/spreadsheets/d/1ytLTevb_3QAbttfVcF-lRlaGXfcJpWaV/edit?usp=sharing&ouid=105057202485758423586&rtpof=true&sd=true)
 
 ![historias de usuario](imgReadMe/historiasDeUsuario.png)
 
 **Historia de usuario N°1**
 
-*Quiero poder registrarme en la pagina con mi cuenta de Google*
-*Para que cuando ingrese, reconozca mi mail y contraseña, sin necesidad de registrarme. Reconoce mi cuenta google.*
-*Criterios de aceptación: el usuario puede ingresar al home y seguir a iniciar sesion con google, sin necesidad de pasar por paso de registrarse, web reconoce su mail y contraseña de google.*
+* *Quiero poder registrarme en la pagina con mi cuenta de Google*
+* *Para que cuando ingrese, reconozca mi mail y contraseña, sin necesidad de registrarme en la misma pagina.*
+* *Criterios de aceptación: el usuario puede ingresar al home y seguir a iniciar sesion con google, sin necesidad de pasar por paso de registrarse, web reconoce su mail y contraseña de google.*
 
 **Historia de usuario N°2**
 
-*Quiero poder registrarme en la pagina.*
-*Para que cuando ingrese mis datos, estos queden almacenados en la web.*
-*Criterios de aceptación: el usuario puede ingresar al home y seguir a registarse con su mail y contraseña, esto podra hacerlo solo una vez por cuenta creada, posteriormente solo debera ingresar a traves de iniciar sesión, solo se aceptara un usuario por mail.*
+* *Quiero poder registrarme en la pagina.*
+* *Para que cuando ingrese mis datos, estos queden almacenados en la web.*
+* *Criterios de aceptación: el usuario puede ingresar al home y seguir a registarse con su mail y contraseña, esto podra hacerlo solo una vez por cuenta creada, posteriormente solo debera ingresar a traves de iniciar sesión, solo se aceptara un usuario por mail.*
 
 **Historia de usuario N°3**
 
-*Quiero escribir mis propios post.*
-*Para que cuando ingrese con mi cuenta, poder hacer post y que queden guardados en la web.*
-*Criterios de aceptación: el usuario al ingresar a su cuenta, podra escribir sus post, cuantos quiera, y quedaran almacenados, con fecha, hora y su mail de usuario como firma.*
+* *Quiero escribir mis propios post.*
+* *Para que cuando ingrese con mi cuenta, poder hacer post y que queden guardados en la web.*
+* *Criterios de aceptación: el usuario al ingresar a su cuenta, podra escribir sus post, cuantos quiera, y quedaran almacenados, con fecha, hora y su mail de usuario como firma.*
 
 **Historia de usuario N°4**
 
-*Quiero dar me gusta a mis propios post y de otros usuarios.*
-*Para que cuando ingrese con mi cuenta, poder dejar me gusta a mis post favoritos.*
-*Criterios de aceptación: el usuario al ingresar a su cuenta, podra leer sus propios post y de otros usuarios y segun su gusto dar o quitar me gusta a publicaciones favoritas.*
+* *Quiero dar me gusta a mis propios post y de otros usuarios.*
+* *Para que cuando ingrese con mi cuenta, poder dejar me gusta a mis post favoritos.*
+* *Criterios de aceptación: el usuario al ingresar a su cuenta, podra leer sus propios post y de otros usuarios y segun su gusto dar o quitar me gusta a publicaciones favoritas.*
 
 **Historia de usuario N°5**
 
-*Quiero identificar cuantos me gusta tiene cada post.*
-*Para que cuando ingrese con mi cuenta, poder identificar cuantos me gusta tiene cada post, ya sean propios o de otros usuarios.*
-*Criterios de aceptación: el usuario al ingresar a su cuenta, podra ver cantidad de me gusta de sus propios post o los de otros usuarios.*
+* *Quiero identificar cuantos me gusta tiene cada post.*
+* *Para que cuando ingrese con mi cuenta, poder identificar cuantos me gusta tiene cada post, ya sean propios o de otros usuarios.*
+* *Criterios de aceptación: el usuario al ingresar a su cuenta, podra ver cantidad de me gusta de sus propios post o los de otros usuarios.*
 
 **Historia de usuario N°6**
 
-*Quiero editar post.*
-*Para que cuando ingrese con mi cuenta, pueda editar post.*
-*Criterios de aceptación: el usuario al ingresar a su cuenta, podra editar solo sus propios post, esta opción solo estara disponible en sus propias publicaciones, sin opcion de editar los de otros usuarios.*
+* *Quiero editar post.*
+* *Para que cuando ingrese con mi cuenta, pueda editar post.*
+* *Criterios de aceptación: el usuario al ingresar a su cuenta, podra editar solo sus propios post, esta opción solo estara disponible en sus propias publicaciones, sin opcion de editar los de otros usuarios.*
 
 **Historia de usuario N°7**
 
-*Quiero borrar post.*
-*Para que cuando ingrese con mi cuenta, pueda borrar post.*
-*Criterios de aceptación: el usuario al ingresar a su cuenta, podra borrar solo sus propios post, esta opción solo estara disponible en sus propias publicaciones, sin opcion de borrar los de otros usuarios. Esta opción tiene pregunta de confirmación de borrado.*
+* *Quiero borrar post.*
+* *Para que cuando ingrese con mi cuenta, pueda borrar post.*
+* *Criterios de aceptación: el usuario al ingresar a su cuenta, podra borrar solo sus propios post, esta opción solo estara disponible en sus propias publicaciones, sin opcion de borrar los de otros usuarios. Esta opción tiene pregunta de confirmación de borrado.*
 
 ## 3. Prototipos de proyecto
 
 Teniendo entendidas las historias de usuarios y desarrollando nuestra creatividad, comenzamos a diseñar nuestros prototipos de diseño en Figma.
 
 **Prototipo baja fidelidad**
-![prototipo baja fidelidad](imgReadMe/protBajaFidelidad.png)
+
+° ![prototipo baja fidelidad](imgReadMe/protBajaFidelidad.png)
 
 **Prototipo alta fidelidad**
-![prototipo alta fidelidad](imgReadMe/protAltaFidelidad.png)
 
-Dejamos el Link Prototipos alta y baja fidelidad para su revisión en detalle.
+° ![prototipo alta fidelidad](imgReadMe/protAltaFidelidad.png)
 
-[link figma](https://www.figma.com/file/dbAofymZlDqIP3kV73uvzZ/Social-Network---Labgram-(tu-gym%2C-nuestro-gym)?type=design&node-id=0-1&mode=design&t=3jaGlObclraCqkPu-0)
+Dejamos el Link Figma de Prototipos alta y baja fidelidad para su revisión en detalle.
+
+[Link Figma](https://www.figma.com/file/dbAofymZlDqIP3kV73uvzZ/Social-Network---Labgram-(tu-gym%2C-nuestro-gym)?type=design&node-id=0-1&mode=design&t=3jaGlObclraCqkPu-0)
 
 
 ## 4. Desarrollo del proyecto
 
-Nuestro proyecto fue realizado 100% responsive para Iphone, IpadMini y Escritorio, en imagenes de login (4.2) veremos estas vistas. Tambien queremos contarte que al realizar tu porceso ya sea en login o registro, tenemos distintas ventanas (snackbar) que te darán pistas si estas cometiendo algun error, como por ejemplo que la contraseña ingresada no corresponda.
+Nuestro proyecto fue realizado 100% responsive para Iphone, IpadMini y Escritorio, en imagenes de login (en punto 4.2) veremos estas vistas. 
+Tambien queremos contarte que al realizar tu proceso ya sea en login o registro, tenemos distintas ventanas (snackbar) que te darán pistas si estas cometiendo algun error, como por ejemplo en la siguiente imagen de registro donde nos indica que la contraseña ingresada no corresponda.
 
 ![snackbar](imgReadMe/snackbar.png)
 
@@ -104,19 +107,26 @@ Nuestro proyecto fue realizado 100% responsive para Iphone, IpadMini y Escritori
 
 **4.2 Login LABGRAM**
 
+* Aqui te mostramos las tres vistas principales disponibles (Iphone, Ipadmini, Escritorio)
 * En esta vista puedes ingresar con tu cuenta, si es que tienes una, si no, puedes registarte en la parte inferior de la pantalla.
 * Tambien podras ingresar a la web con tu cuenta de google.
 * En la parte superior izquierda encontraras un icono para volver al home.
 
+°Iphone
+
 ![login Iphone](imgReadMe/loginIphone.png)
 
+°Ipadmini
+
 ![login IpadMini](imgReadMe/loginIpadmini.png)
+
+°Escritorio
 
 ![login Escritorio](imgReadMe/loginEscritorio.png)
 
 **4.3 Registro LABGRAM**
 
-* En la pagina de registro, puedes ingresar tu nnombre, mail y contraseña de preferencia, este paso se realiza solo una vez, en el futuro con esta cuenta podras ingresar en Iniciar sesion (login).
+* En la pagina de registro, puedes ingresar tu nombre, mail y contraseña de preferencia, este paso se realiza solo una vez, en el futuro con esta cuenta podras ingresar en Iniciar sesion (login).
 * Si ya tienes una cuenta puedes ingresar en la parte inferior, donde indica ir a Iniciar sesión.
 * En la parte superior izquierda encontraras un icono para volver al home.
 * Una vez registrado nuestra web te dara el mensaje exitoso y podras ingresar al feed.
@@ -138,8 +148,8 @@ Nuestro proyecto fue realizado 100% responsive para Iphone, IpadMini y Escritori
 Detalles de las publicaciones/posts
 * Cada post tiene tu mail logeado.
 * El post indica fecha y hora de publicación.
-* Puedes ver el corazon de los me gusta para que puedar dar o quitar a los posts.
-* Junto al contador podras ver el contador de me gusta, asi sabras cuantos tiene cada publicación.
+* Puedes ver el corazón de los me gusta para que puedas dar o quitar a los posts.
+* Junto al corazon podras ver el contador de me gusta, asi sabras cuantos tiene cada publicación.
 * Solo podras ver las opciones de editar y borrar si el post te pertenece como usuario logeado, asi nadie podra editar ni borrar tus post.
 
 ![detalles](imgReadMe/postDetalles.png)
@@ -150,7 +160,7 @@ Detalles de las publicaciones/posts
 
 ![editar](imgReadMe/editar.png)
 
-* Al pulsar el boton boorar, un modal te preguntara si estas seguro de borrar, por si cometiste un error al hacer click.
+* Al pulsar el boton borrar, un modal te preguntara si estas seguro de borrar, por si cometiste un error al hacer click.
 
 ![borrar](imgReadMe/borrar.png)
 
@@ -158,51 +168,51 @@ Detalles de las publicaciones/posts
 
 Para nuestro proyecto realizamos test unitarios, para corroborar que nuestra web es confiable es sus funciones. El detalle de pruebas lo mostramos a continuación:
 
-crearUsuarioYContraseña
-  √ es una función
-  √ deberia llamar a la función createUserWithEmailAndPassword cuando es ejecutada
-  √ deberia devolver undefined
-loginUsuarioYContraseña
-  √ es una función
-  √ debe dar error cuando no funciona
-  √ deberia llamar a la función signInWithEmailAndPassword cuando es ejecutada
-loginGoogle
-  √ es una función
-  √ deberia llamar a la función signInWithPopup cuando es ejecutada
-crearPost
-  √ es una función
-  √ deberia llamar a la funcion addoc cuando es ejecutada
-  √ deberia dar error cuando no se agrega el post
-obtenerTodosLosPost
-  √ es una función
-  √ deberia llamar a la funcion onSnapshot cuando es ejecutada
-  √ deberia dar error cuando no se agregan los posts
-borrarPost
-  √ es una función
-  √ deberia llamar a la funcion deleteDoc cuando es ejecutada
-  √ deberia dar error cuando se eliminen los posts
-  √ deberia borrar el post
-editarPost
-  √ es una función
-  √ deberia llamar a la funcion updateDoc cuando es ejecutada
-  √ deberia editar el post
-likesPost
-  √ es una función
-  √ deberia dar like al post
-  √ deberia llamar a la funcion updateDoc cuando es ejecutada
-removeLike
-  √ es una función
-  √ deberia quitar el like del post
-  √ deberia llamar a la funcion updateDoc cuando es ejecutada
-usuarioLogeado
-  √ es una función
-  √ debería devolver el correo electrónico del usuario actual
-usuarioLogeadoRegister
-  √ es una función
-  √ debería devolver el correo electrónico del usuario
-currentUserInfo
-  √ es una función
-  √ deberia devolver la información del usuario actual
+* crearUsuarioYContraseña
+  ° √ es una función
+  ° √ deberia llamar a la función createUserWithEmailAndPassword cuando es ejecutada
+  ° √ deberia devolver undefined
+* loginUsuarioYContraseña
+  ° √ es una función
+  ° √ debe dar error cuando no funciona
+  ° √ deberia llamar a la función signInWithEmailAndPassword cuando es ejecutada
+* loginGoogle
+  ° √ es una función
+  ° √ deberia llamar a la función signInWithPopup cuando es ejecutada
+* crearPost
+  ° √ es una función
+  ° √ deberia llamar a la funcion addoc cuando es ejecutada
+  ° √ deberia dar error cuando no se agrega el post
+* obtenerTodosLosPost
+  ° √ es una función
+  ° √ deberia llamar a la funcion onSnapshot cuando es ejecutada
+  ° √ deberia dar error cuando no se agregan los posts
+* borrarPost
+  ° √ es una función
+  ° √ deberia llamar a la funcion deleteDoc cuando es ejecutada
+  ° √ deberia dar error cuando se eliminen los posts
+  ° √ deberia borrar el post
+* editarPost
+  ° √ es una función
+  ° √ deberia llamar a la funcion updateDoc cuando es ejecutada
+  ° √ deberia editar el post
++ likesPost
+  ° √ es una función
+  ° √ deberia dar like al post
+  ° √ deberia llamar a la funcion updateDoc cuando es ejecutada
+* removeLike
+  ° √ es una función
+  ° √ deberia quitar el like del post
+  ° √ deberia llamar a la funcion updateDoc cuando es ejecutada
+* usuarioLogeado
+  ° √ es una función
+  ° √ debería devolver el correo electrónico del usuario actual
+* usuarioLogeadoRegister
+  ° √ es una función
+  ° √ debería devolver el correo electrónico del usuario
+* currentUserInfo
+  ° √ es una función
+  ° √ deberia devolver la información del usuario actual
     
 Tenemos un 85.71% de funciones testeadas, segun detalle:
 
@@ -212,7 +222,7 @@ Tenemos un 85.71% de funciones testeadas, segun detalle:
 
 Durante todo el proyecto utilizamos nuestra planificación de tareas en Trello, esta herramienta nos permitio realizar diseño paso a paso, teniendo a mano recursos y actividades para cada sprint.
 
-Link Trello [link trello](https://trello.com/b/YE89Cj6d/social-network)
+Link Trello [Link Trello](https://trello.com/b/YE89Cj6d/social-network)
 
 ![trello](imgReadMe/resumenTrello.jpg)
 
