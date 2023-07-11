@@ -78,7 +78,7 @@ Recopilamos siete historias de usuario, que podemos ver a continuación, tambien
 Teniendo entendidas las historias de usuarios y desarrollando nuestra creatividad, comenzamos a diseñar nuestros prototipos de diseño en Figma.
 
 **Prototipo baja fidelidad**
-
+https://miro.com/app/board/uXjVMCL4inQ=/?share_link_id=853420030999
 ° ![prototipo baja fidelidad](imgReadMe/protBajaFidelidad.png)
 
 **Prototipo alta fidelidad**
