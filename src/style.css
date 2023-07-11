@@ -551,6 +551,15 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+.modal button {
+  border: none;
+  background-color: #c574c1;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .modalConfirmarBorrar button + button {
   margin-left: 10px;
 }
@@ -592,14 +601,7 @@ body {
   margin-bottom: 20px;
 }
 
-.modal button {
-  border: none;
-  background-color: #c574c1;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+
 
 .modal button + button {
   margin-left: 10px;
