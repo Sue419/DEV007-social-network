@@ -41,10 +41,10 @@ export const loginGoogle = () => {
   // signInWithPopup() método para iniciar sesion con ventana emergente
 };
 
-// PERFIL USUARIO GOOGLE
+// PERFIL USUARIO
 export const usuarioLogeado = () => auth.currentUser.email;
 
-// FOTO USUARIO GOOGLE
+// FOTO USUARIO
 export const fotoUsuario = () => auth.currentUser.photoURL;
 
 // PERFIL USUARIO ACTUAL CON LOGIN MAIL

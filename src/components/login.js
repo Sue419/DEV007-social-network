@@ -30,7 +30,6 @@ export const login = (onNavigate) => {
   <img src="img/log_720.png" alt="logo" class="imgLogoLogin">
   <input class="input-email" id="email" type="email" placeholder="Email">
   <input class="input-password" id="password" type="password" placeholder="Password">
-  <a class="olvidoContraseña">¿OLVIDASTE TU CONTRASEÑA?</a>
   <span class="ingresaCon-google">O ingresa con</span>
   <button class="btn-google" type="button"></button>
 
