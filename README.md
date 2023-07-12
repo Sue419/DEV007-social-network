@@ -16,7 +16,7 @@
 
 ## 1. Definición del proyecto
 
-Nuestro proyecto LABGRAM [Link LABGRAM](https://labgram-53b0c.web.app/) nacio de la necesidad de compilar ejercicios de programación de nuestro bootcamp, al realizar esta actividad semanalmente, creimos necesario un espacio donde compartir las posibles soluciones a estos ejercicios y asi aprender en comunidad.
+Nuestro proyecto LABGRAM nacio de la necesidad de compilar ejercicios de programación de nuestro bootcamp, al realizar esta actividad semanalmente, creimos necesario un espacio donde compartir las posibles soluciones a estos ejercicios y asi aprender en comunidad.
 Esta pagina esta desarrollada como una SPA [Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
 [_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página).
 Esta app utilizara los servicios de Firebase para autenticarse, crear registros, escribir post, editar, borrar, etc.
