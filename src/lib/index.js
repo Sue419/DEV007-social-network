@@ -18,6 +18,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
+  query,
 } from 'firebase/firestore';
 import {
   auth,
@@ -61,7 +62,9 @@ export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones')
 });
 
 // FUNCION PARA VER TODOS LOS POST QUE SE EXPORTA A FEED.JS:::::::::::::::::::::::::::::::::::::
-export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
+const posteos = collection(db, 'publicaciones');
+export const postsOrdenados = query(posteos, orderBy('date', 'desc'));
+export const obtenerTodosLosPost = (callback) => onSnapshot(postsOrdenados, callback);
 
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
