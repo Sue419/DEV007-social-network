@@ -65,6 +65,7 @@ export const crearPost = (texto, user) => addDoc(collection(db, 'publicaciones')
 const posteos = collection(db, 'publicaciones');
 export const postsOrdenados = query(posteos, orderBy('date', 'desc'));
 export const obtenerTodosLosPost = (callback) => onSnapshot(postsOrdenados, callback);
+// export const obtenerTodosLosPost = (callback) => onSnapshot(collection(db, 'publicaciones'), orderBy('date', 'desc'), callback);
 
 // FUNCION PARA IDENTIFICAR AL USUARIO
 export const currentUserInfo = () => auth.currentUser;
